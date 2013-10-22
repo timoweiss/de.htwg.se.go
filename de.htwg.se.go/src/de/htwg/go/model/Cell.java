@@ -1,28 +1,42 @@
 package de.htwg.go.model;
 
+import java.awt.Point;
+
 public class Cell {
 	private int status;
+	private Point coords;
 
-	public Cell() {
-		setStatus(0);
+	public Cell(int x, int y) {
+		setStatus("0");
+		coords = new Point(x, y);
 	}
 
-	public Cell(String color) {
-		if (color.equals("w")) {
-			setStatus(1);
-		} else if (color.equals("b")) {
-			setStatus(2);
-		} else {
-			setStatus(0);
-		}
+	public Cell(int x, int y, String color) {
+		setStatus(color);
+		coords = new Point(x, y);
 	}
 
 	public int getStatus() {
 		return status;
 	}
 
-	public void setStatus(int status) {
-		this.status = status;
+	public Point getCoords() {
+		return this.coords;
+	}
+	
+	public void setStatus(String color) {
+
+		switch (color) {
+		case "w":
+			this.status = 1;
+			break;
+		case "b":
+			this.status = 2;
+			break;
+		case "0":
+			this.status = 0;
+			break;
+		}
 	}
 
 }
