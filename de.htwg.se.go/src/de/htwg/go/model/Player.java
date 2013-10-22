@@ -1,4 +1,4 @@
-package model;
+package de.htwg.go.model;
 
 public class Player {
 	//test3

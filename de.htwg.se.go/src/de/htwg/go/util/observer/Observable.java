@@ -1,4 +1,4 @@
-package util.observer;
+package de.htwg.go.util.observer;
 
 import java.util.ArrayList;
 import java.util.Iterator;
