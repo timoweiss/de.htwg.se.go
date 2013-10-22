@@ -1,7 +1,5 @@
 package de.htwg.go;
 import de.htwg.go.model.GameField;
-import de.htwg.go.util.PrintErrors;
-
 
 public class go {
 	public static void main(final String args[]) {

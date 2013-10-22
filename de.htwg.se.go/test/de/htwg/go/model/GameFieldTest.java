@@ -8,7 +8,7 @@ import org.junit.Test;
 public class GameFieldTest {
 
 	GameField testField;
-	
+
 	@Before
 	public void setUp() throws Exception {
 		testField = new GameField();
@@ -17,12 +17,7 @@ public class GameFieldTest {
 	@Test
 	public void testSetStone() {
 		testField.setStone(5, 2, "w");
-		
-	}
-
-	@Test
-	public void testPrintField() {
-		fail("Not yet implemented");
+		assertEquals(1, testField.getCellStatus(5, 2));
 	}
 
 }
