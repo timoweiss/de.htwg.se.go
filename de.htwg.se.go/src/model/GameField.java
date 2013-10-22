@@ -1,4 +1,4 @@
-package mvc.model;
+package model;
 
 public class GameField {
 
