@@ -1,6 +1,8 @@
 package de.htwg.go.controller;
 
-public interface IGoController {
+import de.htwg.go.util.observer.IObservable;
+
+public interface IGoController extends IObservable {
 	/*
 	 * Create GameField
 	 */
