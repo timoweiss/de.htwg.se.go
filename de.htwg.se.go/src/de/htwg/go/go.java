@@ -6,7 +6,8 @@ public class go {
 		GameField testfeld = new GameField();
 		
 		testfeld.setStone(3, 7, "w");
-		testfeld.printField();
+		System.out.println(testfeld.toString());
+		
 		
 	}
 }

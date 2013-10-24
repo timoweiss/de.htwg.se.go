@@ -37,4 +37,17 @@ public class GameField {
 			System.out.print("\n");
 		}
 	}
+	
+	@Override
+	public String toString() {
+		StringBuilder string = new StringBuilder();
+		for (int i = 0; i < gameField.length; i++) {
+			for (Cell element : gameField[i]) {
+				string.append(element.getStatus() + " ");
+			}
+			string.append("\n");
+		}
+		return string.toString();
+		
+	}
 }
