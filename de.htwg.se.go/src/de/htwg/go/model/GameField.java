@@ -1,8 +1,9 @@
 package de.htwg.go.model;
 
 import de.htwg.go.util.PrintErrors;
+import de.htwg.go.util.observer.*;
 
-public class GameField {
+public class GameField extends Observable {
 	private Cell gameField[][];
 
 	public GameField() {
@@ -10,6 +11,8 @@ public class GameField {
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
 				gameField[i][j] = new Cell(i, j);
+				
+				
 			}
 		}
 	}
