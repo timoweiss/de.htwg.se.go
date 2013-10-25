@@ -9,7 +9,10 @@ public class GameField extends Observable {
 
 	public GameField() {
 		randomNext();
+		createField();
+	}
 
+	private void createField() {
 		this.gameField = new Cell[9][9];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
@@ -26,7 +29,6 @@ public class GameField extends Observable {
 		} else {
 			whiteIsNext = false;
 		}
-
 	}
 
 	public String getNext() {
@@ -42,7 +44,7 @@ public class GameField extends Observable {
 		if (getCellStatus(x, y) != 0) {
 			return false;
 		}
-		
+
 		if (whiteIsNext) {
 			this.gameField[y][x].setStatus("w");
 		} else {
@@ -58,28 +60,23 @@ public class GameField extends Observable {
 	}
 
 	public int getCellStatus(int x, int y) {
-		if (gameField[y][x].equals(null)) {
+		if (gameField[y][x] == null) {
 			PrintErrors.printErrorMessage(0);
 			return -1;
 		} else {
 			return gameField[y][x].getStatus();
-		}
-
-	}
-
-	public void printField() {
-		for (int i = 0; i < gameField.length; i++) {
-			for (Cell element : gameField[i]) {
-				System.out.print(element.getStatus() + " ");
-			}
-			System.out.print("\n");
 		}
 	}
 
 	@Override
 	public String toString() {
 		StringBuilder string = new StringBuilder();
+
+		string.append("    0 1 2 3 4 5 6 7 8\n");
+		string.append("    _ _ _ _ _ _ _ _ _\n");
+
 		for (int i = 0; i < gameField.length; i++) {
+			string.append(i + "  |");
 			for (Cell element : gameField[i]) {
 				string.append(element.getStatus() + " ");
 			}

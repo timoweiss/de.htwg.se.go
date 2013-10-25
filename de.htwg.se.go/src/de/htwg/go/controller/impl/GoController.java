@@ -30,14 +30,12 @@ public class GoController extends Observable implements IGoController {
 	public void setStone(int x, int y) {
 		String next = gamefield.getNext();
 		if (gamefield.setStone(x, y)) {
-
 			statusLine = ("set " + next.toUpperCase() + " at (" + x + "," + y
 					+ ")\n" + gamefield.getNext() + " is next");
-
 		} else {
-			statusLine = ("Setzen nicht möglich");
+			statusLine = ("unable to set stone at (" + x + "," + y + ")\n"
+					+ next + " is still next");
 		}
-
 		notifyObservers();
 	}
 

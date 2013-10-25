@@ -27,7 +27,7 @@ public class TextUI implements IObserver {
 	public boolean inputLine(String line) {
 		boolean operate = true;
 		switch (line) {
-		case "q":
+		case "-quit":
 			operate = false;
 			System.out.println("Bye");
 			break;
@@ -37,6 +37,8 @@ public class TextUI implements IObserver {
 		if (line.matches("[0-8][0-8]")) {
 			controller.setStone(Character.getNumericValue(line.charAt(0)),
 					Character.getNumericValue(line.charAt(1)));
+		} else {
+			System.out.println("incorrect command");
 		}
 
 		return operate;
