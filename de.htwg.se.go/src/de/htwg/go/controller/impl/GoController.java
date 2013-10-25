@@ -7,15 +7,17 @@ import de.htwg.go.util.observer.Observable;
 public class GoController extends Observable implements IGoController {
 
 	private GameField gamefield;
+	private String statusLine;
 
 	public GoController() {
-		this.gamefield = new GameField();
-		notifyObservers();
+
 	}
 
 	@Override
 	public void createField() {
 		gamefield = new GameField();
+		statusLine = "Gamefield successfully created\n" + gamefield.getNext()
+				+ " is next";
 		notifyObservers();
 	}
 
@@ -25,11 +27,22 @@ public class GoController extends Observable implements IGoController {
 	}
 
 	@Override
-	public void setStone(int x, int y, String color) {
-		gamefield.setStone(x, y, color);
+	public void setStone(int x, int y) {
+		String next = gamefield.getNext();
+		if (gamefield.setStone(x, y)) {
+
+			statusLine = ("set " + next.toUpperCase() + " at (" + x + "," + y
+					+ ")\n" + gamefield.getNext() + " is next");
+
+		} else {
+			statusLine = ("Setzen nicht möglich");
+		}
+
 		notifyObservers();
 	}
-	
 
+	public String getStatus() {
+		return statusLine;
+	}
 
 }
