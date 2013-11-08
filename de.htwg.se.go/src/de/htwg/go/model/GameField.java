@@ -1,6 +1,5 @@
 package de.htwg.go.model;
 
-import java.util.LinkedList;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
