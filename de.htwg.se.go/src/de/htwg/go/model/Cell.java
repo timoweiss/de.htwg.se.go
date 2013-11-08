@@ -24,7 +24,7 @@ public class Cell {
 		return this.coords;
 	}
 	
-	public void setStatus(String color) {
+	public final void setStatus(String color) {
 
 		switch (color) {
 		case "w":
