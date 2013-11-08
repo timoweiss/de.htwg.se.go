@@ -5,6 +5,10 @@ import java.util.LinkedList;
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
 
+/**
+ * @author Timo Weiss, Michael Knoch
+ *
+ */
 public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
@@ -44,6 +48,9 @@ public class GameField extends Observable {
 		}
 	}
 
+	/*
+	 * sets a Stone with x and y
+	 */
 	public boolean setStone(int x, int y) {
 		if (gameField.length - 1 < x || gameField.length - 1 < y) {
 			return false;
@@ -61,6 +68,10 @@ public class GameField extends Observable {
 		return true;
 	}
 
+	
+	/*
+	 * Sets a stone with x,y and status
+	 */
 	public void setStone(int x, int y, String color) {
 		this.gameField[y][x].setStatus(color);
 	}
