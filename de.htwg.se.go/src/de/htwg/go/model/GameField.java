@@ -13,7 +13,7 @@ public class GameField extends Observable {
 	private boolean whiteIsNext = true;
 
 	//size of the gamefield LENGTH x LENGTH
-	private final int FIELDLENGTH = 9;
+	private final int lENGTH = 9;
 
 	
 	public GameField() {
@@ -26,7 +26,7 @@ public class GameField extends Observable {
 	 */
 	private void createField() {
 
-		this.gameField = new Cell[FIELDLENGTH][FIELDLENGTH];
+		this.gameField = new Cell[lENGTH][lENGTH];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
 				gameField[i][j] = new Cell(i, j);

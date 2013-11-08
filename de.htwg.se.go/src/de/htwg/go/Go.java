@@ -6,10 +6,14 @@ import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.impl.GoController;
 
 public class Go {
-
+	
+	private Go() {}
+	
 	private static Scanner scanner;
 	private static TextUI tui;
 
+	
+	
 	public static void main(final String args[]) {
 
 		GoController controller = new GoController();

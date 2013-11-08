@@ -1,6 +1,9 @@
 package de.htwg.go.util;
 
 public class PrintErrors {
+	
+	private PrintErrors() {}
+	
 	public static void printErrorMessage(int errorcode) {
 		switch (errorcode) {
 		case 0:
