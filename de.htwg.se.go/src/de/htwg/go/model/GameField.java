@@ -13,7 +13,7 @@ public class GameField extends Observable {
 	private boolean whiteIsNext = true;
 
 	//size of the gamefield LENGTH x LENGTH
-	private final int lENGTH = 9;
+	private final static int lENGTH = 9;
 
 	
 	public GameField() {

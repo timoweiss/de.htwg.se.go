@@ -5,7 +5,7 @@ import java.util.Scanner;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.impl.GoController;
 
-public class Go {
+public final class Go {
 	
 	private Go() {}
 	
