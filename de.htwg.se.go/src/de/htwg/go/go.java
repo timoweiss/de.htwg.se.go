@@ -11,10 +11,10 @@ public class go {
 	private static TextUI tui;
 
 	public static void main(final String args[]) {
-		
+
 		GoController controller = new GoController();
 		tui = new TextUI(controller);
-		
+
 		controller.createField();
 
 		boolean goAhead = true;

@@ -1,5 +1,7 @@
 package de.htwg.go.model;
 
+import java.util.LinkedList;
+
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
 
@@ -7,13 +9,16 @@ public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
+	private final int LENGTH = 9;
+
 	public GameField() {
 		randomNext();
 		createField();
 	}
 
 	private void createField() {
-		this.gameField = new Cell[9][9];
+
+		this.gameField = new Cell[LENGTH][LENGTH];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
 				gameField[i][j] = new Cell(i, j);
@@ -40,8 +45,9 @@ public class GameField extends Observable {
 	}
 
 	public boolean setStone(int x, int y) {
-
-		if (getCellStatus(x, y) != 0) {
+		if (gameField.length - 1 < x || gameField.length - 1 < y) {
+			return false;
+		} else if (getCellStatus(x, y) != 0) {
 			return false;
 		}
 
@@ -68,6 +74,12 @@ public class GameField extends Observable {
 		}
 	}
 
+	public Boolean isSurrounded(int x, int y, String color) {
+		return false;
+	}
+	
+	
+
 	@Override
 	public String toString() {
 		StringBuilder string = new StringBuilder();
@@ -85,4 +97,5 @@ public class GameField extends Observable {
 		return string.toString();
 
 	}
+
 }

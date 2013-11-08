@@ -30,11 +30,11 @@ public class TextUI implements IObserver {
 		case "-quit":
 			operate = false;
 			System.out.println("Bye");
-			break;
+			return false;
 		}
 
 		//if the input has "123" set a Stone at 1, 2 with status 3
-		if (line.matches("[0-8][0-8]")) {
+		if (line.matches("[0-9][0-9]")) {
 			controller.setStone(Character.getNumericValue(line.charAt(0)),
 					Character.getNumericValue(line.charAt(1)));
 		} else {
