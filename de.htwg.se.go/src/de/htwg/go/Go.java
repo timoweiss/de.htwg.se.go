@@ -5,7 +5,7 @@ import java.util.Scanner;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.impl.GoController;
 
-public class go {
+public class Go {
 
 	private static Scanner scanner;
 	private static TextUI tui;
