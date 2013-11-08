@@ -13,13 +13,18 @@ public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
+	//size of the gamefield LENGTH x LENGTH
 	private final int LENGTH = 9;
 
+	
 	public GameField() {
 		randomNext();
 		createField();
 	}
 
+	/*
+	 * initializes the field
+	 */
 	private void createField() {
 
 		this.gameField = new Cell[LENGTH][LENGTH];
@@ -30,6 +35,9 @@ public class GameField extends Observable {
 		}
 	}
 
+	/*
+	 * randoms whether white is next or not;
+	 */
 	private void randomNext() {
 		int random = (int) (Math.random() * 2) + 1;
 
@@ -40,6 +48,9 @@ public class GameField extends Observable {
 		}
 	}
 
+	/*
+	 * returns the color of the player whos next
+	 */
 	public String getNext() {
 		if (whiteIsNext) {
 			return "white";
