@@ -19,5 +19,7 @@ public class GameFieldTest {
 		testField.setStone(5, 2, "w");
 		assertEquals(1, testField.getCellStatus(5, 2));
 	}
+	
+	
 
 }
