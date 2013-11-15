@@ -36,18 +36,7 @@ public class Cell {
 			this.status = -1;
 		}
 		
-		/*
-		switch (color) {
-		case "w":
-			this.status = 1;
-			break;
-		case "b":
-			this.status = 2;
-			break;
-		case "0":
-			this.status = 0;
-			break;
-		}*/
+		
 	}
 
 }

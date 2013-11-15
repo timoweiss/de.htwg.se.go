@@ -1,6 +1,5 @@
 package de.htwg.go.model;
 
-import java.awt.Point;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
@@ -99,37 +98,7 @@ public class GameField extends Observable {
 		return false;
 	}
 
-	public boolean buildForm(int x, int y) {
-		int opponent;
-		if (this.getCellStatus(x, y) == 1) {
-			opponent = 2;
-		} else {
-			opponent = 1;
-		}
-
-		if (rbuildForm(x, y, opponent, x, y)) {
-			return true;
-		} else {
-			return false;
-		}
-	}
-
-	private boolean rbuildForm(int x, int y, int opponent, int startx,
-			int starty) {
-
-		if (this.getCellStatus(x, y) == opponent) {
-			return false;
-		} else {
-			if (x == startx && x == starty) {
-				return true;
-			}
-		}
-		rbuildForm(x + 1, y, opponent, startx, starty);
-		rbuildForm(x - 1, y, opponent, startx, starty);
-		rbuildForm(x, y + 1, opponent, startx, starty);
-		rbuildForm(x, y - 1, opponent, startx, starty);
-		return false;
-	}
+	
 
 	@Override
 	public String toString() {
