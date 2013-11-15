@@ -1,21 +1,21 @@
 package de.htwg.go.model;
 
+import java.awt.Point;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
 
 /**
  * @author Timo Weiss, Michael Knoch
- *
+ * 
  */
 public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
-	//size of the gamefield LENGTH x LENGTH
+	// size of the gamefield LENGTH x LENGTH
 	private final static int lENGTH = 9;
 
-	
 	public GameField() {
 		randomNext();
 		createField();
@@ -78,7 +78,6 @@ public class GameField extends Observable {
 		return true;
 	}
 
-	
 	/*
 	 * Sets a stone with x,y and status
 	 */
@@ -96,10 +95,41 @@ public class GameField extends Observable {
 	}
 
 	public Boolean isSurrounded(int x, int y, String color) {
+
 		return false;
 	}
-	
-	
+
+	public boolean buildForm(int x, int y) {
+		int opponent;
+		if (this.getCellStatus(x, y) == 1) {
+			opponent = 2;
+		} else {
+			opponent = 1;
+		}
+
+		if (rbuildForm(x, y, opponent, x, y)) {
+			return true;
+		} else {
+			return false;
+		}
+	}
+
+	private boolean rbuildForm(int x, int y, int opponent, int startx,
+			int starty) {
+
+		if (this.getCellStatus(x, y) == opponent) {
+			return false;
+		} else {
+			if (x == startx && x == starty) {
+				return true;
+			}
+		}
+		rbuildForm(x + 1, y, opponent, startx, starty);
+		rbuildForm(x - 1, y, opponent, startx, starty);
+		rbuildForm(x, y + 1, opponent, startx, starty);
+		rbuildForm(x, y - 1, opponent, startx, starty);
+		return false;
+	}
 
 	@Override
 	public String toString() {
@@ -116,7 +146,6 @@ public class GameField extends Observable {
 			string.append("\n");
 		}
 		return string.toString();
-
 	}
 
 }
