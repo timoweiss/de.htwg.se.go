@@ -132,7 +132,6 @@ public class GameField extends Observable {
 		int backJumps = 0;
 
 		while (true) {
-
 			int cellStatusRight = getCellStatus(pointer.x + 1, pointer.y);
 			int cellStatusLeft = getCellStatus(pointer.x - 1, pointer.y);
 			int cellStatusDown = getCellStatus(pointer.x, pointer.y + 1);
