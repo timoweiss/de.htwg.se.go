@@ -9,6 +9,7 @@ public interface IGoController extends IObservable {
 	String tuiToString();
 
 	void setStone(int x, int y);
+	void setStone(int x, int y, String status);
 
 	String getStatus();
 }

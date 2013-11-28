@@ -23,6 +23,9 @@ public final class Go {
 
 		boolean goAhead = true;
 		scanner = new Scanner(System.in);
+		
+		
+		
 		while (goAhead) {
 			goAhead = tui.inputLine(scanner.next());
 		}

@@ -30,6 +30,8 @@ public class TextUI implements IObserver {
 	public boolean inputLine(String line) {
 		boolean operate = true;
 
+
+		
 		if (line.equals("-quit")) {
 			operate = false;
 			logger.info("bye");

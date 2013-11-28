@@ -1,5 +1,6 @@
 package de.htwg.go.model;
 
+import java.awt.Point;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
@@ -74,6 +75,7 @@ public class GameField extends Observable {
 		}
 
 		whiteIsNext = !whiteIsNext;
+		System.out.println(isForm(x, y));
 		return true;
 	}
 
@@ -82,6 +84,7 @@ public class GameField extends Observable {
 	 */
 	public void setStone(int x, int y, String color) {
 		this.gameField[y][x].setStatus(color);
+		System.out.println(isForm(x, y));
 	}
 
 	public int getCellStatus(int x, int y) {
@@ -92,13 +95,6 @@ public class GameField extends Observable {
 			return gameField[y][x].getStatus();
 		}
 	}
-
-	public Boolean isSurrounded(int x, int y, String color) {
-
-		return false;
-	}
-
-	
 
 	@Override
 	public String toString() {
@@ -115,6 +111,94 @@ public class GameField extends Observable {
 			string.append("\n");
 		}
 		return string.toString();
+	}
+
+	public void resetAllChecks() {
+		for (int i = 0; i < this.gameField.length; ++i) {
+			for (int j = 0; j < gameField[i].length; ++j) {
+				gameField[i][j].resetCheck();
+			}
+		}
+	}
+
+	public boolean isForm(int x, int y) {
+		resetAllChecks();
+		int status = getCellStatus(x, y);
+		Point pointer = new Point(x, y);
+
+		int counter = 0;
+		Point backPointer = null;
+		int backJumps = 0;
+		while (true) {
+
+			System.out.println(pointer);
+			if (pointer.x == x && pointer.y == y && counter > 2) {
+				return true;
+			}
+
+			// Um zu Beginn nicht wieder auf den Startpunkt zu fallen, ihn aber
+			// trotzdem als letzen Punkt checken zu können
+			if (counter < 2) {
+				gameField[x][y].setChecked(true);
+			} else if (counter <= 2) {
+				gameField[x][y].setChecked(false);
+			}
+
+			// Anzahl wege
+			int countWays = 0;
+			if (getCellStatus(pointer.x + 1, pointer.y) == status) {
+				countWays++;
+			}
+
+			if (getCellStatus(pointer.x - 1, pointer.y) == status) {
+				countWays++;
+			}
+
+			if (getCellStatus(pointer.x, pointer.y + 1) == status) {
+				countWays++;
+			}
+
+			if (getCellStatus(pointer.x, pointer.y - 1) == status) {
+				countWays++;
+			}
+
+			if (countWays > 2) {
+				backPointer = new Point(pointer.x, pointer.y);
+			}
+
+			if (getCellStatus(pointer.x + 1, pointer.y) == status
+					&& !gameField[pointer.x + 1][pointer.y].isChecked()) {
+				gameField[pointer.x + 1][pointer.y].setChecked(true);
+				pointer.setLocation(pointer.x + 1, pointer.y);
+
+			} else if (getCellStatus(pointer.x, pointer.y + 1) == status
+					&& !gameField[pointer.x][pointer.y + 1].isChecked()) {
+				gameField[pointer.x][pointer.y + 1].setChecked(true);
+				pointer.setLocation(pointer.x, pointer.y + 1);
+
+			} else if (getCellStatus(pointer.x - 1, pointer.y) == status
+					&& !gameField[pointer.x - 1][pointer.y].isChecked()) {
+				gameField[pointer.x - 1][pointer.y].setChecked(true);
+				pointer.setLocation(pointer.x - 1, pointer.y);
+
+			} else if (getCellStatus(pointer.x, pointer.y - 1) == status
+					&& !gameField[pointer.x][pointer.y - 1].isChecked()) {
+				gameField[pointer.x][pointer.y - 1].setChecked(true);
+				pointer.setLocation(pointer.x, pointer.y - 1);
+
+			} else {
+				if (backPointer != null && backJumps < 100) {
+					backJumps++;
+					pointer = new Point(backPointer.x, backPointer.y);
+					backPointer = null;
+				} else {
+					return false;
+				}
+
+			}
+			counter++;
+		}
+
 	}
 
 }

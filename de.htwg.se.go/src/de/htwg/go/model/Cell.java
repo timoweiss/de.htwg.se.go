@@ -5,6 +5,7 @@ import java.awt.Point;
 public class Cell {
 	private int status;
 	private Point coords;
+	private boolean checked;
 
 	public Cell(int x, int y) {
 		setStatus("0");
@@ -38,5 +39,18 @@ public class Cell {
 		
 		
 	}
+
+	public boolean isChecked() {
+		return checked;
+	}
+
+	public void setChecked(boolean checked) {
+		this.checked = checked;
+	}
+	
+	public void resetCheck() {
+		this.checked = false;
+	}
+	
 
 }
