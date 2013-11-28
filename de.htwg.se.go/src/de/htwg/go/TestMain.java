@@ -12,28 +12,35 @@ public class TestMain {
 
 		controller.createField();
 			
+		for (int i = 1; i < 8; i++) {
+			controller.setStone(i, i, "b");
+		}
 		
-		controller.setStone(4, 2, "b");
-		controller.setStone(4, 6, "b");
-		controller.setStone(4, 1, "b");
-		controller.setStone(3, 1, "b");
-		controller.setStone(4, 2, "b");
-		controller.setStone(2, 1, "b");
-		controller.setStone(5, 6, "b");
-		controller.setStone(6, 6, "b");
-		
-		controller.setStone(5, 5, "b");
-		controller.setStone(4, 5, "b");
-		controller.setStone(3, 5, "b");
-		controller.setStone(3, 4, "b");
-		controller.setStone(6, 4, "b");
-		controller.setStone(6, 3, "b");
-		controller.setStone(6, 5, "b");
-		
-		controller.setStone(3, 3, "b");
-		controller.setStone(4, 3, "b");
-		System.out.println("LastPoint:");
-		controller.setStone(5, 3, "b");
+//		controller.setStone(4, 2, "b");
+//		controller.setStone(4, 6, "b");
+//		controller.setStone(4, 1, "b");
+//		controller.setStone(3, 1, "b");
+//		controller.setStone(4, 2, "b");
+//		controller.setStone(2, 1, "b");
+//		controller.setStone(5, 6, "b");
+//		controller.setStone(6, 6, "b");
+//		controller.setStone(3, 2, "b");
+//		controller.setStone(7, 3, "b");
+//		controller.setStone(7, 4, "b");
+//		
+//		controller.setStone(5, 5, "b");
+//		controller.setStone(4, 5, "b");
+//		controller.setStone(3, 5, "b");
+//		controller.setStone(3, 4, "b");
+//		controller.setStone(6, 4, "b");
+//		controller.setStone(6, 3, "b");
+//		controller.setStone(6, 5, "b");
+//		
+//		controller.setStone(3, 3, "b");
+//		controller.setStone(4, 3, "b");
+//		
+//		System.out.println("LastPoint:");
+//		controller.setStone(5, 3, "b");
 		
 		
 		

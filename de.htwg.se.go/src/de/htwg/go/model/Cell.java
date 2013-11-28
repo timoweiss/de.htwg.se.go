@@ -10,11 +10,13 @@ public class Cell {
 	public Cell(int x, int y) {
 		setStatus("0");
 		coords = new Point(x, y);
+		checked = false;
 	}
 
 	public Cell(int x, int y, String color) {
 		setStatus(color);
 		coords = new Point(x, y);
+		checked = false;
 	}
 
 	public int getStatus() {

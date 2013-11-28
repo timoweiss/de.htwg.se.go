@@ -122,6 +122,7 @@ public class GameField extends Observable {
 	}
 
 	public boolean isForm(int x, int y) {
+
 		resetAllChecks();
 		int status = getCellStatus(x, y);
 		Point pointer = new Point(x, y);
@@ -129,7 +130,18 @@ public class GameField extends Observable {
 		int counter = 0;
 		Point backPointer = null;
 		int backJumps = 0;
+
 		while (true) {
+
+			int cellStatusRight = getCellStatus(pointer.x + 1, pointer.y);
+			int cellStatusLeft = getCellStatus(pointer.x - 1, pointer.y);
+			int cellStatusDown = getCellStatus(pointer.x, pointer.y + 1);
+			int cellStatusUp = getCellStatus(pointer.x, pointer.y - 1);
+
+			Cell right = gameField[pointer.x + 1][pointer.y];
+			Cell left = gameField[pointer.x - 1][pointer.y];
+			Cell down = gameField[pointer.x][pointer.y + 1];
+			Cell up = gameField[pointer.x][pointer.y - 1];
 
 			System.out.println(pointer);
 			if (pointer.x == x && pointer.y == y && counter > 2) {
@@ -140,54 +152,51 @@ public class GameField extends Observable {
 			// trotzdem als letzen Punkt checken zu können
 			if (counter < 2) {
 				gameField[x][y].setChecked(true);
-			} else if (counter <= 2) {
+			} else if (counter >= 2) {
 				gameField[x][y].setChecked(false);
 			}
 
 			// Anzahl wege
 			int countWays = 0;
-			if (getCellStatus(pointer.x + 1, pointer.y) == status) {
+			if (cellStatusRight == status && !right.isChecked()) {
 				countWays++;
 			}
 
-			if (getCellStatus(pointer.x - 1, pointer.y) == status) {
+			if (cellStatusLeft == status && !left.isChecked()) {
 				countWays++;
 			}
 
-			if (getCellStatus(pointer.x, pointer.y + 1) == status) {
+			if (cellStatusDown == status && !down.isChecked()) {
 				countWays++;
 			}
 
-			if (getCellStatus(pointer.x, pointer.y - 1) == status) {
+			if (cellStatusUp == status && !up.isChecked()) {
 				countWays++;
 			}
 
-			if (countWays > 2) {
+			if (countWays > 1) {
 				backPointer = new Point(pointer.x, pointer.y);
+				System.out.println("new Backpointer: " + backPointer);
 			}
 
-			if (getCellStatus(pointer.x + 1, pointer.y) == status
-					&& !gameField[pointer.x + 1][pointer.y].isChecked()) {
-				gameField[pointer.x + 1][pointer.y].setChecked(true);
+			if (cellStatusRight == status && !right.isChecked()) {
+				right.setChecked(true);
 				pointer.setLocation(pointer.x + 1, pointer.y);
 
-			} else if (getCellStatus(pointer.x, pointer.y + 1) == status
-					&& !gameField[pointer.x][pointer.y + 1].isChecked()) {
-				gameField[pointer.x][pointer.y + 1].setChecked(true);
+			} else if (cellStatusDown == status && !down.isChecked()) {
+				down.setChecked(true);
 				pointer.setLocation(pointer.x, pointer.y + 1);
 
-			} else if (getCellStatus(pointer.x - 1, pointer.y) == status
-					&& !gameField[pointer.x - 1][pointer.y].isChecked()) {
-				gameField[pointer.x - 1][pointer.y].setChecked(true);
+			} else if (cellStatusLeft == status && !left.isChecked()) {
+				left.setChecked(true);
 				pointer.setLocation(pointer.x - 1, pointer.y);
 
-			} else if (getCellStatus(pointer.x, pointer.y - 1) == status
-					&& !gameField[pointer.x][pointer.y - 1].isChecked()) {
-				gameField[pointer.x][pointer.y - 1].setChecked(true);
+			} else if (cellStatusUp == status && !up.isChecked()) {
+				up.setChecked(true);
 				pointer.setLocation(pointer.x, pointer.y - 1);
 
 			} else {
-				if (backPointer != null && backJumps < 100) {
+				if (backPointer != null && backJumps < 20) {
 					backJumps++;
 					pointer = new Point(backPointer.x, backPointer.y);
 					backPointer = null;
