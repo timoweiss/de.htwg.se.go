@@ -1,6 +1,7 @@
 package de.htwg.go.model;
 
 import java.awt.Point;
+import java.util.LinkedList;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
@@ -10,6 +11,7 @@ import de.htwg.go.util.observer.*;
  * 
  */
 public class GameField extends Observable {
+	
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
