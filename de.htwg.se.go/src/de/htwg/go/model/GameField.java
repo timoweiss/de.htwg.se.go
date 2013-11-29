@@ -155,7 +155,6 @@ public class GameField extends Observable {
 				} else {
 					backPointList.add(new Point(pointer));
 				}
-
 			}
 
 			if (pointer.x == x && pointer.y == y && counter > 2) {
