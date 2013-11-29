@@ -2,6 +2,7 @@ package de.htwg.go.model;
 
 import java.awt.Point;
 import java.util.LinkedList;
+import java.util.TreeSet;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
