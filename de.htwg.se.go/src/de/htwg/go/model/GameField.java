@@ -2,6 +2,7 @@ package de.htwg.go.model;
 
 import java.awt.Point;
 import java.util.LinkedList;
+import java.util.TreeSet;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
@@ -124,8 +125,8 @@ public class GameField extends Observable {
 	}
 
 	public boolean isForm(int x, int y) {
-		LinkedList<Point> pointList = new LinkedList<Point>();
-		LinkedList<Point> backPointList = new LinkedList<Point>();
+		TreeSet<Double> pointList = new TreeSet<Double>();
+		TreeSet<Double> backPointList = new TreeSet<Double>();
 
 		resetAllChecks();
 		int status = getCellStatus(x, y);
@@ -136,11 +137,14 @@ public class GameField extends Observable {
 		int backJumps = 0;
 
 		while (true) {
+
+			// Get environment cell-status
 			int cellStatusRight = getCellStatus(pointer.x + 1, pointer.y);
 			int cellStatusLeft = getCellStatus(pointer.x - 1, pointer.y);
 			int cellStatusDown = getCellStatus(pointer.x, pointer.y + 1);
 			int cellStatusUp = getCellStatus(pointer.x, pointer.y - 1);
 
+			// Get environment cells
 			Cell right = gameField[pointer.x + 1][pointer.y];
 			Cell left = gameField[pointer.x - 1][pointer.y];
 			Cell down = gameField[pointer.x][pointer.y + 1];
@@ -148,31 +152,27 @@ public class GameField extends Observable {
 
 			System.out.println(pointer);
 
-			if (!backPointList.contains(pointer)
-					&& !pointList.contains(pointer)) {
-				if (backPointer == null) {
-					pointList.add(new Point(pointer));
-				} else {
-					backPointList.add(new Point(pointer));
-				}
-
+			if (backPointer == null) {
+				pointList.add(pointer.x + (pointer.y * 0.1));
+			} else {
+				backPointList.add(pointer.x + (pointer.y * 0.1));
 			}
 
+			// returns true, if we have a closed form
 			if (pointer.x == x && pointer.y == y && counter > 2) {
 				pointList.addAll(backPointList);
 				System.out.println(pointList);
 				return true;
 			}
 
-			// Um zu Beginn nicht wieder auf den Startpunkt zu fallen, ihn aber
-			// trotzdem als letzen Punkt checken zu können
+			//
 			if (counter < 2) {
 				gameField[x][y].setChecked(true);
 			} else if (counter >= 2) {
 				gameField[x][y].setChecked(false);
 			}
 
-			// Anzahl wege
+			// get count of possible way to go
 			int countWays = 0;
 			if (cellStatusRight == status && !right.isChecked()) {
 				countWays++;
@@ -190,14 +190,18 @@ public class GameField extends Observable {
 				countWays++;
 			}
 
+			// remember turning point, if available
 			if (countWays > 1) {
 				if (backPointer != null) {
 					pointList.addAll(backPointList);
+					
 				}
-				backPointer = new Point(pointer.x, pointer.y);				
+				backPointer = new Point(pointer.x, pointer.y);
 				System.out.println("new Backpointer: " + backPointer);
 			}
 
+			// here comes the magic
+			// sets pointer to the new position
 			if (cellStatusRight == status && !right.isChecked()) {
 				right.setChecked(true);
 				pointer.setLocation(pointer.x + 1, pointer.y);
@@ -215,11 +219,14 @@ public class GameField extends Observable {
 				pointer.setLocation(pointer.x, pointer.y - 1);
 
 			} else {
-
+				// if we have no further opportunity to go ahead & if we have a
+				// turningpoint
+				// we jump back to the turningpoint
 				if (backPointer != null && backJumps < 20) {
 					backJumps++;
 					pointer = new Point(backPointer.x, backPointer.y);
 					backPointer = null;
+					backPointList.clear();
 				} else {
 					return false;
 				}
