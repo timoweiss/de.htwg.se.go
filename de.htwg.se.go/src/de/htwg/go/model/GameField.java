@@ -11,7 +11,7 @@ import de.htwg.go.util.observer.*;
  * 
  */
 public class GameField extends Observable {
-	
+
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
@@ -124,6 +124,8 @@ public class GameField extends Observable {
 	}
 
 	public boolean isForm(int x, int y) {
+		LinkedList<Point> pointList = new LinkedList<Point>();
+		LinkedList<Point> backPointList = new LinkedList<Point>();
 
 		resetAllChecks();
 		int status = getCellStatus(x, y);
@@ -145,7 +147,20 @@ public class GameField extends Observable {
 			Cell up = gameField[pointer.x][pointer.y - 1];
 
 			System.out.println(pointer);
+
+			if (!backPointList.contains(pointer)
+					&& !pointList.contains(pointer)) {
+				if (backPointer == null) {
+					pointList.add(new Point(pointer));
+				} else {
+					backPointList.add(new Point(pointer));
+				}
+
+			}
+
 			if (pointer.x == x && pointer.y == y && counter > 2) {
+				pointList.addAll(backPointList);
+				System.out.println(pointList);
 				return true;
 			}
 
@@ -176,7 +191,10 @@ public class GameField extends Observable {
 			}
 
 			if (countWays > 1) {
-				backPointer = new Point(pointer.x, pointer.y);
+				if (backPointer != null) {
+					pointList.addAll(backPointList);
+				}
+				backPointer = new Point(pointer.x, pointer.y);				
 				System.out.println("new Backpointer: " + backPointer);
 			}
 
@@ -197,6 +215,7 @@ public class GameField extends Observable {
 				pointer.setLocation(pointer.x, pointer.y - 1);
 
 			} else {
+
 				if (backPointer != null && backJumps < 20) {
 					backJumps++;
 					pointer = new Point(backPointer.x, backPointer.y);
@@ -206,6 +225,7 @@ public class GameField extends Observable {
 				}
 
 			}
+
 			counter++;
 		}
 
