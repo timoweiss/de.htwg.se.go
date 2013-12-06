@@ -13,18 +13,18 @@ public class CellTest {
 	@Before
 	public void setUp() throws Exception {
 		testCell1 = new Cell(0, 0);
-		testCell2 = new Cell(0, 0, "w");
+		testCell2 = new Cell(0, 0, 1);
 	}
 
 	@Test
 	public void testSetStatus() {
-		testCell1.setStatus("w");
+		testCell1.setStatus(1);
 		assertEquals(1, testCell1.getStatus());
 
-		testCell1.setStatus("b");
+		testCell1.setStatus(2);
 		assertEquals(2, testCell1.getStatus());
 
-		testCell1.setStatus("0");
+		testCell1.setStatus(0);
 		assertEquals(0, testCell1.getStatus());
 	}
 

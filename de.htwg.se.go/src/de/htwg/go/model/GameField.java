@@ -2,7 +2,6 @@ package de.htwg.go.model;
 
 import java.awt.Point;
 import java.util.LinkedList;
-import java.util.TreeSet;
 
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
@@ -16,12 +15,18 @@ public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
+	private LinkedList<Cell> blackList;
+	private LinkedList<Cell> whiteList;
+
 	// size of the gamefield LENGTH x LENGTH
 	private final static int lENGTH = 9;
 
 	public GameField() {
 		randomNext();
 		createField();
+
+		blackList = new LinkedList<Cell>();
+		whiteList = new LinkedList<Cell>();
 	}
 
 	/*
@@ -72,22 +77,27 @@ public class GameField extends Observable {
 		}
 
 		if (whiteIsNext) {
-			this.gameField[y][x].setStatus("w");
+			this.gameField[y][x].setStatus(1);
+			whiteList.add(gameField[x][y]);
 		} else {
-			this.gameField[y][x].setStatus("b");
+			this.gameField[y][x].setStatus(2);
+			blackList.add(gameField[x][y]);
 		}
 
 		whiteIsNext = !whiteIsNext;
-		System.out.println(isForm(x, y));
 		return true;
 	}
 
 	/*
 	 * Sets a stone with x,y and status
 	 */
-	public void setStone(int x, int y, String color) {
+	public void setStone(int x, int y, int color) {
 		this.gameField[y][x].setStatus(color);
-		System.out.println(isForm(x, y));
+		if (color == 1) {
+			whiteList.add(gameField[x][y]);
+		} else {
+			blackList.add(gameField[x][y]);
+		}
 	}
 
 	public int getCellStatus(int x, int y) {
@@ -124,118 +134,110 @@ public class GameField extends Observable {
 		}
 	}
 
-	public boolean isForm(int x, int y) {
-		TreeSet<Double> pointList = new TreeSet<Double>();
-		TreeSet<Double> backPointList = new TreeSet<Double>();
-
-		resetAllChecks();
-		int status = getCellStatus(x, y);
-		Point pointer = new Point(x, y);
-
-		int counter = 0;
-		Point backPointer = null;
-		int backJumps = 0;
-
-		while (true) {
-
-			// Get environment cell-status
-			int cellStatusRight = getCellStatus(pointer.x + 1, pointer.y);
-			int cellStatusLeft = getCellStatus(pointer.x - 1, pointer.y);
-			int cellStatusDown = getCellStatus(pointer.x, pointer.y + 1);
-			int cellStatusUp = getCellStatus(pointer.x, pointer.y - 1);
-
-			// Get environment cells
-			Cell right = gameField[pointer.x + 1][pointer.y];
-			Cell left = gameField[pointer.x - 1][pointer.y];
-			Cell down = gameField[pointer.x][pointer.y + 1];
-			Cell up = gameField[pointer.x][pointer.y - 1];
-
-			System.out.println(pointer);
-			
-			if (backPointer == null) {
-				pointList.add(pointer.x + (pointer.y * 0.1));
-			} else {
-				backPointList.add(pointer.x + (pointer.y * 0.1));
-}
-
-			// returns true, if we have a closed form
-			if (pointer.x == x && pointer.y == y && counter > 2) {
-				pointList.addAll(backPointList);
-				System.out.println(pointList);
-				return true;
-			}
-
-			//
-			if (counter < 2) {
-				gameField[x][y].setChecked(true);
-			} else if (counter >= 2) {
-				gameField[x][y].setChecked(false);
-			}
-
-			// get count of possible way to go
-			int countWays = 0;
-			if (cellStatusRight == status && !right.isChecked()) {
-				countWays++;
-			}
-
-			if (cellStatusLeft == status && !left.isChecked()) {
-				countWays++;
-			}
-
-			if (cellStatusDown == status && !down.isChecked()) {
-				countWays++;
-			}
-
-			if (cellStatusUp == status && !up.isChecked()) {
-				countWays++;
-			}
-
-			// remember turning point, if available
-			if (countWays > 1) {
-				if (backPointer != null) {
-					pointList.addAll(backPointList);
-					
-				}
-				backPointer = new Point(pointer.x, pointer.y);
-				System.out.println("new Backpointer: " + backPointer);
-			}
-
-			// here comes the magic
-			// sets pointer to the new position
-			if (cellStatusRight == status && !right.isChecked()) {
-				right.setChecked(true);
-				pointer.setLocation(pointer.x + 1, pointer.y);
-
-			} else if (cellStatusDown == status && !down.isChecked()) {
-				down.setChecked(true);
-				pointer.setLocation(pointer.x, pointer.y + 1);
-
-			} else if (cellStatusLeft == status && !left.isChecked()) {
-				left.setChecked(true);
-				pointer.setLocation(pointer.x - 1, pointer.y);
-
-			} else if (cellStatusUp == status && !up.isChecked()) {
-				up.setChecked(true);
-				pointer.setLocation(pointer.x, pointer.y - 1);
-
-			} else {
-				// if we have no further opportunity to go ahead & if we have a
-				// turningpoint
-				// we jump back to the turningpoint
-				if (backPointer != null && backJumps < 20) {
-					backJumps++;
-					pointer = new Point(backPointer.x, backPointer.y);
-					backPointer = null;
-					backPointList.clear();
-				} else {
-					return false;
-				}
-
-			}
-
-			counter++;
-		}
-
+	public boolean fenced(int x, int y, int status) {
+		deepSearch(x, y, status);
+		return false;
 	}
+
+	private void deepSearch(int x, int y, int alteFarbe) {
+
+		if (getCellStatus(x, y) == alteFarbe) {
+
+			markierePixel(x, y, 5);
+			
+			if (y < 8) 
+				deepSearch(x, y + 1, alteFarbe); // unten
+			
+			if (x > 0) 
+				deepSearch(x - 1, y, alteFarbe); // links
+			
+			if (y > 0) 
+				deepSearch(x, y - 1, alteFarbe); // oben
+			
+			if (x < 8) 
+				deepSearch(x + 1, y, alteFarbe); // rechts
+			
+		}
+		return;
+	}
+
+	private void markierePixel(int x, int y, int neueFarbe) {
+		gameField[y][x].setStatus(neueFarbe);
+	}
+
+	/*
+	 * public boolean isForm(int x, int y) { TreeSet<Double> pointList = new
+	 * TreeSet<Double>(); TreeSet<Double> backPointList = new TreeSet<Double>();
+	 * 
+	 * resetAllChecks(); int status = getCellStatus(x, y); Point pointer = new
+	 * Point(x, y);
+	 * 
+	 * int counter = 0; Point backPointer = null; int backJumps = 0;
+	 * 
+	 * while (true) {
+	 * 
+	 * // Get environment cell-status int cellStatusRight =
+	 * getCellStatus(pointer.x + 1, pointer.y); int cellStatusLeft =
+	 * getCellStatus(pointer.x - 1, pointer.y); int cellStatusDown =
+	 * getCellStatus(pointer.x, pointer.y + 1); int cellStatusUp =
+	 * getCellStatus(pointer.x, pointer.y - 1);
+	 * 
+	 * // Get environment cells Cell right = gameField[pointer.x +
+	 * 1][pointer.y]; Cell left = gameField[pointer.x - 1][pointer.y]; Cell down
+	 * = gameField[pointer.x][pointer.y + 1]; Cell up =
+	 * gameField[pointer.x][pointer.y - 1];
+	 * 
+	 * System.out.println(pointer);
+	 * 
+	 * if (backPointer == null) { pointList.add(pointer.x + (pointer.y * 0.1));
+	 * } else { backPointList.add(pointer.x + (pointer.y * 0.1)); }
+	 * 
+	 * // returns true, if we have a closed form if (pointer.x == x && pointer.y
+	 * == y && counter > 2) { pointList.addAll(backPointList);
+	 * System.out.println(pointList); return true; }
+	 * 
+	 * // if (counter < 2) { gameField[x][y].setChecked(true); } else if
+	 * (counter >= 2) { gameField[x][y].setChecked(false); }
+	 * 
+	 * // get count of possible way to go int countWays = 0; if (cellStatusRight
+	 * == status && !right.isChecked()) { countWays++; }
+	 * 
+	 * if (cellStatusLeft == status && !left.isChecked()) { countWays++; }
+	 * 
+	 * if (cellStatusDown == status && !down.isChecked()) { countWays++; }
+	 * 
+	 * if (cellStatusUp == status && !up.isChecked()) { countWays++; }
+	 * 
+	 * // remember turning point, if available if (countWays > 1) { if
+	 * (backPointer != null) { pointList.addAll(backPointList);
+	 * 
+	 * } backPointer = new Point(pointer.x, pointer.y);
+	 * System.out.println("new Backpointer: " + backPointer); }
+	 * 
+	 * // here comes the magic // sets pointer to the new position if
+	 * (cellStatusRight == status && !right.isChecked()) {
+	 * right.setChecked(true); pointer.setLocation(pointer.x + 1, pointer.y);
+	 * 
+	 * } else if (cellStatusDown == status && !down.isChecked()) {
+	 * down.setChecked(true); pointer.setLocation(pointer.x, pointer.y + 1);
+	 * 
+	 * } else if (cellStatusLeft == status && !left.isChecked()) {
+	 * left.setChecked(true); pointer.setLocation(pointer.x - 1, pointer.y);
+	 * 
+	 * } else if (cellStatusUp == status && !up.isChecked()) {
+	 * up.setChecked(true); pointer.setLocation(pointer.x, pointer.y - 1);
+	 * 
+	 * } else { // if we have no further opportunity to go ahead & if we have a
+	 * // turningpoint // we jump back to the turningpoint if (backPointer !=
+	 * null && backJumps < 20) { backJumps++; pointer = new Point(backPointer.x,
+	 * backPointer.y); backPointer = null; backPointList.clear(); } else {
+	 * return false; }
+	 * 
+	 * }
+	 * 
+	 * counter++; }
+	 * 
+	 * }
+	 */
 
 }

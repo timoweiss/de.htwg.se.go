@@ -8,12 +8,12 @@ public class Cell {
 	private boolean checked;
 
 	public Cell(int x, int y) {
-		setStatus("0");
+		setStatus(0);
 		coords = new Point(x, y);
 		checked = false;
 	}
 
-	public Cell(int x, int y, String color) {
+	public Cell(int x, int y, int color) {
 		setStatus(color);
 		coords = new Point(x, y);
 		checked = false;
@@ -27,17 +27,19 @@ public class Cell {
 		return this.coords;
 	}
 	
-	public final void setStatus(String color) {
+	public final void setStatus(int color) {
 	
-		if (color.equals("w")) {
-			this.status = 1;
-		} else if (color.equals("b")) {
-			this.status = 2;
-		} else if (color.equals("0")) {
-			this.status = 0;
-		} else if (color.equals("-1")) {
-			this.status = -1;
-		}
+//		if (color.equals("w")) {
+//			this.status = 1;
+//		} else if (color.equals("b")) {
+//			this.status = 2;
+//		} else if (color.equals("0")) {
+//			this.status = 0;
+//		} else if (color.equals("-1")) {
+//			this.status = -1;
+//		}
+		
+		this.status = color;
 		
 		
 	}

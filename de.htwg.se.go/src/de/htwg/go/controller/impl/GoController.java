@@ -38,14 +38,19 @@ public class GoController extends Observable implements IGoController {
 		}
 		notifyObservers();
 	}
-	
-	public void setStone(int x, int y, String status) {
+
+	public void setStone(int x, int y, int status) {
 		gamefield.setStone(x, y, status);
 		notifyObservers();
 	}
 
 	public String getStatus() {
 		return statusLine;
+	}
+
+	public void fenced(int x, int y, int status) {
+		gamefield.fenced(x, y, status);
+		notifyObservers();
 	}
 
 }
