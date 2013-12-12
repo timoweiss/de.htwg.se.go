@@ -50,13 +50,12 @@ public class GoController extends Observable implements IGoController {
 
 	@Override
 	public int getwhitePlayerScore() {
-		return 0;
+		return gamefield.getwhitePlayer().getScore();
 	}
 
 	@Override
-	public int getBlackPlayerScore() {
-		// TODO Auto-generated method stub
-		return 0;
+	public int getblackPlayerScore() {
+		return gamefield.getblackPlayer().getScore();
 	}
 
 	
