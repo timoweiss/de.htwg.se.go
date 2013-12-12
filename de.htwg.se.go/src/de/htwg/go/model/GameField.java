@@ -234,5 +234,13 @@ public class GameField extends Observable {
 		System.out.println("whitePlayer score: " + whitePlayer.getScore());
 		System.out.println("blackPlayer score: " + blackPlayer.getScore());
 	}
+	
+	public Player getwhitePlayer() {
+		return whitePlayer;
+	}
+	
+	public Player getblackPlayer() {
+		return blackPlayer;
+	}
 
 }
