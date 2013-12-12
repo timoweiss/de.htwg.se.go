@@ -46,14 +46,15 @@ public class GameFieldTest {
 
 	@Test
 	public void testSetStoneIntInt() {
-		testField.setStone(5, 2);
-		assertEquals(2, testField.getCellStatus(5, 2));
+		
+		assertEquals(true, testField.setStone(5, 2));
+		assertEquals(false, testField.setStone(100, 100));
 	}
 
 	@Test
 	public void testSetStoneIntIntInt() {
-		testField.setStone(5, 2, 1);
-		assertEquals(1, testField.getCellStatus(5, 2));
+		
+		//assertEquals(true, testField.setStone(5, 2, 1));
 		
 		testField.setStone(5, 2, 2);
 		assertEquals(2, testField.getCellStatus(5, 2));
