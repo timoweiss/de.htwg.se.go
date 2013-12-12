@@ -48,8 +48,8 @@ public class GoController extends Observable implements IGoController {
 		return statusLine;
 	}
 
-	public void fenced(int x, int y, int status) {
-		gamefield.fenced(x, y, status);
+	public void fenced(int x, int y) {
+		gamefield.fenced(x, y);
 		notifyObservers();
 	}
 

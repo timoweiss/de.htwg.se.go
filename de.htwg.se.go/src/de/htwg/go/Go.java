@@ -17,14 +17,11 @@ public final class Go {
 
 		IGoController controller = new GoController();
 		tui = new TextUI(controller);
-
 		controller.createField();
 
 		boolean goAhead = true;
 		scanner = new Scanner(System.in);
-		
-		
-		
+
 		while (goAhead) {
 			goAhead = tui.inputLine(scanner.next());
 		}

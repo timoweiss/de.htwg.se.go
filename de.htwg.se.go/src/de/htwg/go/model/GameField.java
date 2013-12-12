@@ -134,37 +134,49 @@ public class GameField extends Observable {
 		}
 	}
 
-	public boolean fenced(int x, int y, int status) {
-		deepSearch(x, y, status);
-		return false;
-	}
+	public boolean fenced(int x, int y) {
 
-	private void deepSearch(int x, int y, int alteFarbe) {
+		int status = getCellStatus(x, y);
+		int gegner = 100;
 
-		if (getCellStatus(x, y) == alteFarbe) {
-
-			markierePixel(x, y, 5);
-			
-			if (y < 8) 
-				deepSearch(x, y + 1, alteFarbe); // unten
-			
-			if (x > 0) 
-				deepSearch(x - 1, y, alteFarbe); // links
-			
-			if (y > 0) 
-				deepSearch(x, y - 1, alteFarbe); // oben
-			
-			if (x < 8) 
-				deepSearch(x + 1, y, alteFarbe); // rechts
-			
+		if (status == 1) {
+			gegner = 2;
+		} else {
+			gegner = 1;
 		}
-		return;
+
+		try {
+			boolean fenced = deepSearch(x, y, gegner);
+			System.out.println(fenced);
+			return fenced;
+
+		} catch (IndexOutOfBoundsException e) {
+			System.out.println("Exception geworfen");
+			return false;
+		} finally {
+			resetAllChecks();
+		}
 	}
 
-	private void markierePixel(int x, int y, int neueFarbe) {
-		gameField[y][x].setStatus(neueFarbe);
+	private boolean deepSearch(int x, int y, int gegner) {
+
+		if (getCellStatus(x, y) != gegner && !gameField[x][y].isChecked()) {
+
+			rememberMe(x, y);
+
+			deepSearch(x, y + 1, gegner); // unten
+			deepSearch(x - 1, y, gegner); // links
+			deepSearch(x, y - 1, gegner); // oben
+			deepSearch(x + 1, y, gegner); // rechts
+		}
+		return true;
 	}
 
+	private void rememberMe(int x, int y) {
+		gameField[y][x].setChecked(true);
+	}
+
+	
 	/*
 	 * public boolean isForm(int x, int y) { TreeSet<Double> pointList = new
 	 * TreeSet<Double>(); TreeSet<Double> backPointList = new TreeSet<Double>();

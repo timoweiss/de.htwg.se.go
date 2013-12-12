@@ -27,7 +27,10 @@ public class TestMain {
 		
 		controller.setStone(2, 2, 2);
 		
-		controller.fenced(0, 0, 0);
+		controller.setStone(3, 3, 1);
+		
+		controller.setStone(2,6,1);
+		controller.fenced(2, 6);
 
 	}
 }
