@@ -18,6 +18,9 @@ public class GameField extends Observable {
 	private LinkedList<Cell> blackList;
 	private LinkedList<Cell> whiteList;
 
+	private LinkedList<LinkedList<Cell>> blackRegions;
+	private LinkedList<LinkedList<Cell>> whiteRegions;
+
 	// size of the gamefield LENGTH x LENGTH
 	private final static int lENGTH = 9;
 
@@ -27,6 +30,9 @@ public class GameField extends Observable {
 
 		blackList = new LinkedList<Cell>();
 		whiteList = new LinkedList<Cell>();
+
+		blackRegions = new LinkedList<LinkedList<Cell>>();
+		whiteRegions = new LinkedList<LinkedList<Cell>>();
 	}
 
 	/*
@@ -79,9 +85,11 @@ public class GameField extends Observable {
 		if (whiteIsNext) {
 			this.gameField[y][x].setStatus(1);
 			whiteList.add(gameField[x][y]);
+			moveEnd(2);
 		} else {
 			this.gameField[y][x].setStatus(2);
 			blackList.add(gameField[x][y]);
+			moveEnd(1);
 		}
 
 		whiteIsNext = !whiteIsNext;
@@ -95,9 +103,12 @@ public class GameField extends Observable {
 		this.gameField[y][x].setStatus(color);
 		if (color == 1) {
 			whiteList.add(gameField[x][y]);
+			moveEnd(2);
 		} else {
 			blackList.add(gameField[x][y]);
+			moveEnd(1);
 		}
+
 	}
 
 	public int getCellStatus(int x, int y) {
@@ -135,6 +146,7 @@ public class GameField extends Observable {
 	}
 
 	public boolean fenced(int x, int y) {
+		LinkedList<Cell> region = new LinkedList<Cell>();
 
 		int status = getCellStatus(x, y);
 		int gegner = 100;
@@ -146,28 +158,39 @@ public class GameField extends Observable {
 		}
 
 		try {
-			boolean fenced = deepSearch(x, y, gegner);
-			System.out.println(fenced);
+			boolean fenced = deepSearch(x, y, gegner, region);
+
+			if (fenced) {
+				if (status == 1) {
+					blackRegions.add(region);
+				} else {
+					whiteRegions.add(region);
+				}
+			}
+
 			return fenced;
 
 		} catch (IndexOutOfBoundsException e) {
-			System.out.println("Exception geworfen");
 			return false;
 		} finally {
 			resetAllChecks();
+
+			System.out.println("white: " + whiteRegions);
+			System.out.println("black : " + blackRegions);
 		}
 	}
 
-	private boolean deepSearch(int x, int y, int gegner) {
+	private boolean deepSearch(int x, int y, int gegner, LinkedList<Cell> region) {
 
 		if (getCellStatus(x, y) != gegner && !gameField[x][y].isChecked()) {
 
 			rememberMe(x, y);
+			region.add(gameField[x][y]);
 
-			deepSearch(x, y + 1, gegner); // unten
-			deepSearch(x - 1, y, gegner); // links
-			deepSearch(x, y - 1, gegner); // oben
-			deepSearch(x + 1, y, gegner); // rechts
+			deepSearch(x, y + 1, gegner, region); // unten
+			deepSearch(x - 1, y, gegner, region); // links
+			deepSearch(x, y - 1, gegner, region); // oben
+			deepSearch(x + 1, y, gegner, region); // rechts
 		}
 		return true;
 	}
@@ -176,80 +199,26 @@ public class GameField extends Observable {
 		gameField[y][x].setChecked(true);
 	}
 
-	
-	/*
-	 * public boolean isForm(int x, int y) { TreeSet<Double> pointList = new
-	 * TreeSet<Double>(); TreeSet<Double> backPointList = new TreeSet<Double>();
-	 * 
-	 * resetAllChecks(); int status = getCellStatus(x, y); Point pointer = new
-	 * Point(x, y);
-	 * 
-	 * int counter = 0; Point backPointer = null; int backJumps = 0;
-	 * 
-	 * while (true) {
-	 * 
-	 * // Get environment cell-status int cellStatusRight =
-	 * getCellStatus(pointer.x + 1, pointer.y); int cellStatusLeft =
-	 * getCellStatus(pointer.x - 1, pointer.y); int cellStatusDown =
-	 * getCellStatus(pointer.x, pointer.y + 1); int cellStatusUp =
-	 * getCellStatus(pointer.x, pointer.y - 1);
-	 * 
-	 * // Get environment cells Cell right = gameField[pointer.x +
-	 * 1][pointer.y]; Cell left = gameField[pointer.x - 1][pointer.y]; Cell down
-	 * = gameField[pointer.x][pointer.y + 1]; Cell up =
-	 * gameField[pointer.x][pointer.y - 1];
-	 * 
-	 * System.out.println(pointer);
-	 * 
-	 * if (backPointer == null) { pointList.add(pointer.x + (pointer.y * 0.1));
-	 * } else { backPointList.add(pointer.x + (pointer.y * 0.1)); }
-	 * 
-	 * // returns true, if we have a closed form if (pointer.x == x && pointer.y
-	 * == y && counter > 2) { pointList.addAll(backPointList);
-	 * System.out.println(pointList); return true; }
-	 * 
-	 * // if (counter < 2) { gameField[x][y].setChecked(true); } else if
-	 * (counter >= 2) { gameField[x][y].setChecked(false); }
-	 * 
-	 * // get count of possible way to go int countWays = 0; if (cellStatusRight
-	 * == status && !right.isChecked()) { countWays++; }
-	 * 
-	 * if (cellStatusLeft == status && !left.isChecked()) { countWays++; }
-	 * 
-	 * if (cellStatusDown == status && !down.isChecked()) { countWays++; }
-	 * 
-	 * if (cellStatusUp == status && !up.isChecked()) { countWays++; }
-	 * 
-	 * // remember turning point, if available if (countWays > 1) { if
-	 * (backPointer != null) { pointList.addAll(backPointList);
-	 * 
-	 * } backPointer = new Point(pointer.x, pointer.y);
-	 * System.out.println("new Backpointer: " + backPointer); }
-	 * 
-	 * // here comes the magic // sets pointer to the new position if
-	 * (cellStatusRight == status && !right.isChecked()) {
-	 * right.setChecked(true); pointer.setLocation(pointer.x + 1, pointer.y);
-	 * 
-	 * } else if (cellStatusDown == status && !down.isChecked()) {
-	 * down.setChecked(true); pointer.setLocation(pointer.x, pointer.y + 1);
-	 * 
-	 * } else if (cellStatusLeft == status && !left.isChecked()) {
-	 * left.setChecked(true); pointer.setLocation(pointer.x - 1, pointer.y);
-	 * 
-	 * } else if (cellStatusUp == status && !up.isChecked()) {
-	 * up.setChecked(true); pointer.setLocation(pointer.x, pointer.y - 1);
-	 * 
-	 * } else { // if we have no further opportunity to go ahead & if we have a
-	 * // turningpoint // we jump back to the turningpoint if (backPointer !=
-	 * null && backJumps < 20) { backJumps++; pointer = new Point(backPointer.x,
-	 * backPointer.y); backPointer = null; backPointList.clear(); } else {
-	 * return false; }
-	 * 
-	 * }
-	 * 
-	 * counter++; }
-	 * 
-	 * }
-	 */
+	private void moveEnd(int enemy) {
+		LinkedList<Cell> allCells = new LinkedList<Cell>();
+		allCells.addAll(whiteList);
+		allCells.addAll(blackList);
+
+		for (Cell x : allCells) {
+			fenced(x.getCoords().x, x.getCoords().y);
+		}
+
+		for (LinkedList<Cell> list : blackRegions) {
+			for (Cell cell : list) {
+				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
+			}
+		}
+
+		for (LinkedList<Cell> list : whiteRegions) {
+			for (Cell cell : list) {
+				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
+			}
+		}
+	}
 
 }

@@ -56,5 +56,9 @@ public class Cell {
 		this.checked = false;
 	}
 	
+	public String toString() {
+		return (coords + " " + status);
+	}
+	
 
 }
