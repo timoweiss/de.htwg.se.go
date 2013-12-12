@@ -48,9 +48,17 @@ public class GoController extends Observable implements IGoController {
 		return statusLine;
 	}
 
-	public void fenced(int x, int y) {
-		gamefield.fenced(x, y);
-		notifyObservers();
+	@Override
+	public int getwhitePlayerScore() {
+		return 0;
 	}
+
+	@Override
+	public int getBlackPlayerScore() {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+
+	
 
 }

@@ -27,6 +27,9 @@ public class GameField extends Observable {
 	public GameField() {
 		randomNext();
 		createField();
+		
+		whitePlayer = new Player();
+		blackPlayer = new Player();
 
 		blackList = new LinkedList<Cell>();
 		whiteList = new LinkedList<Cell>();
@@ -85,10 +88,12 @@ public class GameField extends Observable {
 		if (whiteIsNext) {
 			this.gameField[y][x].setStatus(1);
 			whiteList.add(gameField[x][y]);
+			whitePlayer.addScore(1);
 			moveEnd(2);
 		} else {
 			this.gameField[y][x].setStatus(2);
 			blackList.add(gameField[x][y]);
+			blackPlayer.addScore(1);
 			moveEnd(1);
 		}
 
@@ -197,6 +202,7 @@ public class GameField extends Observable {
 		gameField[y][x].setChecked(true);
 	}
 
+	// Method will be called after a stone is set
 	private void moveEnd(int enemy) {
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
 		allCells.addAll(whiteList);
@@ -210,6 +216,8 @@ public class GameField extends Observable {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
 				blackList.remove(cell);
+				blackPlayer.addScore(-1);
+				
 			}
 		}
 
@@ -217,10 +225,14 @@ public class GameField extends Observable {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
 				whiteList.remove(cell);
+				whitePlayer.addScore(-1);
 			}
 		}
 		System.out.println("blackRegions: " + blackRegions);
 		System.out.println("whiteRegions: " + whiteRegions);
+		
+		System.out.println("whitePlayer score: " + whitePlayer.getScore());
+		System.out.println("blackPlayer score: " + blackPlayer.getScore());
 	}
 
 }
