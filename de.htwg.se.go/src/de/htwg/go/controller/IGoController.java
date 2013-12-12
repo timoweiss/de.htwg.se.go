@@ -12,4 +12,7 @@ public interface IGoController extends IObservable {
 	void setStone(int x, int y, int status);
 
 	String getStatus();
+	int getwhitePlayerScore();
+	int getBlackPlayerScore();
+	
 }

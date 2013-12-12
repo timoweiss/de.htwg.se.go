@@ -1,8 +1,5 @@
 package de.htwg.go.model;
-
-import java.awt.Point;
 import java.util.LinkedList;
-
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
 
@@ -20,6 +17,9 @@ public class GameField extends Observable {
 
 	private LinkedList<LinkedList<Cell>> blackRegions;
 	private LinkedList<LinkedList<Cell>> whiteRegions;
+	
+	Player whitePlayer;
+	Player blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
 	private final static int lENGTH = 9;
@@ -27,6 +27,9 @@ public class GameField extends Observable {
 	public GameField() {
 		randomNext();
 		createField();
+		
+		whitePlayer = new Player();
+		blackPlayer = new Player();
 
 		blackList = new LinkedList<Cell>();
 		whiteList = new LinkedList<Cell>();
@@ -85,10 +88,12 @@ public class GameField extends Observable {
 		if (whiteIsNext) {
 			this.gameField[y][x].setStatus(1);
 			whiteList.add(gameField[x][y]);
+			whitePlayer.addScore(1);
 			moveEnd(2);
 		} else {
 			this.gameField[y][x].setStatus(2);
 			blackList.add(gameField[x][y]);
+			blackPlayer.addScore(1);
 			moveEnd(1);
 		}
 
@@ -102,10 +107,10 @@ public class GameField extends Observable {
 	public void setStone(int x, int y, int color) {
 		this.gameField[y][x].setStatus(color);
 		if (color == 1) {
-			whiteList.add(gameField[x][y]);
+			whiteList.add(gameField[y][x]);
 			moveEnd(2);
 		} else {
-			blackList.add(gameField[x][y]);
+			blackList.add(gameField[y][x]);
 			moveEnd(1);
 		}
 
@@ -175,14 +180,12 @@ public class GameField extends Observable {
 		} finally {
 			resetAllChecks();
 
-			System.out.println("white: " + whiteRegions);
-			System.out.println("black : " + blackRegions);
 		}
 	}
 
 	private boolean deepSearch(int x, int y, int gegner, LinkedList<Cell> region) {
 
-		if (getCellStatus(x, y) != gegner && !gameField[x][y].isChecked()) {
+		if (getCellStatus(x, y) != gegner && !gameField[y][x].isChecked()) {
 
 			rememberMe(x, y);
 			region.add(gameField[x][y]);
@@ -199,6 +202,7 @@ public class GameField extends Observable {
 		gameField[y][x].setChecked(true);
 	}
 
+	// Method will be called after a stone is set
 	private void moveEnd(int enemy) {
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
 		allCells.addAll(whiteList);
@@ -211,14 +215,24 @@ public class GameField extends Observable {
 		for (LinkedList<Cell> list : blackRegions) {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
+				blackList.remove(cell);
+				blackPlayer.addScore(-1);
+				
 			}
 		}
 
 		for (LinkedList<Cell> list : whiteRegions) {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
+				whiteList.remove(cell);
+				whitePlayer.addScore(-1);
 			}
 		}
+		System.out.println("blackRegions: " + blackRegions);
+		System.out.println("whiteRegions: " + whiteRegions);
+		
+		System.out.println("whitePlayer score: " + whitePlayer.getScore());
+		System.out.println("blackPlayer score: " + blackPlayer.getScore());
 	}
 
 }

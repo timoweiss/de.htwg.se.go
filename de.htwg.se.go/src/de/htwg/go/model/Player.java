@@ -2,29 +2,32 @@ package de.htwg.go.model;
 
 public class Player {
 	private String name;
-	private int score;
-
+	private Score score;	
 	
 	public Player() {
 		this.name = "unknown";
-		score = 0;
+		score = new Score();
 	}
 	
 	public Player(String name) {
 		this.name = name;
-		score = 0;
+		score = new Score();
 	}
 
 	public String getName() {
 		return name;
 	}
 	
-	public int addPoints(int scoretoAdd) {
-		score += scoretoAdd;
-		return this.score;
+	public int getScore() {
+		return score.getScore();
 	}
 	
-	public int getScore() {
-		return this.score;
+	public int addScore(int scoreToAdd) {
+		return score.addPoints(scoreToAdd);
 	}
+	
+	
+	
+	
+	
 }
