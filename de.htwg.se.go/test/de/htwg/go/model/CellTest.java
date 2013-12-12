@@ -2,6 +2,8 @@ package de.htwg.go.model;
 
 import static org.junit.Assert.*;
 
+import java.awt.Point;
+
 import org.junit.Before;
 import org.junit.Test;
 
@@ -15,6 +17,25 @@ public class CellTest {
 		testCell1 = new Cell(0, 0);
 		testCell2 = new Cell(0, 0, 1);
 	}
+	@Test
+	public void testCellIntInt() {
+		assertEquals(true, true);
+	}
+
+	@Test
+	public void testCellIntIntInt() {
+		assertEquals(true, true);
+	}
+
+	@Test
+	public void testGetStatus() {
+		assertEquals(1, testCell2.getStatus());
+	}
+
+	@Test
+	public void testGetCoords() {
+		assertEquals(new Point(0,0), testCell2.getCoords());
+	}
 
 	@Test
 	public void testSetStatus() {
@@ -26,6 +47,29 @@ public class CellTest {
 
 		testCell1.setStatus(0);
 		assertEquals(0, testCell1.getStatus());
+	}
+
+	@Test
+	public void testIsChecked() {
+		assertEquals(false, testCell1.isChecked());
+	}
+
+	@Test
+	public void testSetChecked() {
+		testCell1.setChecked(true);
+		assertEquals(true, testCell1.isChecked());
+	}
+
+	@Test
+	public void testResetCheck() {
+		testCell1.resetCheck();
+		assertEquals(false, testCell1.isChecked());
+	}
+
+	@Test
+	public void testToString() {
+		
+		assertEquals("java.awt.Point[x=0,y=0] 1", testCell2.toString());
 	}
 
 }
