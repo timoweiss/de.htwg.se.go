@@ -25,6 +25,9 @@ public class TextUI implements IObserver {
 	private void printTui() {
 		logger.info(newLine + controller.tuiToString());
 		logger.info(newLine + controller.getStatus());
+		logger.info(newLine + "white Player score: " + controller.getwhitePlayerScore()
+				+ newLine + "black Player score: " + controller.getblackPlayerScore());
+		
 	}
 
 	public boolean inputLine(String line) {
