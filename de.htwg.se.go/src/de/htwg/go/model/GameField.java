@@ -138,7 +138,6 @@ public class GameField extends Observable {
 
 		while (true) {
 
-			// Get environment cell-status
 			int cellStatusRight = getCellStatus(pointer.x + 1, pointer.y);
 			int cellStatusLeft = getCellStatus(pointer.x - 1, pointer.y);
 			int cellStatusDown = getCellStatus(pointer.x, pointer.y + 1);
