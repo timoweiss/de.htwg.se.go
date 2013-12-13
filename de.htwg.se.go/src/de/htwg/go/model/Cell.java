@@ -2,7 +2,7 @@ package de.htwg.go.model;
 
 import java.awt.Point;
 
-public class Cell {
+public class Cell implements Comparable<Cell> {
 	private int status;
 	private Point coords;
 	private boolean checked;
@@ -45,6 +45,14 @@ public class Cell {
 
 	public String toString() {
 		return (coords + " " + status);
+	}
+
+	public int compareTo(Cell cell) {
+		if (this.coords.x == cell.coords.x && this.coords.y == cell.coords.y) {
+			return 0;
+		} else {
+			return -1;
+		}
 	}
 
 }
