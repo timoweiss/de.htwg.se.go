@@ -1,5 +1,8 @@
 package de.htwg.go.model;
+
 import java.util.LinkedList;
+import java.util.TreeSet;
+
 import de.htwg.go.util.PrintErrors;
 import de.htwg.go.util.observer.*;
 
@@ -12,12 +15,12 @@ public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
-	private LinkedList<Cell> blackList;
-	private LinkedList<Cell> whiteList;
+	private TreeSet<Cell> blackList;
+	private TreeSet<Cell> whiteList;
 
-	private LinkedList<LinkedList<Cell>> blackRegions;
-	private LinkedList<LinkedList<Cell>> whiteRegions;
-	
+	private LinkedList<TreeSet<Cell>> blackRegions;
+	private LinkedList<TreeSet<Cell>> whiteRegions;
+
 	Player whitePlayer;
 	Player blackPlayer;
 
@@ -27,15 +30,15 @@ public class GameField extends Observable {
 	public GameField() {
 		randomNext();
 		createField();
-		
+
 		whitePlayer = new Player();
 		blackPlayer = new Player();
 
-		blackList = new LinkedList<Cell>();
-		whiteList = new LinkedList<Cell>();
+		blackList = new TreeSet<Cell>();
+		whiteList = new TreeSet<Cell>();
 
-		blackRegions = new LinkedList<LinkedList<Cell>>();
-		whiteRegions = new LinkedList<LinkedList<Cell>>();
+		blackRegions = new LinkedList<TreeSet<Cell>>();
+		whiteRegions = new LinkedList<TreeSet<Cell>>();
 	}
 
 	/*
@@ -46,7 +49,7 @@ public class GameField extends Observable {
 		this.gameField = new Cell[lENGTH][lENGTH];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
-				gameField[i][j] = new Cell(i, j);
+				gameField[i][j] = new Cell(j, i);
 			}
 		}
 	}
@@ -87,12 +90,12 @@ public class GameField extends Observable {
 
 		if (whiteIsNext) {
 			this.gameField[y][x].setStatus(1);
-			whiteList.add(gameField[x][y]);
+			whiteList.add(gameField[y][x]);
 			whitePlayer.addScore(1);
 			moveEnd(2);
 		} else {
 			this.gameField[y][x].setStatus(2);
-			blackList.add(gameField[x][y]);
+			blackList.add(gameField[y][x]);
 			blackPlayer.addScore(1);
 			moveEnd(1);
 		}
@@ -151,15 +154,18 @@ public class GameField extends Observable {
 	}
 
 	public boolean fenced(int x, int y) {
-		LinkedList<Cell> region = new LinkedList<Cell>();
+		TreeSet<Cell> region = new TreeSet<Cell>();
 
 		int status = getCellStatus(x, y);
 		int gegner = 100;
+
 
 		if (status == 1) {
 			gegner = 2;
 		} else {
 			gegner = 1;
+
+			
 		}
 
 		try {
@@ -183,12 +189,12 @@ public class GameField extends Observable {
 		}
 	}
 
-	private boolean deepSearch(int x, int y, int gegner, LinkedList<Cell> region) {
+	private boolean deepSearch(int x, int y, int gegner, TreeSet<Cell> region) {
 
 		if (getCellStatus(x, y) != gegner && !gameField[y][x].isChecked()) {
 
 			rememberMe(x, y);
-			region.add(gameField[x][y]);
+			region.add(gameField[y][x]);
 
 			deepSearch(x, y + 1, gegner, region); // unten
 			deepSearch(x - 1, y, gegner, region); // links
@@ -204,6 +210,8 @@ public class GameField extends Observable {
 
 	// Method will be called after a stone is set
 	private void moveEnd(int enemy) {
+		
+		
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
 		allCells.addAll(whiteList);
 		allCells.addAll(blackList);
@@ -212,33 +220,39 @@ public class GameField extends Observable {
 			fenced(x.getCoords().x, x.getCoords().y);
 		}
 
-		for (LinkedList<Cell> list : blackRegions) {
+		for (TreeSet<Cell> list : blackRegions) {
 			for (Cell cell : list) {
-				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
-				blackList.remove(cell);
-				blackPlayer.addScore(-1);
-				
+								
+				if (whiteList.remove(cell)) {
+					whitePlayer.addScore(-1);
+					gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
+					
+					
+				}
+
 			}
 		}
 
-		for (LinkedList<Cell> list : whiteRegions) {
+		for (TreeSet<Cell> list : whiteRegions) {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
-				whiteList.remove(cell);
-				whitePlayer.addScore(-1);
+				
+				if (blackList.remove(cell)) {
+					blackPlayer.addScore(-1);
+					gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
+					
+					
+				}
+
 			}
 		}
-		System.out.println("blackRegions: " + blackRegions);
-		System.out.println("whiteRegions: " + whiteRegions);
 		
-		System.out.println("whitePlayer score: " + whitePlayer.getScore());
-		System.out.println("blackPlayer score: " + blackPlayer.getScore());
 	}
-	
+
 	public Player getwhitePlayer() {
 		return whitePlayer;
 	}
-	
+
 	public Player getblackPlayer() {
 		return blackPlayer;
 	}
