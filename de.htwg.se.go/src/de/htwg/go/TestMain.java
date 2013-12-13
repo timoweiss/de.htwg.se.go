@@ -2,7 +2,6 @@ package de.htwg.go;
 
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.impl.GoController;
-import de.htwg.go.model.GameField;
 
 public class TestMain {
 	public static void main(final String args[]) {
@@ -10,8 +9,6 @@ public class TestMain {
 		new TextUI(controller);
 
 		controller.createField();
-		
-		GameField text = new GameField();
 		
 //		
 //		text.setStone(5, 1, 1);
