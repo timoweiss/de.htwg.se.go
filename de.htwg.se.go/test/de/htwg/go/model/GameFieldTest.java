@@ -53,6 +53,8 @@ public class GameFieldTest {
 		
 		assertEquals(true, testField.setStone(5, 2));
 		assertEquals(false, testField.setStone(100, 100));
+		
+		assertFalse(testField.setStone(5, 2));
 	}
 
 	@Test
@@ -68,6 +70,7 @@ public class GameFieldTest {
 	public void testGetCellStatus() {
 		assertEquals(0, emptyTestField.getCellStatus(0, 0));
 		assertEquals(1, testField.getCellStatus(2, 2));
+		
 	}
 
 	
@@ -92,6 +95,15 @@ public class GameFieldTest {
 		assertFalse(testField.fenced(3, 3));
 		testField.setStone(2, 3, 1);
 		assertTrue(testField.fenced(3, 3));
+	}
+	
+	@Test
+	public void testGetwhitePlayer() {
+		assertTrue(testField.getwhitePlayer() instanceof Player);
+	}
+	
+	public void testGetblackPlayer() {
+		assertTrue(testField.getblackPlayer() instanceof Player);
 	}
 
 }

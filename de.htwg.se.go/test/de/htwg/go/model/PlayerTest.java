@@ -24,26 +24,19 @@ public class PlayerTest {
 
 	@Test
 	public void testaddScore() {
-		/*unknownPlayer.addPoints(500);
-		unknownPlayer.addPoints(5);
-
-		knownPlayer.addPoints(501);
-		knownPlayer.addPoints(9);
-
-		assertEquals(505, unknownPlayer.addPoints(0));
-		assertEquals(510, knownPlayer.addPoints(0));*/
+		unknownPlayer.addScore(500);
+		assertEquals(500, unknownPlayer.getScore());
+		assertEquals(505, unknownPlayer.addScore(5));
+		
 	}
 
 	@Test
 	public void testgetScore() {
-		/*unknownPlayer.addPoints(500);
-		unknownPlayer.addPoints(5);
-
-		knownPlayer.addPoints(501);
-		knownPlayer.addPoints(9);
-
-		assertEquals(505, unknownPlayer.getScore());
-		assertEquals(510, knownPlayer.getScore());*/
+		unknownPlayer.addScore(500);
+		assertEquals(500, unknownPlayer.getScore());
+		assertEquals(505, unknownPlayer.addScore(5));
 	}
+	
+
 
 }

@@ -8,9 +8,6 @@ public class Score {
 		return this.score;
 	}
 	
-	public int getAllScore() {
-		return this.score;
-	}
 	
 	public int getScore() {
 		return score;
