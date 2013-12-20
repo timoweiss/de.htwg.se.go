@@ -156,10 +156,11 @@ public class GameField extends Observable {
 	}
 
 	public boolean fenced(int x, int y) {
-		TreeSet<Cell> region = new TreeSet<Cell>();
+		final int HIGHNUMBER = 100;
+		Set<Cell> region = new TreeSet<Cell>();
 
 		int status = getCellStatus(x, y);
-		int gegner = 100;
+		int gegner = HIGHNUMBER;
 
 
 		if (status == 1) {
@@ -191,7 +192,7 @@ public class GameField extends Observable {
 		}
 	}
 
-	private boolean deepSearch(int x, int y, int gegner, TreeSet<Cell> region) {
+	private boolean deepSearch(int x, int y, int gegner, Set<Cell> region) {
 
 		if (getCellStatus(x, y) != gegner && !gameField[y][x].isChecked()) {
 
