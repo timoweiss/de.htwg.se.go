@@ -227,6 +227,7 @@ public class GameField extends Observable {
 			fenced(x.getCoords().x, x.getCoords().y);
 		}
 
+		//check Black Regions
 		for (Set<Cell> list : blackRegions) {
 			for (Cell cell : list) {
 
@@ -240,6 +241,7 @@ public class GameField extends Observable {
 			}
 		}
 
+		//check white Regions
 		for (Set<Cell> list : whiteRegions) {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x]
