@@ -27,7 +27,7 @@ public class GameField extends Observable {
 	private Player blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
-	private static final int lENGTH = 9;
+	private static final int LENGTH = 9;
 
 	public GameField() {
 		randomNext();
@@ -48,7 +48,7 @@ public class GameField extends Observable {
 	 */
 	private void createField() {
 
-		this.gameField = new Cell[lENGTH][lENGTH];
+		this.gameField = new Cell[LENGTH][LENGTH];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
 				gameField[i][j] = new Cell(j, i);
@@ -216,6 +216,8 @@ public class GameField extends Observable {
 
 	// Method will be called after a stone is set
 	private void moveEnd() {
+		final int blackRemoved = -2;
+		final int whiteRemoved = -1;
 
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
 		allCells.addAll(whiteList);
@@ -229,9 +231,9 @@ public class GameField extends Observable {
 			for (Cell cell : list) {
 
 				if (whiteList.remove(cell)) {
-					whitePlayer.addScore(-1);
+					whitePlayer.addScore(whiteRemoved);
 					gameField[cell.getCoords().y][cell.getCoords().x]
-							.setStatus(-1);
+							.setStatus(whiteRemoved);
 
 				}
 
@@ -240,12 +242,13 @@ public class GameField extends Observable {
 
 		for (Set<Cell> list : whiteRegions) {
 			for (Cell cell : list) {
-				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
+				gameField[cell.getCoords().y][cell.getCoords().x]
+						.setStatus(blackRemoved);
 
 				if (blackList.remove(cell)) {
 					blackPlayer.addScore(-1);
 					gameField[cell.getCoords().y][cell.getCoords().x]
-							.setStatus(-1);
+							.setStatus(blackRemoved);
 
 				}
 
