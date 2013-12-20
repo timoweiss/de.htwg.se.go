@@ -41,7 +41,7 @@ public class GameFieldTest {
 		
 		if (testNext.equals("white")) {
 			assertEquals("black", testField.getNext());
-		} else {
+		} else if (testNext.equals("black")) {
 			assertEquals("white", testField.getNext());
 		}
 		
