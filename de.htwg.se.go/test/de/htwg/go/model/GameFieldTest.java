@@ -36,9 +36,8 @@ public class GameFieldTest {
 	@Test
 	public void testGetNext() {
 		String testNext = testField.getNext();
-		assertEquals(testNext, testField.getNext());
-		
-		testField.setStone(1, 1);
+		testField.setStone(8, 8);
+
 		
 		if (testNext.equals("white")) {
 			assertEquals("black", testField.getNext());
@@ -46,8 +45,7 @@ public class GameFieldTest {
 			assertEquals("white", testField.getNext());
 		}
 		
-		
-		assertEquals("white", testNext);	
+	
 	}
 
 	@Test

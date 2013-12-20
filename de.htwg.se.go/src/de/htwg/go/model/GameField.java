@@ -1,6 +1,7 @@
 package de.htwg.go.model;
 
 import java.util.LinkedList;
+import java.util.Set;
 import java.util.TreeSet;
 
 import de.htwg.go.util.PrintErrors;
@@ -15,11 +16,11 @@ public class GameField extends Observable {
 	private Cell gameField[][];
 	private boolean whiteIsNext = true;
 
-	private TreeSet<Cell> blackList;
-	private TreeSet<Cell> whiteList;
+	private Set<Cell> blackList;
+	private Set<Cell> whiteList;
 
-	private LinkedList<TreeSet<Cell>> blackRegions;
-	private LinkedList<TreeSet<Cell>> whiteRegions;
+	private LinkedList<Set<Cell>> blackRegions;
+	private LinkedList<Set<Cell>> whiteRegions;
 
 	private Player whitePlayer;
 	private Player blackPlayer;
@@ -37,8 +38,8 @@ public class GameField extends Observable {
 		blackList = new TreeSet<Cell>();
 		whiteList = new TreeSet<Cell>();
 
-		blackRegions = new LinkedList<TreeSet<Cell>>();
-		whiteRegions = new LinkedList<TreeSet<Cell>>();
+		blackRegions = new LinkedList<Set<Cell>>();
+		whiteRegions = new LinkedList<Set<Cell>>();
 	}
 
 	/*
@@ -92,12 +93,12 @@ public class GameField extends Observable {
 			this.gameField[y][x].setStatus(1);
 			whiteList.add(gameField[y][x]);
 			whitePlayer.addScore(1);
-			moveEnd(2);
+			moveEnd();
 		} else {
 			this.gameField[y][x].setStatus(2);
 			blackList.add(gameField[y][x]);
 			blackPlayer.addScore(1);
-			moveEnd(1);
+			moveEnd();
 		}
 
 		whiteIsNext = !whiteIsNext;
@@ -111,10 +112,10 @@ public class GameField extends Observable {
 		this.gameField[y][x].setStatus(color);
 		if (color == 1) {
 			whiteList.add(gameField[y][x]);
-			moveEnd(2);
+			moveEnd();
 		} else {
 			blackList.add(gameField[y][x]);
-			moveEnd(1);
+			moveEnd();
 		}
 
 	}
@@ -209,7 +210,7 @@ public class GameField extends Observable {
 	}
 
 	// Method will be called after a stone is set
-	private void moveEnd(int enemy) {
+	private void moveEnd() {
 		
 		
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
@@ -220,7 +221,7 @@ public class GameField extends Observable {
 			fenced(x.getCoords().x, x.getCoords().y);
 		}
 
-		for (TreeSet<Cell> list : blackRegions) {
+		for (Set<Cell> list : blackRegions) {
 			for (Cell cell : list) {
 								
 				if (whiteList.remove(cell)) {
@@ -233,7 +234,7 @@ public class GameField extends Observable {
 			}
 		}
 
-		for (TreeSet<Cell> list : whiteRegions) {
+		for (Set<Cell> list : whiteRegions) {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
 				

@@ -41,11 +41,7 @@ public class TextUI implements IObserver {
 			return false;
 		}
 
-		/*
-		 * switch (line) { case "-quit": operate = false;
-		 * System.out.println("Bye"); return false; }
-		 */
-
+		
 		// if the input has "123" set a Stone at 1, 2 with status 3
 		if (line.matches("[0-9][0-9]")) {
 			controller.setStone(Character.getNumericValue(line.charAt(0)),
