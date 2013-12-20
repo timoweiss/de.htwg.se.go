@@ -162,13 +162,11 @@ public class GameField extends Observable {
 		int status = getCellStatus(x, y);
 		int gegner = HIGHNUMBER;
 
-
 		if (status == 1) {
 			gegner = 2;
 		} else {
 			gegner = 1;
 
-			
 		}
 
 		try {
@@ -199,10 +197,14 @@ public class GameField extends Observable {
 			rememberMe(x, y);
 			region.add(gameField[y][x]);
 
-			deepSearch(x, y + 1, gegner, region); // unten
-			deepSearch(x - 1, y, gegner, region); // links
-			deepSearch(x, y - 1, gegner, region); // oben
-			deepSearch(x + 1, y, gegner, region); // rechts
+			// unten
+			deepSearch(x, y + 1, gegner, region);
+			// links
+			deepSearch(x - 1, y, gegner, region);
+			// oben
+			deepSearch(x, y - 1, gegner, region);
+			// rechts
+			deepSearch(x + 1, y, gegner, region);
 		}
 		return true;
 	}
@@ -213,8 +215,7 @@ public class GameField extends Observable {
 
 	// Method will be called after a stone is set
 	private void moveEnd() {
-		
-		
+
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
 		allCells.addAll(whiteList);
 		allCells.addAll(blackList);
@@ -225,12 +226,12 @@ public class GameField extends Observable {
 
 		for (Set<Cell> list : blackRegions) {
 			for (Cell cell : list) {
-								
+
 				if (whiteList.remove(cell)) {
 					whitePlayer.addScore(-1);
-					gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
-					
-					
+					gameField[cell.getCoords().y][cell.getCoords().x]
+							.setStatus(-1);
+
 				}
 
 			}
@@ -239,17 +240,17 @@ public class GameField extends Observable {
 		for (Set<Cell> list : whiteRegions) {
 			for (Cell cell : list) {
 				gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-2);
-				
+
 				if (blackList.remove(cell)) {
 					blackPlayer.addScore(-1);
-					gameField[cell.getCoords().y][cell.getCoords().x].setStatus(-1);
-					
-					
+					gameField[cell.getCoords().y][cell.getCoords().x]
+							.setStatus(-1);
+
 				}
 
 			}
 		}
-		
+
 	}
 
 	public Player getwhitePlayer() {
@@ -259,7 +260,7 @@ public class GameField extends Observable {
 	public Player getblackPlayer() {
 		return blackPlayer;
 	}
-	
+
 	public boolean checked(int x, int y) {
 		return gameField[x][y].isChecked();
 	}
