@@ -30,18 +30,24 @@ public class GameFieldTest {
 
 	@Test
 	public void testGameField() {
-		fail("Not yet implemented");
+		assertTrue(testField instanceof GameField);
 	}
 
 	@Test
 	public void testGetNext() {
-		testField.setStone(1, 2, 1);
 		String testNext = testField.getNext();
-		assertEquals("white", testNext);
+		assertEquals(testNext, testField.getNext());
 		
-
+		testField.setStone(1, 1);
+		
+		if (testNext.equals("white")) {
+			assertEquals("black", testField.getNext());
+		} else {
+			assertEquals("white", testField.getNext());
+		}
 		
 		
+		assertEquals("white", testNext);	
 	}
 
 	@Test
@@ -62,25 +68,32 @@ public class GameFieldTest {
 
 	@Test
 	public void testGetCellStatus() {
-		System.out.println(emptyTestField.getCellStatus(0, 0));
-		assertEquals(-1, emptyTestField.getCellStatus(0, 0));
-		
+		assertEquals(0, emptyTestField.getCellStatus(0, 0));
 		assertEquals(1, testField.getCellStatus(2, 2));
 	}
 
-	@Test
-	public void testToString() {
-		fail("Not yet implemented");
-	}
-
+	
 	@Test
 	public void testResetAllChecks() {
-		fail("Not yet implemented");
+		boolean checkvar = false;
+		testField.resetAllChecks();
+		for (int i = 0; i < 9; i++) {
+			for (int j = 0; j < 9; j++) {
+				if (testField.checked(i, j)) {
+					checkvar = true;
+					fail("all Cells should be unchecked");
+				}
+			}
+		}
+		assertFalse(checkvar);
+		
 	}
 
 	@Test
 	public void testFenced() {
-		fail("Not yet implemented");
+		assertFalse(testField.fenced(3, 3));
+		testField.setStone(2, 3, 1);
+		assertTrue(testField.fenced(3, 3));
 	}
 
 }

@@ -21,8 +21,8 @@ public class GameField extends Observable {
 	private LinkedList<TreeSet<Cell>> blackRegions;
 	private LinkedList<TreeSet<Cell>> whiteRegions;
 
-	Player whitePlayer;
-	Player blackPlayer;
+	private Player whitePlayer;
+	private Player blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
 	private final static int lENGTH = 9;
@@ -255,6 +255,10 @@ public class GameField extends Observable {
 
 	public Player getblackPlayer() {
 		return blackPlayer;
+	}
+	
+	public boolean checked(int x, int y) {
+		return gameField[x][y].isChecked();
 	}
 
 }
