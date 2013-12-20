@@ -27,7 +27,7 @@ public class GameField extends Observable {
 	private Player blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
-	private final static int lENGTH = 9;
+	private static final int lENGTH = 9;
 
 	public GameField() {
 		randomNext();
@@ -156,11 +156,12 @@ public class GameField extends Observable {
 	}
 
 	public boolean fenced(int x, int y) {
-		final int HIGHNUMBER = 100;
+
+		final int highNumber = 100;
 		Set<Cell> region = new TreeSet<Cell>();
 
 		int status = getCellStatus(x, y);
-		int gegner = HIGHNUMBER;
+		int gegner = highNumber;
 
 		if (status == 1) {
 			gegner = 2;
