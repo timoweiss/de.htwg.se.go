@@ -1,5 +1,6 @@
 package de.htwg.go.model;
 
+import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
@@ -19,8 +20,8 @@ public class GameField extends Observable {
 	private Set<Cell> blackList;
 	private Set<Cell> whiteList;
 
-	private LinkedList<Set<Cell>> blackRegions;
-	private LinkedList<Set<Cell>> whiteRegions;
+	private Collection<Set<Cell>> blackRegions;
+	private Collection<Set<Cell>> whiteRegions;
 
 	private Player whitePlayer;
 	private Player blackPlayer;
