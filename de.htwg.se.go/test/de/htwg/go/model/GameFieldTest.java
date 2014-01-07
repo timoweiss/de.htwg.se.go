@@ -24,8 +24,6 @@ public class GameFieldTest {
 		testField.setStone(2, 4, 1);
 		
 		emptyTestField = new GameField();
-		
-		
 	}
 
 	@Test
@@ -38,30 +36,22 @@ public class GameFieldTest {
 		String testNext = testField.getNext();
 		testField.setStone(8, 8);
 
-		
 		if (testNext.equals("white")) {
 			assertEquals("black", testField.getNext());
 		} else if (testNext.equals("black")) {
 			assertEquals("white", testField.getNext());
 		}
-		
-	
 	}
 
 	@Test
 	public void testSetStoneIntInt() {
-		
 		assertEquals(true, testField.setStone(5, 2));
 		assertEquals(false, testField.setStone(100, 100));
-		
 		assertFalse(testField.setStone(5, 2));
 	}
 
 	@Test
 	public void testSetStoneIntIntInt() {
-		
-		//assertEquals(true, testField.setStone(5, 2, 1));
-		
 		testField.setStone(5, 2, 2);
 		assertEquals(2, testField.getCellStatus(5, 2));
 	}
@@ -70,7 +60,6 @@ public class GameFieldTest {
 	public void testGetCellStatus() {
 		assertEquals(0, emptyTestField.getCellStatus(0, 0));
 		assertEquals(1, testField.getCellStatus(2, 2));
-		
 	}
 
 	
@@ -87,7 +76,6 @@ public class GameFieldTest {
 			}
 		}
 		assertFalse(checkvar);
-		
 	}
 
 	@Test

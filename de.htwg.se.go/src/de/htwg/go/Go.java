@@ -2,6 +2,7 @@ package de.htwg.go;
 
 import java.util.Scanner;
 
+import de.htwg.go.aview.GraphicalUI;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.controller.impl.GoController;
@@ -12,11 +13,12 @@ public final class Go {
 	
 	private static Scanner scanner;
 	private static TextUI tui;
-
 	public static void main(final String args[]) {
 
 		IGoController controller = new GoController();
 		tui = new TextUI(controller);
+		new GraphicalUI(controller);
+		
 		controller.createField();
 
 		boolean goAhead = true;
