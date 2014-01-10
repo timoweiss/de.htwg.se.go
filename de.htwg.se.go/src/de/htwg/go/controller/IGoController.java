@@ -28,4 +28,7 @@ public interface IGoController extends IObservable {
 	//returns the status of a cell
 	int getCellStatus(int x, int y);
 	
+	//return if white is next or not
+	String getNext();
+	
 }

@@ -74,5 +74,18 @@ public class ControllerTest {
 		controller.setStone(5, 5, 2);
 		assertEquals(2, controller.getCellStatus(5, 5));
 	}
+	
+	@Test
+	public void testGetNext() {
+		controller.createField();
+		String testNext = controller.getNext();
+		controller.setStone(8, 8);
+
+		if (testNext.equals("white")) {
+			assertEquals("black", controller.getNext());
+		} else if (testNext.equals("black")) {
+			assertEquals("white", controller.getNext());
+		}
+	}
 
 }

@@ -63,6 +63,11 @@ public class GoController extends Observable implements IGoController {
 		return gamefield.getCellStatus(x, y);
 	}
 
+	@Override
+	public String getNext() {
+		return gamefield.getNext();
+	}
+
 	
 
 }
