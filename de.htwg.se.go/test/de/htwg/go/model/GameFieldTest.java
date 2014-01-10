@@ -93,9 +93,11 @@ public class GameFieldTest {
 		testField.setStone(2, 3, 1);
 		assertTrue(testField.fenced(3, 3));
 		testField.setStone(3, 3, 1);
+		
+		testField.setStone(3, 3, 2);
+		assertEquals(-2, testField.getCellStatus(3, 3));
 
 		assertFalse(testField2.fenced(1, 1));
-
 		assertEquals(-1, testField2.getCellStatus(5, 6));
 
 	}
