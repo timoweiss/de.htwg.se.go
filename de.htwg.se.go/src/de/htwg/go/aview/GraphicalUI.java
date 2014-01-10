@@ -47,8 +47,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	public GraphicalUI(IGoController controller) {
 
+//		backgroundplay = new ImageIcon(
+//				"de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
+		
 		backgroundplay = new ImageIcon(
-				"C:\\Users\\Public\\Pictures\\Sample Pictures\\Chrysanthemum.jpg");
+				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
+		
+		
 
 		this.controller = controller;
 		controller.addObserver(this);
@@ -152,8 +157,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Labels //
 
-		int x = 0;
-		int y = 0;
+		int x = 21;
+		int y = 22;
 		for (int i = 0; i < 9; i++) {
 
 			for (int j = 0; j < 9; j++) {
@@ -175,10 +180,10 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				}
 
 				panel.add(cell);
-				y = y + 40;
+				y = y + 55;
 			}
-			x = x + 40;
-			y = 0;
+			x = x + 55;
+			y = 22;
 		}
 
 		// background //
