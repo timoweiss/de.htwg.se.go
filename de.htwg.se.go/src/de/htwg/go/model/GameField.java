@@ -100,6 +100,7 @@ public class GameField extends Observable {
 			blackList.add(gameField[y][x]);
 			blackPlayer.addScore(1);
 			moveEnd();
+
 		}
 
 		whiteIsNext = !whiteIsNext;
@@ -117,6 +118,7 @@ public class GameField extends Observable {
 		} else {
 			blackList.add(gameField[y][x]);
 			moveEnd();
+
 		}
 
 	}
@@ -218,6 +220,7 @@ public class GameField extends Observable {
 	private void moveEnd() {
 		final int blackRemoved = -2;
 		final int whiteRemoved = -1;
+		final int minusone = -1;
 
 		LinkedList<Cell> allCells = new LinkedList<Cell>();
 		allCells.addAll(whiteList);
@@ -227,34 +230,38 @@ public class GameField extends Observable {
 			fenced(x.getCoords().x, x.getCoords().y);
 		}
 
-		//check Black Regions
+		// check Black Regions
 		for (Set<Cell> list : blackRegions) {
 			for (Cell cell : list) {
 
-				if (whiteList.remove(cell)) {
-					whitePlayer.addScore(whiteRemoved);
+				if ((this.getCellStatus(cell.getCoords().x, cell.getCoords().y) == 1)) {
+
+					whitePlayer.addScore(minusone);
 					gameField[cell.getCoords().y][cell.getCoords().x]
 							.setStatus(whiteRemoved);
 
 				}
 
 			}
+			whiteList.removeAll(list);
 		}
 
-		//check white Regions
+		// check white Regions
 		for (Set<Cell> list : whiteRegions) {
-			for (Cell cell : list) {
-				gameField[cell.getCoords().y][cell.getCoords().x]
-						.setStatus(blackRemoved);
 
-				if (blackList.remove(cell)) {
-					blackPlayer.addScore(-1);
+			for (Cell cell : list) {
+
+				if (this.getCellStatus(cell.getCoords().x, cell.getCoords().y) == 2) {
+
+					blackPlayer.addScore(minusone);
 					gameField[cell.getCoords().y][cell.getCoords().x]
 							.setStatus(blackRemoved);
 
 				}
 
 			}
+
+			blackList.removeAll(list);
 		}
 
 	}

@@ -16,10 +16,12 @@ public final class Go {
 	public static void main(final String args[]) {
 
 		IGoController controller = new GoController();
+		controller.createField();
+		
 		tui = new TextUI(controller);
 		new GraphicalUI(controller);
 		
-		controller.createField();
+		
 
 		boolean goAhead = true;
 		scanner = new Scanner(System.in);

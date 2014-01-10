@@ -68,8 +68,8 @@ public class CellTest {
 
 	@Test
 	public void testToString() {
-		
-		assertEquals("java.awt.Point[x=0,y=0] 1", testCell2.toString());
+		System.out.println(testCell2.toString());
+		assertEquals("0|0", testCell2.toString());
 	}
 
 }

@@ -22,7 +22,7 @@ public class GameFieldTest {
 		testField.setStone(3, 5, 1);
 		testField.setStone(2, 5, 1);
 		testField.setStone(2, 4, 1);
-		
+
 		emptyTestField = new GameField();
 	}
 
@@ -62,7 +62,6 @@ public class GameFieldTest {
 		assertEquals(1, testField.getCellStatus(2, 2));
 	}
 
-	
 	@Test
 	public void testResetAllChecks() {
 		boolean checkvar = false;
@@ -84,14 +83,24 @@ public class GameFieldTest {
 		testField.setStone(2, 3, 1);
 		assertTrue(testField.fenced(3, 3));
 	}
-	
+
 	@Test
 	public void testGetwhitePlayer() {
 		assertTrue(testField.getwhitePlayer() instanceof Player);
 	}
-	
+
+	@Test
 	public void testGetblackPlayer() {
 		assertTrue(testField.getblackPlayer() instanceof Player);
+	}
+
+	@Test
+	public void testtoString() {
+		testField = new GameField();
+
+		assertEquals(
+				"    0 1 2 3 4 5 6 7 8\n    _ _ _ _ _ _ _ _ _\n0  |0 0 0 0 0 0 0 0 0 \n1  |0 0 0 0 0 0 0 0 0 \n2  |0 0 0 0 0 0 0 0 0 \n3  |0 0 0 0 0 0 0 0 0 \n4  |0 0 0 0 0 0 0 0 0 \n5  |0 0 0 0 0 0 0 0 0 \n6  |0 0 0 0 0 0 0 0 0 \n7  |0 0 0 0 0 0 0 0 0 \n8  |0 0 0 0 0 0 0 0 0 \n",
+				testField.toString());
 	}
 
 }

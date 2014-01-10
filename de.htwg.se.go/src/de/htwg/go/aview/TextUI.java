@@ -15,6 +15,7 @@ public class TextUI implements IObserver {
 	public TextUI(IGoController controller) {
 		this.controller = controller;
 		controller.addObserver(this);
+		printTui();
 	}
 
 	@Override

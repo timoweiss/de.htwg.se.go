@@ -44,7 +44,7 @@ public class Cell implements Comparable<Cell> {
 	}
 
 	public String toString() {
-		return (coords + " " + status);
+		return (coords.x + "|" + coords.y);
 	}
 
 	public int compareTo(Cell cell) {
@@ -53,6 +53,7 @@ public class Cell implements Comparable<Cell> {
 		} else {
 			return -1;
 		}
+
 	}
 
 }

@@ -57,6 +57,11 @@ public class GoController extends Observable implements IGoController {
 	public int getblackPlayerScore() {
 		return gamefield.getblackPlayer().getScore();
 	}
+	
+	@Override
+	public int getCellStatus(int x, int y) {
+		return gamefield.getCellStatus(x, y);
+	}
 
 	
 

@@ -24,5 +24,8 @@ public interface IGoController extends IObservable {
 	
 	//returns the Score from whitePlayer
 	int getblackPlayerScore();
+
+	//returns the status of a cell
+	int getCellStatus(int x, int y);
 	
 }
