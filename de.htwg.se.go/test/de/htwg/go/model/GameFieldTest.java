@@ -8,6 +8,7 @@ import org.junit.Test;
 public class GameFieldTest {
 
 	GameField testField;
+	GameField testField2;
 	GameField emptyTestField;
 
 	@Before
@@ -22,6 +23,18 @@ public class GameFieldTest {
 		testField.setStone(3, 5, 1);
 		testField.setStone(2, 5, 1);
 		testField.setStone(2, 4, 1);
+
+		testField2 = new GameField();
+		testField2.setStone(2, 2, 2);
+		testField2.setStone(3, 2, 2);
+		testField2.setStone(4, 2, 2);
+		testField2.setStone(4, 3, 2);
+		testField2.setStone(4, 4, 2);
+		testField2.setStone(4, 5, 2);
+		testField2.setStone(3, 5, 2);
+		testField2.setStone(2, 5, 2);
+		testField2.setStone(2, 4, 2);
+		testField2.setStone(2, 3, 2);
 
 		emptyTestField = new GameField();
 	}
@@ -58,8 +71,10 @@ public class GameFieldTest {
 
 	@Test
 	public void testGetCellStatus() {
+
 		assertEquals(0, emptyTestField.getCellStatus(0, 0));
 		assertEquals(1, testField.getCellStatus(2, 2));
+
 	}
 
 	@Test
@@ -82,6 +97,11 @@ public class GameFieldTest {
 		assertFalse(testField.fenced(3, 3));
 		testField.setStone(2, 3, 1);
 		assertTrue(testField.fenced(3, 3));
+
+		testField.setStone(3, 3, 1);
+
+		assertFalse(testField2.fenced(1, 1));
+
 	}
 
 	@Test

@@ -53,7 +53,9 @@ public class ControllerTest {
 
 	@Test
 	public void testGetStatus() {
-		// assertEquals(true, controller.getStatus().charAt(5) instanceof char);
+		controller.createField();
+		assertEquals("Gamefield successfully created\n" + controller.getNext()
+				+ " is next", controller.getStatus());
 	}
 
 	@Test

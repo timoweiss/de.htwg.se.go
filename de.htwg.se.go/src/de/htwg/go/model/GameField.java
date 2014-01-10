@@ -124,12 +124,7 @@ public class GameField extends Observable {
 	}
 
 	public int getCellStatus(int x, int y) {
-		if (gameField[y][x] == null) {
-			PrintErrors.printErrorMessage(0);
-			return -1;
-		} else {
-			return gameField[y][x].getStatus();
-		}
+		return gameField[y][x].getStatus();
 	}
 
 	@Override
