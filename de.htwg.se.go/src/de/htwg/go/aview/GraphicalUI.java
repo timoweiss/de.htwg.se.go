@@ -6,7 +6,10 @@ import java.awt.GridLayout;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.io.File;
+import java.io.IOException;
 
+import javax.imageio.ImageIO;
 import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
@@ -44,16 +47,32 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	Image back;
 
 	ImageIcon backgroundplay;
+	ImageIcon whiteButton;
+	ImageIcon blackButton;
+	
 
 	public GraphicalUI(IGoController controller) {
 
-//		backgroundplay = new ImageIcon(
-//				"de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
-		
+		// backgroundplay = new ImageIcon(
+		// "de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
+
 		backgroundplay = new ImageIcon(
 				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
-		
-		
+
+		try {
+			whiteButton = new ImageIcon(ImageIO.read(new File(
+					"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteStone.png")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
+		try {
+			blackButton = new ImageIcon(ImageIO.read(new File(
+					"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackStone.png")));
+		} catch (IOException e) {
+			// TODO Auto-generated catch block
+			e.printStackTrace();
+		}
 
 		this.controller = controller;
 		controller.addObserver(this);
@@ -157,8 +176,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Labels //
 
-		int x = 21;
-		int y = 22;
+		int x = 18;
+		int y = 20;
 		for (int i = 0; i < 9; i++) {
 
 			for (int j = 0; j < 9; j++) {
@@ -167,23 +186,30 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				cell.setActionCommand(i + "" + j);
 				cell.addActionListener(this);
 
-				cell.setSize(20, 20);
+				cell.setSize(36, 36);
 				cell.setOpaque(true);
 				cell.setLocation(x, y);
 
+				cell.setOpaque(false);
+				cell.setContentAreaFilled(false);
+				cell.setBorderPainted(false);
+				
 				if (controller.getCellStatus(i, j) == 1) {
-					cell.setBackground(Color.white);
+					// cell.setBackground(Color.white);
+					cell.setIcon(whiteButton);
 				} else if (controller.getCellStatus(i, j) == 2) {
-					cell.setBackground(Color.black);
+					// cell.setBackground(Color.black);
+					cell.setIcon(blackButton);
 				} else {
+
 					cell.setBackground(Color.green);
 				}
 
 				panel.add(cell);
-				y = y + 55;
+				y = y + 54;
 			}
-			x = x + 55;
-			y = 22;
+			x = x + 54;
+			y = 20;
 		}
 
 		// background //
