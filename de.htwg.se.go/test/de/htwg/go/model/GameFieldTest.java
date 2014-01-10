@@ -25,16 +25,11 @@ public class GameFieldTest {
 		testField.setStone(2, 4, 1);
 
 		testField2 = new GameField();
-		testField2.setStone(2, 2, 2);
-		testField2.setStone(3, 2, 2);
-		testField2.setStone(4, 2, 2);
-		testField2.setStone(4, 3, 2);
-		testField2.setStone(4, 4, 2);
-		testField2.setStone(4, 5, 2);
-		testField2.setStone(3, 5, 2);
-		testField2.setStone(2, 5, 2);
-		testField2.setStone(2, 4, 2);
-		testField2.setStone(2, 3, 2);
+		testField2.setStone(6, 6, 2);
+		testField2.setStone(5, 7, 2);
+		testField2.setStone(4, 6, 2);
+		testField2.setStone(5, 5, 2);
+		testField2.setStone(5, 6, 1);
 
 		emptyTestField = new GameField();
 	}
@@ -97,10 +92,11 @@ public class GameFieldTest {
 		assertFalse(testField.fenced(3, 3));
 		testField.setStone(2, 3, 1);
 		assertTrue(testField.fenced(3, 3));
-
 		testField.setStone(3, 3, 1);
 
 		assertFalse(testField2.fenced(1, 1));
+
+		assertEquals(-1, testField2.getCellStatus(5, 6));
 
 	}
 
