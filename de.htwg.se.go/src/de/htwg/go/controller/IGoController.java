@@ -11,7 +11,7 @@ public interface IGoController extends IObservable {
 	String tuiToString();
 
 	//Sets a stone and knows, whos next
-	void setStone(int x, int y);
+	boolean setStone(int x, int y);
 	
 	//Sets a stone and wants to know which player is next
 	void setStone(int x, int y, int status);

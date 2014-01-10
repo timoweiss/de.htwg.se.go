@@ -27,16 +27,22 @@ public class GoController extends Observable implements IGoController {
 	}
 
 	@Override
-	public void setStone(int x, int y) {
+	public boolean setStone(int x, int y) {
+		boolean status;
+
 		String next = gamefield.getNext();
 		if (gamefield.setStone(x, y)) {
 			statusLine = ("set " + next.toUpperCase() + " at (" + x + "," + y
 					+ ")\n" + gamefield.getNext() + " is next");
+			status = true;
+
 		} else {
 			statusLine = ("unable to set stone at (" + x + "," + y + ")\n"
 					+ next + " is still next");
+			status = false;
 		}
 		notifyObservers();
+		return status;
 	}
 
 	public void setStone(int x, int y, int status) {
@@ -57,7 +63,7 @@ public class GoController extends Observable implements IGoController {
 	public int getblackPlayerScore() {
 		return gamefield.getblackPlayer().getScore();
 	}
-	
+
 	@Override
 	public int getCellStatus(int x, int y) {
 		return gamefield.getCellStatus(x, y);
@@ -67,7 +73,5 @@ public class GoController extends Observable implements IGoController {
 	public String getNext() {
 		return gamefield.getNext();
 	}
-
-	
 
 }

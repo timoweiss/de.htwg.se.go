@@ -18,7 +18,8 @@ public class ControllerTest {
 	@Test
 	public void testCreateField() {
 		controller.createField();
-
+		assertEquals(true, controller != null);
+		assertNotNull(controller);
 	}
 
 	@Test
@@ -32,7 +33,10 @@ public class ControllerTest {
 
 	@Test
 	public void testSetStoneIntInt() {
-
+		controller.createField();
+		assertEquals(true, controller.setStone(5, 2));
+		assertEquals(false, controller.setStone(100, 100));
+		assertFalse(controller.setStone(5, 2));
 	}
 
 	@Test
@@ -74,7 +78,7 @@ public class ControllerTest {
 		controller.setStone(5, 5, 2);
 		assertEquals(2, controller.getCellStatus(5, 5));
 	}
-	
+
 	@Test
 	public void testGetNext() {
 		controller.createField();
