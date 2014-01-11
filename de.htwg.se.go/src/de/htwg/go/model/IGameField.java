@@ -36,7 +36,7 @@ public interface IGameField {
 	 * toString method of the gamefield for console output
 	 * @return string of the gamefield
 	 */
-	public String toString();
+	String toString();
 
 	/**
 	 * checks whether a stone is surrounded or not
@@ -44,19 +44,19 @@ public interface IGameField {
 	 * @param y y-coordinate
 	 * @return boolean
 	 */
-	public boolean fenced(int x, int y);
+	boolean fenced(int x, int y);
 
 	/**
 	 * returns the whitePlayer
 	 * @return IPlayer
 	 */
-	public IPlayer getwhitePlayer();
+	IPlayer getwhitePlayer();
 
 	/**
 	 * returns the blackPlayer
 	 * @return IPlayer
 	 */
-	public IPlayer getblackPlayer();
+	IPlayer getblackPlayer();
 
 	/**
 	 * returns if a cell at x,y is already checked
@@ -64,5 +64,5 @@ public interface IGameField {
 	 * @param y y-coordinate
 	 * @return boolean
 	 */
-	public boolean checked(int x, int y);
+	boolean checked(int x, int y);
 }
