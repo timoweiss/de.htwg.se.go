@@ -2,6 +2,8 @@ package de.htwg.go;
 
 import java.util.Scanner;
 
+import org.apache.log4j.PropertyConfigurator;
+
 import de.htwg.go.aview.GraphicalUI;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
@@ -15,6 +17,8 @@ public final class Go {
 	private static TextUI tui;
 	public static void main(final String args[]) {
 
+		PropertyConfigurator.configure("log4j.properties");
+		
 		IGoController controller = new GoController();
 		controller.createField();
 		

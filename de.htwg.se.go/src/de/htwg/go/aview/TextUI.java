@@ -1,6 +1,8 @@
 package de.htwg.go.aview;
 
-import java.util.logging.Logger;
+
+
+import org.apache.log4j.Logger;
 
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.util.observer.Event;
