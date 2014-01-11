@@ -59,7 +59,7 @@ public class GameFieldTest {
 		assertEquals(true, testField.setStone(5, 2));
 		assertEquals(false, testField.setStone(100, 100));
 		assertFalse(testField.setStone(5, 2));
-		
+
 		assertFalse(testField.setStone(100, 1));
 		assertFalse(testField.setStone(1, 100));
 	}
@@ -95,11 +95,12 @@ public class GameFieldTest {
 
 	@Test
 	public void testFenced() {
+
 		assertFalse(testField.fenced(3, 3));
 		testField.setStone(2, 3, 1);
 		assertTrue(testField.fenced(3, 3));
 		testField.setStone(3, 3, 1);
-		
+
 		testField.setStone(3, 3, 2);
 		assertEquals(-2, testField.getCellStatus(3, 3));
 

@@ -3,7 +3,6 @@ package de.htwg.go.aview;
 import java.awt.BorderLayout;
 import java.awt.Color;
 import java.awt.GridLayout;
-import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
@@ -19,7 +18,6 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
-import javax.swing.JTextField;
 
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.util.observer.Event;
@@ -29,26 +27,58 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
-	JMenuBar menuBar;
-	JMenu menu, submenu;
-	JMenuItem menuItem;
-	JButton cell;
-	JTextField textField;
-	IGoController controller;
-	JPanel panel;
-	JFrame frame;
+	private JMenuBar menuBar;
+	private JMenu menu;
+	private JMenuItem menuItem;
+	private JButton cell;
+	private IGoController controller;
+	private JPanel panel;
+	private JFrame frame;
 
-	JLabel whitePoints;
-	JLabel blackPoints;
+	private JLabel whitePoints;
+	private JLabel blackPoints;
 
-	JLabel statustext;
-	JLabel background;
+	private JLabel statustext;
+	private JLabel background;
 
-	Image back;
-
-	ImageIcon backgroundplay;
-	ImageIcon whiteButton;
-	ImageIcon blackButton;
+	private ImageIcon backgroundplay;
+	private ImageIcon whiteButton;
+	private ImageIcon blackButton;
+	
+	// Magic Numbers //
+	
+	// Framesize//
+	private final int framexsize = 750;
+	private final int frameysize = 600;
+	
+	// Playpanelsize //
+	private final int playxsize = 500;
+	private final int playysize = 500;
+	
+	
+	// Statspanel //
+	private final int statsxsize = 250;
+	private final int statsysize = 500;
+	
+	private final int statsxpos = 500;
+	private final int statsypos = 0;
+	
+	// whiteLabel //
+	
+	// whitePoints //
+	
+	// blackLabel //
+	
+	// blackPoints //
+	
+	// statuspanel //
+	private final int statusxpos = 0;
+	private final int statusypos = 500;
+	
+	private final int statusxsize = 750;
+	private final int statusysize = 100;
+	
+	
 	
 
 	public GraphicalUI(IGoController controller) {
@@ -60,17 +90,15 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
 
 		try {
-			whiteButton = new ImageIcon(ImageIO.read(new File(
-					"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteStone.png")));
+			whiteButton = new ImageIcon(
+					ImageIO.read(new File(
+							"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteStone.png")));
+
+			blackButton = new ImageIcon(
+					ImageIO.read(new File(
+							"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackStone.png")));
+		
 		} catch (IOException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-		try {
-			blackButton = new ImageIcon(ImageIO.read(new File(
-					"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackStone.png")));
-		} catch (IOException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 
@@ -79,7 +107,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Frame//
 		frame = new JFrame("GO");
-		frame.setSize(750, 600);
+		frame.setSize(framexsize, frameysize);
 		frame.setResizable(false);
 
 		// Wrapperpanel //
@@ -93,7 +121,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Playpanel //
 		panel = new JPanel();
-		panel.setSize(500, 500);
+		panel.setSize(playxsize, playysize);
 
 		panel.setLayout(null);
 		panel.setBorder(BorderFactory.createLineBorder(Color.black));
@@ -102,7 +130,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		// Statspanel //
 		JPanel statspanel = new JPanel();
 		statspanel.setLayout(null);
-		statspanel.setBounds(500, 0, 250, 500);
+		statspanel.setBounds(statsxpos, statsypos, statsxsize, statsysize);
 		statspanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
 		JLabel whiteLabel = new JLabel("Score white: ");
@@ -129,12 +157,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Statuspanel //
 		JPanel statuspanel = new JPanel();
-		statspanel.setLayout(null);
-		statspanel.setBounds(0, 500, 750, 100);
-		statspanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		statuspanel.setLayout(null);
+		statuspanel.setBounds(statusxpos, statusypos, statusxsize, statusysize);
+		statuspanel.setBorder(BorderFactory.createLineBorder(Color.black));
+		
 		statustext = new JLabel("status");
 		statustext.setBounds(0, 0, 500, 20);
-		statspanel.add(statustext);
+		statuspanel.add(statustext);
 		wrapper.add(statuspanel);
 
 		// Menu//
@@ -172,7 +201,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	}
 
-	public void print() {
+	private final void print() {
 
 		// Labels //
 
@@ -193,12 +222,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				cell.setOpaque(false);
 				cell.setContentAreaFilled(false);
 				cell.setBorderPainted(false);
-				
+
 				if (controller.getCellStatus(i, j) == 1) {
-					// cell.setBackground(Color.white);
+
 					cell.setIcon(whiteButton);
 				} else if (controller.getCellStatus(i, j) == 2) {
-					// cell.setBackground(Color.black);
+
 					cell.setIcon(blackButton);
 				} else {
 
