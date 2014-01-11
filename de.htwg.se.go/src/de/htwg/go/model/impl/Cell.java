@@ -1,8 +1,10 @@
-package de.htwg.go.model;
+package de.htwg.go.model.impl;
 
 import java.awt.Point;
 
-public class Cell implements Comparable<Cell> {
+import de.htwg.go.model.ICell;
+
+public class Cell implements Comparable<Cell>, ICell {
 	private int status;
 	private Point coords;
 	private boolean checked;

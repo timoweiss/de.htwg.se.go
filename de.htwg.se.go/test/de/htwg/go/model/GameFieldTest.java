@@ -5,6 +5,9 @@ import static org.junit.Assert.*;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.htwg.go.model.impl.GameField;
+import de.htwg.go.model.impl.Player;
+
 public class GameFieldTest {
 
 	GameField testField;

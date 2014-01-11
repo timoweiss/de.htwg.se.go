@@ -1,12 +1,13 @@
 package de.htwg.go.controller.impl;
 
 import de.htwg.go.controller.IGoController;
-import de.htwg.go.model.GameField;
+import de.htwg.go.model.IGameField;
+import de.htwg.go.model.impl.GameField;
 import de.htwg.go.util.observer.Observable;
 
 public class GoController extends Observable implements IGoController {
 
-	private GameField gamefield;
+	private IGameField gamefield;
 	private String statusLine;
 
 	public GoController() {

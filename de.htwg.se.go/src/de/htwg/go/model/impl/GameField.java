@@ -1,30 +1,32 @@
-package de.htwg.go.model;
+package de.htwg.go.model.impl;
 
 import java.util.Collection;
 import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
-import de.htwg.go.util.PrintErrors;
+import de.htwg.go.model.ICell;
+import de.htwg.go.model.IGameField;
+import de.htwg.go.model.IPlayer;
 import de.htwg.go.util.observer.*;
 
 /**
  * @author Timo Weiss, Michael Knoch
  * 
  */
-public class GameField extends Observable {
+public class GameField extends Observable implements IGameField {
 
-	private Cell gameField[][];
+	private ICell gameField[][];
 	private boolean whiteIsNext = true;
 
-	private Set<Cell> blackList;
-	private Set<Cell> whiteList;
+	private Set<ICell> blackList;
+	private Set<ICell> whiteList;
 
-	private Collection<Set<Cell>> blackRegions;
-	private Collection<Set<Cell>> whiteRegions;
+	private Collection<Set<ICell>> blackRegions;
+	private Collection<Set<ICell>> whiteRegions;
 
-	private Player whitePlayer;
-	private Player blackPlayer;
+	private IPlayer whitePlayer;
+	private IPlayer blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
 	private static final int LENGTH = 9;
@@ -36,11 +38,11 @@ public class GameField extends Observable {
 		whitePlayer = new Player();
 		blackPlayer = new Player();
 
-		blackList = new TreeSet<Cell>();
-		whiteList = new TreeSet<Cell>();
+		blackList = new TreeSet<ICell>();
+		whiteList = new TreeSet<ICell>();
 
-		blackRegions = new LinkedList<Set<Cell>>();
-		whiteRegions = new LinkedList<Set<Cell>>();
+		blackRegions = new LinkedList<Set<ICell>>();
+		whiteRegions = new LinkedList<Set<ICell>>();
 	}
 
 	/*
@@ -136,7 +138,7 @@ public class GameField extends Observable {
 
 		for (int i = 0; i < gameField.length; i++) {
 			string.append(i + "  |");
-			for (Cell element : gameField[i]) {
+			for (ICell element : gameField[i]) {
 				string.append(element.getStatus() + " ");
 			}
 			string.append("\n");
@@ -155,7 +157,7 @@ public class GameField extends Observable {
 	public boolean fenced(int x, int y) {
 
 		final int highNumber = 100;
-		Set<Cell> region = new TreeSet<Cell>();
+		Set<ICell> region = new TreeSet<ICell>();
 
 		int status = getCellStatus(x, y);
 		int gegner = highNumber;
@@ -188,7 +190,7 @@ public class GameField extends Observable {
 		}
 	}
 
-	private boolean deepSearch(int x, int y, int gegner, Set<Cell> region) {
+	private boolean deepSearch(int x, int y, int gegner, Set<ICell> region) {
 
 		if (getCellStatus(x, y) != gegner && !gameField[y][x].isChecked()) {
 
@@ -217,17 +219,17 @@ public class GameField extends Observable {
 		final int whiteRemoved = -1;
 		final int minusone = -1;
 
-		LinkedList<Cell> allCells = new LinkedList<Cell>();
+		LinkedList<ICell> allCells = new LinkedList<ICell>();
 		allCells.addAll(whiteList);
 		allCells.addAll(blackList);
 
-		for (Cell x : allCells) {
+		for (ICell x : allCells) {
 			fenced(x.getCoords().x, x.getCoords().y);
 		}
 
 		// check Black Regions
-		for (Set<Cell> list : blackRegions) {
-			for (Cell cell : list) {
+		for (Set<ICell> list : blackRegions) {
+			for (ICell cell : list) {
 
 				if ((this.getCellStatus(cell.getCoords().x, cell.getCoords().y) == 1)) {
 
@@ -242,9 +244,9 @@ public class GameField extends Observable {
 		}
 
 		// check white Regions
-		for (Set<Cell> list : whiteRegions) {
+		for (Set<ICell> list : whiteRegions) {
 
-			for (Cell cell : list) {
+			for (ICell cell : list) {
 
 				if (this.getCellStatus(cell.getCoords().x, cell.getCoords().y) == 2) {
 
@@ -261,11 +263,11 @@ public class GameField extends Observable {
 
 	}
 
-	public Player getwhitePlayer() {
+	public IPlayer getwhitePlayer() {
 		return whitePlayer;
 	}
 
-	public Player getblackPlayer() {
+	public IPlayer getblackPlayer() {
 		return blackPlayer;
 	}
 

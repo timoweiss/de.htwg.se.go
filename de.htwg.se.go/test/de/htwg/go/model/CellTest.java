@@ -7,6 +7,8 @@ import java.awt.Point;
 import org.junit.Before;
 import org.junit.Test;
 
+import de.htwg.go.model.impl.Cell;
+
 public class CellTest {
 
 	Cell testCell1;
