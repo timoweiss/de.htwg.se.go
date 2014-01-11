@@ -27,7 +27,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
-	
 	private IGoController controller;
 	private JPanel panel;
 
@@ -39,6 +38,15 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private ImageIcon backgroundplay;
 	private ImageIcon whiteButton;
 	private ImageIcon blackButton;
+
+	private ImageIcon whiteStatsback;
+	private ImageIcon blackStatsback;
+
+	private ImageIcon whiteStatsbackA;
+	private ImageIcon blackStatsbackA;
+
+	private JLabel whiteStatsBackground;
+	private JLabel blackStatsBackground;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //
@@ -54,24 +62,20 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		// Statspanel //
 		final int statsxsize = 250;
 		final int statsysize = 500;
-
 		final int statsxpos = 500;
 		final int statsypos = 0;
 
-		// whitePoints //
-
-		final int blackScorexpos = 150;
-		final int blackScoreypos = 20;
-
-		final int blackScorexsize = 100;
-		final int blackScoreysize = 100;
-
 		// blackPoints //
-		final int whiteScorexpos = 150;
-		final int whiteScoreypos = 40;
+		final int blackScorexpos = 0;
+		final int blackScoreypos = 100;
+		final int blackScorexsize = 36;
+		final int blackScoreysize = 36;
 
-		final int whiteScorexsize = 100;
-		final int whiteScoreysize = 100;
+		// whitePoints //
+		final int whiteScorexpos = 0;
+		final int whiteScoreypos = 200;
+		final int whiteScorexsize = 36;
+		final int whiteScoreysize = 36;
 
 		// statuspanel //
 		final int statusxpos = 0;
@@ -86,17 +90,28 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int statustxsize = 500;
 		final int statustysize = 20;
 
-		
 		JMenuBar menuBar;
 		JMenu menu;
 		JMenuItem menuItem;
 		JFrame frame;
-		
+
 		// backgroundplay = new ImageIcon(
 		// "de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
 
 		backgroundplay = new ImageIcon(
 				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
+
+		whiteStatsback = new ImageIcon(
+				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteScoreboard.jpg");
+
+		whiteStatsbackA = new ImageIcon(
+				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteScoreboardAct.jpg");
+
+		blackStatsback = new ImageIcon(
+				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackScoreboard.jpg");
+
+		blackStatsbackA = new ImageIcon(
+				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackScoreboardAct.jpg");
 
 		try {
 			whiteButton = new ImageIcon(
@@ -142,25 +157,28 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		statspanel.setBounds(statsxpos, statsypos, statsxsize, statsysize);
 		statspanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
-		JLabel whiteLabel = new JLabel("Score white: ");
-		JLabel blackLabel = new JLabel("Score black: ");
-
 		whitePoints = new JLabel("0");
 		blackPoints = new JLabel("0");
 
-		whiteLabel.setBounds(10, 20, 100, 100);
 		whitePoints.setBounds(whiteScorexpos, whiteScoreypos, whiteScorexsize,
 				whiteScoreysize);
 
-		blackLabel.setBounds(10, 40, 100, 100);
 		blackPoints.setBounds(blackScorexpos, blackScoreypos, blackScorexsize,
 				blackScoreysize);
 
-		statspanel.add(whiteLabel);
 		statspanel.add(whitePoints);
-
-		statspanel.add(blackLabel);
 		statspanel.add(blackPoints);
+
+		whiteStatsBackground = new JLabel();
+		whiteStatsBackground.setBounds(0, 100, 180, 92);
+		whiteStatsBackground.setIcon(whiteStatsback);
+
+		blackStatsBackground = new JLabel();
+		blackStatsBackground.setBounds(0, 200, 180, 92);
+		blackStatsBackground.setIcon(blackStatsback);
+
+		statspanel.add(whiteStatsBackground);
+		statspanel.add(blackStatsBackground);
 
 		wrapper.add(statspanel);
 
@@ -216,7 +234,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private void print() {
 		JButton cell;
 		JLabel background;
-		
+
 		// Magic Numbers //
 		// Cells //
 		final int xBeginningPos = 18;
@@ -276,6 +294,14 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				backgroundysize);
 		background.setIcon(backgroundplay);
 		panel.add(background);
+
+		if (controller.getNext() == "white") {
+			whiteStatsBackground.setIcon(whiteStatsbackA);
+			blackStatsBackground.setIcon(blackStatsback);
+		} else {
+			blackStatsBackground.setIcon(blackStatsbackA);
+			whiteStatsBackground.setIcon(whiteStatsback);
+		}
 
 	}
 
