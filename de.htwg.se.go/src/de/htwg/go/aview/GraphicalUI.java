@@ -27,19 +27,14 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private static final long serialVersionUID = 1L;
 
-	private JMenuBar menuBar;
-	private JMenu menu;
-	private JMenuItem menuItem;
-	private JButton cell;
+	
 	private IGoController controller;
 	private JPanel panel;
-	private JFrame frame;
 
 	private JLabel whitePoints;
 	private JLabel blackPoints;
 
 	private JLabel statustext;
-	private JLabel background;
 
 	private ImageIcon backgroundplay;
 	private ImageIcon whiteButton;
@@ -91,6 +86,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int statustxsize = 500;
 		final int statustysize = 20;
 
+		
+		JMenuBar menuBar;
+		JMenu menu;
+		JMenuItem menuItem;
+		JFrame frame;
+		
 		// backgroundplay = new ImageIcon(
 		// "de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
 
@@ -213,6 +214,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	}
 
 	private final void print() {
+		JButton cell;
+		JLabel background;
+		
 		// Magic Numbers //
 		// Cells //
 		final int xBeginningPos = 18;
