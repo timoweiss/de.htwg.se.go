@@ -44,44 +44,52 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private ImageIcon backgroundplay;
 	private ImageIcon whiteButton;
 	private ImageIcon blackButton;
-	
-	// Magic Numbers //
-	
-	// Framesize//
-	private final int framexsize = 750;
-	private final int frameysize = 600;
-	
-	// Playpanelsize //
-	private final int playxsize = 500;
-	private final int playysize = 500;
-	
-	
-	// Statspanel //
-	private final int statsxsize = 250;
-	private final int statsysize = 500;
-	
-	private final int statsxpos = 500;
-	private final int statsypos = 0;
-	
-	// whiteLabel //
-	
-	// whitePoints //
-	
-	// blackLabel //
-	
-	// blackPoints //
-	
-	// statuspanel //
-	private final int statusxpos = 0;
-	private final int statusypos = 500;
-	
-	private final int statusxsize = 750;
-	private final int statusysize = 100;
-	
-	
-	
 
 	public GraphicalUI(IGoController controller) {
+		// Magic Numbers //
+
+		// Framesize//
+		final int framexsize = 750;
+		final int frameysize = 600;
+
+		// Playpanelsize //
+		final int playxsize = 500;
+		final int playysize = 500;
+
+		// Statspanel //
+		final int statsxsize = 250;
+		final int statsysize = 500;
+
+		final int statsxpos = 500;
+		final int statsypos = 0;
+
+		// whitePoints //
+
+		final int blackScorexpos = 150;
+		final int blackScoreypos = 20;
+
+		final int blackScorexsize = 100;
+		final int blackScoreysize = 100;
+
+		// blackPoints //
+		final int whiteScorexpos = 150;
+		final int whiteScoreypos = 40;
+
+		final int whiteScorexsize = 100;
+		final int whiteScoreysize = 100;
+
+		// statuspanel //
+		final int statusxpos = 0;
+		final int statusypos = 500;
+
+		final int statusxsize = 750;
+		final int statusysize = 100;
+
+		// statusText //
+		final int statustxpos = 0;
+		final int statustypos = 0;
+		final int statustxsize = 500;
+		final int statustysize = 20;
 
 		// backgroundplay = new ImageIcon(
 		// "de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
@@ -97,7 +105,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 			blackButton = new ImageIcon(
 					ImageIO.read(new File(
 							"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackStone.png")));
-		
+
 		} catch (IOException e) {
 			e.printStackTrace();
 		}
@@ -140,10 +148,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		blackPoints = new JLabel("0");
 
 		whiteLabel.setBounds(10, 20, 100, 100);
-		whitePoints.setBounds(150, 20, 100, 100);
+		whitePoints.setBounds(whiteScorexpos, whiteScoreypos, whiteScorexsize,
+				whiteScoreysize);
 
 		blackLabel.setBounds(10, 40, 100, 100);
-		blackPoints.setBounds(150, 40, 100, 100);
+		blackPoints.setBounds(blackScorexpos, blackScoreypos, blackScorexsize,
+				blackScoreysize);
 
 		statspanel.add(whiteLabel);
 		statspanel.add(whitePoints);
@@ -160,9 +170,10 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		statuspanel.setLayout(null);
 		statuspanel.setBounds(statusxpos, statusypos, statusxsize, statusysize);
 		statuspanel.setBorder(BorderFactory.createLineBorder(Color.black));
-		
+
 		statustext = new JLabel("status");
-		statustext.setBounds(0, 0, 500, 20);
+		statustext.setBounds(statustxpos, statustypos, statustxsize,
+				statustysize);
 		statuspanel.add(statustext);
 		wrapper.add(statuspanel);
 
@@ -202,20 +213,27 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	}
 
 	private final void print() {
+		// Magic Numbers //
+		final int xBeginningPos = 18;
+		final int yBeginningPos = 20;
+		final int distance = 54;
+		final int gameSize = 9;
+		final int cellSize = 36;
 
 		// Labels //
 
-		int x = 18;
-		int y = 20;
-		for (int i = 0; i < 9; i++) {
+		int x = xBeginningPos;
+		int y = yBeginningPos;
 
-			for (int j = 0; j < 9; j++) {
+		for (int i = 0; i < gameSize; i++) {
+
+			for (int j = 0; j < gameSize; j++) {
 
 				cell = new JButton();
 				cell.setActionCommand(i + "" + j);
 				cell.addActionListener(this);
 
-				cell.setSize(36, 36);
+				cell.setSize(cellSize, cellSize);
 				cell.setOpaque(true);
 				cell.setLocation(x, y);
 
@@ -235,10 +253,10 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				}
 
 				panel.add(cell);
-				y = y + 54;
+				y = y + distance;
 			}
-			x = x + 54;
-			y = 20;
+			x = x + distance;
+			y = yBeginningPos;
 		}
 
 		// background //

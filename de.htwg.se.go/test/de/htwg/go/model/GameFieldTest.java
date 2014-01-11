@@ -98,6 +98,7 @@ public class GameFieldTest {
 
 		assertFalse(testField.fenced(3, 3));
 		testField.setStone(2, 3, 1);
+		
 		assertTrue(testField.fenced(3, 3));
 		testField.setStone(3, 3, 1);
 
