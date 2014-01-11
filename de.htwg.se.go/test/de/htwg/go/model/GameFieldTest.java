@@ -59,6 +59,9 @@ public class GameFieldTest {
 		assertEquals(true, testField.setStone(5, 2));
 		assertEquals(false, testField.setStone(100, 100));
 		assertFalse(testField.setStone(5, 2));
+		
+		assertFalse(testField.setStone(100, 1));
+		assertFalse(testField.setStone(1, 100));
 	}
 
 	@Test

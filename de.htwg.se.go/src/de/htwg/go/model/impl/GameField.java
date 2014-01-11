@@ -102,7 +102,6 @@ public class GameField extends Observable implements IGameField {
 			blackList.add(gameField[y][x]);
 			blackPlayer.addScore(1);
 			moveEnd();
-
 		}
 
 		whiteIsNext = !whiteIsNext;
