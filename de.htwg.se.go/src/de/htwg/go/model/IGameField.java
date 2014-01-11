@@ -6,7 +6,7 @@ public interface IGameField {
 	 * returns which player is next (white or black)
 	 * @return a string who is next
 	 */
-	public String getNext();
+	String getNext();
 
 	/**
 	 * sets a stone at x,y
@@ -14,7 +14,7 @@ public interface IGameField {
 	 * @param y y-coordinate
 	 * @return true if setting the stone worked, false if not
 	 */
-	public boolean setStone(int x, int y);
+	boolean setStone(int x, int y);
 
 	/**
 	 * sets a stone at x,y with a color
@@ -22,7 +22,7 @@ public interface IGameField {
 	 * @param y y-coordinate
 	 * @param color
 	 */
-	public void setStone(int x, int y, int color);
+	void setStone(int x, int y, int color);
 
 	/**
 	 * returns the cell status of a stone at x,y
@@ -30,7 +30,7 @@ public interface IGameField {
 	 * @param y y-coordinate
 	 * @return cell status in int (unplaced = 0, white = 1, black = 2)
 	 */
-	public int getCellStatus(int x, int y);
+	int getCellStatus(int x, int y);
 
 	/**
 	 * toString method of the gamefield for console output

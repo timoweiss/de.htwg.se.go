@@ -213,7 +213,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	}
 
-	private final void print() {
+	private void print() {
 		JButton cell;
 		JLabel background;
 		
