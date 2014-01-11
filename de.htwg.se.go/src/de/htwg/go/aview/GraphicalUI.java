@@ -214,11 +214,18 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private final void print() {
 		// Magic Numbers //
+		// Cells //
 		final int xBeginningPos = 18;
 		final int yBeginningPos = 20;
 		final int distance = 54;
 		final int gameSize = 9;
 		final int cellSize = 36;
+
+		// Background //
+		final int backgroundxpos = 0;
+		final int backgroundypos = 0;
+		final int backgroundxsize = 500;
+		final int backgroundysize = 500;
 
 		// Labels //
 
@@ -261,7 +268,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// background //
 		background = new JLabel();
-		background.setBounds(0, 0, 500, 500);
+		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
+				backgroundysize);
 		background.setIcon(backgroundplay);
 		panel.add(background);
 

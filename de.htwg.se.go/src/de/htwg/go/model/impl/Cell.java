@@ -9,13 +9,13 @@ public class Cell implements Comparable<Cell>, ICell {
 	private Point coords;
 	private boolean checked;
 
-	public Cell(int x, int y) {
+	Cell(int x, int y) {
 		setStatus(0);
 		coords = new Point(x, y);
 		checked = false;
 	}
 
-	public Cell(int x, int y, int color) {
+	Cell(int x, int y, int color) {
 		setStatus(color);
 		coords = new Point(x, y);
 		checked = false;
