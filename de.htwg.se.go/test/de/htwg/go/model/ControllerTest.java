@@ -93,5 +93,14 @@ public class ControllerTest {
 			assertEquals("white", controller.getNext());
 		}
 	}
+	
+	@Test
+	public void testpass() {
+		controller.createField();
+		assertFalse(controller.pass());
+	
+		assertTrue(controller.pass());
+		
+	}
 
 }
