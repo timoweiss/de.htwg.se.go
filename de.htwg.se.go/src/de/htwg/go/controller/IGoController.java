@@ -68,4 +68,10 @@ public interface IGoController extends IObservable {
 	 */
 	String getNext();
 	
+	/**
+	 * allows a player to pass
+	 * @return true if both players passed, false if just one players passed
+	 */
+	boolean pass();
+	
 }

@@ -16,6 +16,8 @@ import de.htwg.go.util.observer.*;
  */
 public class GameField extends Observable implements IGameField {
 
+	private boolean pass = false;
+
 	private ICell gameField[][];
 	private boolean whiteIsNext = true;
 
@@ -105,6 +107,7 @@ public class GameField extends Observable implements IGameField {
 		}
 
 		whiteIsNext = !whiteIsNext;
+		pass = false;
 		return true;
 	}
 
@@ -121,6 +124,7 @@ public class GameField extends Observable implements IGameField {
 			moveEnd();
 
 		}
+		pass = false;
 
 	}
 
@@ -272,6 +276,21 @@ public class GameField extends Observable implements IGameField {
 
 	public boolean checked(int x, int y) {
 		return gameField[x][y].isChecked();
+	}
+
+	public boolean pass() {
+		
+		whiteIsNext = !whiteIsNext;
+		
+		if (pass) {
+			System.out.println("spiel beendet");
+			return true;
+		}
+
+		pass = true;
+
+		return false;
+
 	}
 
 }

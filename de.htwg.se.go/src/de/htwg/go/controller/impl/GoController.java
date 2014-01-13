@@ -75,4 +75,13 @@ public class GoController extends Observable implements IGoController {
 		return gamefield.getNext();
 	}
 
+	@Override
+	public boolean pass() {
+		boolean pass = gamefield.pass();
+
+		statusLine = "Player passed, " + gamefield.getNext() + " is next";
+		notifyObservers();
+		return pass;
+	}
+
 }

@@ -1,7 +1,5 @@
 package de.htwg.go.aview;
 
-
-
 import org.apache.log4j.Logger;
 
 import de.htwg.go.controller.IGoController;
@@ -28,28 +26,32 @@ public class TextUI implements IObserver {
 	private void printTui() {
 		logger.info(newLine + controller.tuiToString());
 		logger.info(newLine + controller.getStatus());
-		logger.info(newLine + "white Player score: " + controller.getwhitePlayerScore()
-				+ newLine + "black Player score: " + controller.getblackPlayerScore());
-		
+		logger.info(newLine + "white Player score: "
+				+ controller.getwhitePlayerScore() + newLine
+				+ "black Player score: " + controller.getblackPlayerScore());
+
 	}
 
 	public boolean inputLine(String line) {
 		boolean operate = true;
 
-
-		
 		if (line.equals("-quit")) {
 			operate = false;
 			logger.info("bye");
 			return false;
-		}
 
-		
-		// if the input has "123" set a Stone at 1, 2 with status 3
-		if (line.matches("[0-9][0-9]")) {
+		} else if (line.equals("-pass")) {
+
+			if (controller.pass()) {
+				operate = false;
+				logger.info("game has ended");
+			}
+
+		} else if (line.matches("[0-9][0-9]")) {
 			controller.setStone(Character.getNumericValue(line.charAt(0)),
 					Character.getNumericValue(line.charAt(1)));
 		} else {
+
 			logger.info("incorrect command");
 		}
 

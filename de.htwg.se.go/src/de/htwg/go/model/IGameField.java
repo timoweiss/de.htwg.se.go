@@ -65,4 +65,10 @@ public interface IGameField {
 	 * @return boolean
 	 */
 	boolean checked(int x, int y);
+	
+	/**
+	 * allows a player to pass
+	 * @return true if both players passed, false if just one players passed
+	 */
+	boolean pass();
 }
