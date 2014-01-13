@@ -2,6 +2,12 @@ package de.htwg.go.controller;
 
 import de.htwg.go.util.observer.IObservable;
 
+/**	
+ * Interface IGoController builds the bridge 
+ * between view and model
+ * 
+ */
+
 public interface IGoController extends IObservable {
 
 	/**
