@@ -1,5 +1,11 @@
 package de.htwg.go.model;
 
+/**
+ * Represents the Players of the Game.
+ * Provides methods to change/get the score or other player-properties
+ *
+ */
+
 public interface IPlayer {
 	/**
 	 *  returns the name of a Player

@@ -1,5 +1,9 @@
 package de.htwg.go.model;
-
+/**
+ * Represents the Gamefield of the Game.
+ * Provides serveral methods for the general game functionality
+ *
+ */
 public interface IGameField {
 	
 	/**
