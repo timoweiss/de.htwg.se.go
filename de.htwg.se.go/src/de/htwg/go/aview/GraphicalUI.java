@@ -261,6 +261,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		menu.addSeparator();
 		menuItem = new JMenuItem("About Go");
+		menuItem.addActionListener(this);
 		menu.add(menuItem);
 
 		frame.setJMenuBar(menuBar);
@@ -357,16 +358,19 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	public void actionPerformed(ActionEvent e) {
 		System.out.println(e.getActionCommand());
 
-		if (operate) {
+		String ActionCommand = e.getActionCommand();
 
-			String ActionCommand = e.getActionCommand();
+		if (ActionCommand.matches("[0-9][0-9]")) {
+			if (operate) {
 
-			if (ActionCommand.matches("[0-9][0-9]")) {
 				controller.setStone(
 						(int) (e.getActionCommand().charAt(0) - '0'), (int) (e
 								.getActionCommand().charAt(1) - '0'));
 				repaint();
-			} else if (ActionCommand.equals("pass")) {
+			}
+		} else if (ActionCommand.equals("pass")) {
+			if (operate) {
+
 				if (controller.pass()) {
 					JOptionPane.showMessageDialog(
 							null,
@@ -377,43 +381,42 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 							"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
 
 					operate = false;
-
 				}
-			} else if (ActionCommand.equals("View Sourcecode")) {
-				Desktop desktop = Desktop.isDesktopSupported() ? Desktop
-						.getDesktop() : null;
-				try {
-					desktop.browse(new URL(
-							"https://github.com/timoweiss/de.htwg.se.go")
-							.toURI());
-				} catch (Exception x) {
-					logger.error("not able to parse url to visit");
-				}
-
-			} else if (ActionCommand.equals("Rules")) {
-
-				Desktop desktop = Desktop.isDesktopSupported() ? Desktop
-						.getDesktop() : null;
-				try {
-					desktop.browse(new URL(
-							"http://en.wikipedia.org/wiki/Rules_of_Go").toURI());
-				} catch (Exception x) {
-					logger.error("not able to parse url to visit");
-				}
-
-			} else if (ActionCommand.equals("Exit")) {
-				System.exit(0);
-
-			} else if (ActionCommand.equals("New Game")) {
-				controller.createField();
-
-			} else if (ActionCommand.equals("About Go")) {
-				JOptionPane.showMessageDialog(null,
-						"Go is a fucking awesome game!", "About Go",
-						JOptionPane.OK_CANCEL_OPTION);
-
-				operate = false;
 			}
+		} else if (ActionCommand.equals("View Sourcecode")) {
+			Desktop desktop = Desktop.isDesktopSupported() ? Desktop
+					.getDesktop() : null;
+			try {
+				desktop.browse(new URL(
+						"https://github.com/timoweiss/de.htwg.se.go").toURI());
+			} catch (Exception x) {
+				logger.error("not able to parse url to visit");
+			}
+
+		} else if (ActionCommand.equals("Rules")) {
+
+			Desktop desktop = Desktop.isDesktopSupported() ? Desktop
+					.getDesktop() : null;
+			try {
+				desktop.browse(new URL(
+						"http://en.wikipedia.org/wiki/Rules_of_Go").toURI());
+			} catch (Exception x) {
+				logger.error("not able to parse url to visit");
+			}
+
+		} else if (ActionCommand.equals("Exit")) {
+			System.exit(0);
+
+		} else if (ActionCommand.equals("New Game")) {
+			controller.createField();
+
+		} else if (ActionCommand.equals("About Go")) {
+			JOptionPane
+					.showMessageDialog(
+							null,
+							"Go by \nTimo Weiss \n Michael Knoch \n (c) Copyright Go contributors and others 2014.  \nAll rights reserved.",
+							"About Go", JOptionPane.OK_CANCEL_OPTION);
 		}
+
 	}
 }
