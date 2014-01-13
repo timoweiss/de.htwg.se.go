@@ -368,40 +368,16 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				repaint();
 			}
 		} else if (actionCommand.equals("pass")) {
-			if (operate) {
-
-				if (controller.pass()) {
-					JOptionPane.showMessageDialog(
-							null,
-							"Game has ended. white score: "
-									+ controller.getwhitePlayerScore()
-									+ " black player score: "
-									+ controller.getblackPlayerScore(),
-							"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
-
-					operate = false;
-				}
-			}
+			
+			guiPass();
+			
 		} else if (actionCommand.equals("View Sourcecode")) {
-			Desktop desktop = Desktop.isDesktopSupported() ? Desktop
-					.getDesktop() : null;
-			try {
-				desktop.browse(new URL(
-						"https://github.com/timoweiss/de.htwg.se.go").toURI());
-			} catch (Exception x) {
-				logger.error("not able to parse url to visit");
-			}
+
+			showCode();
 
 		} else if (actionCommand.equals("Rules")) {
 
-			Desktop desktop = Desktop.isDesktopSupported() ? Desktop
-					.getDesktop() : null;
-			try {
-				desktop.browse(new URL(
-						"http://en.wikipedia.org/wiki/Rules_of_Go").toURI());
-			} catch (Exception x) {
-				logger.error("not able to parse url to visit");
-			}
+			showRules();
 
 		} else if (actionCommand.equals("Exit")) {
 			System.exit(0);
@@ -410,12 +386,55 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 			controller.createField();
 
 		} else if (actionCommand.equals("About Go")) {
-			JOptionPane
-					.showMessageDialog(
-							null,
-							"Go by \nTimo Weiss \n Michael Knoch \n (c) Copyright Go contributors and others 2014.  \nAll rights reserved.",
-							"About Go", JOptionPane.OK_CANCEL_OPTION);
+			showAboutDialog();
 		}
 
+	}
+
+	private void showAboutDialog() {
+		JOptionPane
+				.showMessageDialog(
+						null,
+						"Go by \nTimo Weiss \n Michael Knoch \n (c) Copyright Go contributors and others 2014.  \nAll rights reserved.",
+						"About Go", JOptionPane.OK_CANCEL_OPTION);
+	}
+
+	private void showRules() {
+		Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop()
+				: null;
+		try {
+			desktop.browse(new URL("http://en.wikipedia.org/wiki/Rules_of_Go")
+					.toURI());
+		} catch (Exception x) {
+			logger.error("not able to parse url to visit");
+		}
+	}
+
+	private void showCode() {
+		Desktop desktop = Desktop.isDesktopSupported() ? Desktop.getDesktop()
+				: null;
+		try {
+			desktop.browse(new URL("https://github.com/timoweiss/de.htwg.se.go")
+					.toURI());
+		} catch (Exception x) {
+			logger.error("not able to parse url to visit");
+		}
+	}
+	
+	private void guiPass() {
+		if (operate) {
+
+			if (controller.pass()) {
+				JOptionPane.showMessageDialog(
+						null,
+						"Game has ended. white score: "
+								+ controller.getwhitePlayerScore()
+								+ " black player score: "
+								+ controller.getblackPlayerScore(),
+						"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
+
+				operate = false;
+			}
+		}
 	}
 }
