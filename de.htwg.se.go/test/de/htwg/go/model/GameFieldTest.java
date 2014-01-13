@@ -98,7 +98,7 @@ public class GameFieldTest {
 
 		assertFalse(testField.fenced(3, 3));
 		testField.setStone(2, 3, 1);
-		
+
 		assertTrue(testField.fenced(3, 3));
 		testField.setStone(3, 3, 1);
 
@@ -128,12 +128,13 @@ public class GameFieldTest {
 				"    0 1 2 3 4 5 6 7 8\n    _ _ _ _ _ _ _ _ _\n0  |0 0 0 0 0 0 0 0 0 \n1  |0 0 0 0 0 0 0 0 0 \n2  |0 0 0 0 0 0 0 0 0 \n3  |0 0 0 0 0 0 0 0 0 \n4  |0 0 0 0 0 0 0 0 0 \n5  |0 0 0 0 0 0 0 0 0 \n6  |0 0 0 0 0 0 0 0 0 \n7  |0 0 0 0 0 0 0 0 0 \n8  |0 0 0 0 0 0 0 0 0 \n",
 				testField.toString());
 	}
-	
+
 	@Test
 	public void testpass() {
 		testField.pass();
 		assertTrue(testField.pass());
 		assertFalse(testField2.pass());
+
 	}
 
 }
