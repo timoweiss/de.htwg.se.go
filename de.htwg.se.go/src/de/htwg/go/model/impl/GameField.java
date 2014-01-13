@@ -279,11 +279,10 @@ public class GameField extends Observable implements IGameField {
 	}
 
 	public boolean pass() {
-		
+
 		whiteIsNext = !whiteIsNext;
-		
+
 		if (pass) {
-			System.out.println("spiel beendet");
 			return true;
 		}
 

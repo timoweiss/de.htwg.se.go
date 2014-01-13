@@ -333,7 +333,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		background.setIcon(backgroundplay);
 		panel.add(background);
 
-		if (controller.getNext() == "white") {
+		if (controller.getNext().equals("white")) {
 			whiteStatsBackground.setIcon(whiteStatsbackA);
 			blackStatsBackground.setIcon(blackStatsback);
 		} else {
@@ -356,11 +356,10 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		System.out.println(e.getActionCommand());
 
-		String ActionCommand = e.getActionCommand();
+		String actionCommand = e.getActionCommand();
 
-		if (ActionCommand.matches("[0-9][0-9]")) {
+		if (actionCommand.matches("[0-9][0-9]")) {
 			if (operate) {
 
 				controller.setStone(
@@ -368,7 +367,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 								.getActionCommand().charAt(1) - '0'));
 				repaint();
 			}
-		} else if (ActionCommand.equals("pass")) {
+		} else if (actionCommand.equals("pass")) {
 			if (operate) {
 
 				if (controller.pass()) {
@@ -383,7 +382,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 					operate = false;
 				}
 			}
-		} else if (ActionCommand.equals("View Sourcecode")) {
+		} else if (actionCommand.equals("View Sourcecode")) {
 			Desktop desktop = Desktop.isDesktopSupported() ? Desktop
 					.getDesktop() : null;
 			try {
@@ -393,7 +392,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				logger.error("not able to parse url to visit");
 			}
 
-		} else if (ActionCommand.equals("Rules")) {
+		} else if (actionCommand.equals("Rules")) {
 
 			Desktop desktop = Desktop.isDesktopSupported() ? Desktop
 					.getDesktop() : null;
@@ -404,13 +403,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				logger.error("not able to parse url to visit");
 			}
 
-		} else if (ActionCommand.equals("Exit")) {
+		} else if (actionCommand.equals("Exit")) {
 			System.exit(0);
 
-		} else if (ActionCommand.equals("New Game")) {
+		} else if (actionCommand.equals("New Game")) {
 			controller.createField();
 
-		} else if (ActionCommand.equals("About Go")) {
+		} else if (actionCommand.equals("About Go")) {
 			JOptionPane
 					.showMessageDialog(
 							null,
