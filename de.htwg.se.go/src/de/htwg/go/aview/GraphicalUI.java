@@ -2,11 +2,13 @@ package de.htwg.go.aview;
 
 import java.awt.BorderLayout;
 import java.awt.Color;
+import java.awt.Desktop;
 import java.awt.GridLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
+import java.net.URL;
 
 import javax.imageio.ImageIO;
 import javax.swing.ImageIcon;
@@ -16,8 +18,10 @@ import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.border.LineBorder;
+
+import org.apache.log4j.Logger;
 
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.util.observer.Event;
@@ -26,6 +30,9 @@ import de.htwg.go.util.observer.IObserver;
 public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private static final long serialVersionUID = 1L;
+	private boolean operate = true;
+
+	private Logger logger = Logger.getLogger("de.htwg.go");
 
 	private IGoController controller;
 	private JPanel panel;
@@ -46,6 +53,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private ImageIcon whiteStatsbackA;
 	private ImageIcon blackStatsbackA;
 
+	private ImageIcon passMove;
+
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
 
@@ -54,7 +63,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Framesize//
 		final int framexsize = 750;
-		final int frameysize = 700;
+		final int frameysize = 650;
 
 		// Playpanelsize //
 		final int playxsize = 500;
@@ -83,10 +92,10 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// statuspanel //
 		final int statusxpos = 0;
-		final int statusypos = 600;
+		final int statusypos = 575;
 
 		final int statusxsize = 750;
-		final int statusysize = 100;
+		final int statusysize = 50;
 
 		// statusText //
 		final int statustxpos = 0;
@@ -101,6 +110,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		backgroundplay = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
+
+		passMove = new ImageIcon(
+				"src/de/htwg/go/util/ressources/images/passMove.jpg");
 
 		whiteStatsback = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/whiteScoreboard.jpg");
@@ -125,7 +137,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 					"src/de/htwg/go/util/ressources/images/blackStone.png")));
 
 		} catch (IOException e) {
-
+			logger.error("not able to initialize image ressources");
 		}
 
 		this.controller = controller;
@@ -135,6 +147,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		frame = new JFrame("GO");
 		frame.setSize(framexsize, frameysize);
 		frame.setResizable(false);
+		frame.setLocationRelativeTo(null);
+		frame.setDefaultCloseOperation(EXIT_ON_CLOSE);
 
 		// Wrapperpanel //
 
@@ -167,6 +181,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		blackPoints.setBounds(blackScorexpos, blackScoreypos, blackScorexsize,
 				blackScoreysize);
 
+		JButton passButton = new JButton();
+		passButton.setBounds(100, 300, 97, 30);
+		passButton.addActionListener(this);
+		passButton.setIcon(passMove);
+		passButton.setActionCommand("pass");
+
 		statspanel.add(whitePoints);
 		statspanel.add(blackPoints);
 
@@ -180,6 +200,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		statspanel.add(whiteStatsBackground);
 		statspanel.add(blackStatsBackground);
+		statspanel.add(passButton);
 		statspanel.setOpaque(false);
 
 		wrapper.add(statspanel);
@@ -191,7 +212,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		statuspanel.setLayout(null);
 		statuspanel.setBounds(statusxpos, statusypos, statusxsize, statusysize);
 
-		statustext = new JLabel("status");
+		statustext = new JLabel(controller.getStatus());
 		statustext.setBounds(statustxpos, statustypos, statustxsize,
 				statustysize);
 		statuspanel.add(statustext);
@@ -208,26 +229,36 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		// Gamemenu//
 		menu = new JMenu("Game");
 		menuBar.add(menu);
+
 		menuItem = new JMenuItem("New Game");
+		menuItem.addActionListener(this);
+
 		menu.add(menuItem);
 		menuItem = new JMenuItem("Exit");
+		menuItem.addActionListener(this);
 		menu.add(menuItem);
 
 		// Settings //
 		menu = new JMenu("Settings");
+		menuItem.addActionListener(this);
 		menuBar.add(menu);
+
 		menuItem = new JMenuItem("Appearance");
-		menu.add(menuItem);
-		menuItem = new JMenuItem("Time settings");
 		menu.add(menuItem);
 
 		// Help //
 		menu = new JMenu("Help");
+		menuItem.addActionListener(this);
 		menuBar.add(menu);
+
 		menuItem = new JMenuItem("Rules");
+		menuItem.addActionListener(this);
 		menu.add(menuItem);
+
 		menuItem = new JMenuItem("View Sourcecode");
+		menuItem.addActionListener(this);
 		menu.add(menuItem);
+
 		menu.addSeparator();
 		menuItem = new JMenuItem("About Go");
 		menu.add(menuItem);
@@ -324,13 +355,65 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
+		System.out.println(e.getActionCommand());
 
-		if (e.getActionCommand().matches("[0-9][0-9]")) {
-			controller.setStone((int) (e.getActionCommand().charAt(0) - '0'),
-					(int) (e.getActionCommand().charAt(1) - '0'));
-			repaint();
+		if (operate) {
+
+			String ActionCommand = e.getActionCommand();
+
+			if (ActionCommand.matches("[0-9][0-9]")) {
+				controller.setStone(
+						(int) (e.getActionCommand().charAt(0) - '0'), (int) (e
+								.getActionCommand().charAt(1) - '0'));
+				repaint();
+			} else if (ActionCommand.equals("pass")) {
+				if (controller.pass()) {
+					JOptionPane.showMessageDialog(
+							null,
+							"Game has ended. white score: "
+									+ controller.getwhitePlayerScore()
+									+ " black player score: "
+									+ controller.getblackPlayerScore(),
+							"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
+
+					operate = false;
+
+				}
+			} else if (ActionCommand.equals("View Sourcecode")) {
+				Desktop desktop = Desktop.isDesktopSupported() ? Desktop
+						.getDesktop() : null;
+				try {
+					desktop.browse(new URL(
+							"https://github.com/timoweiss/de.htwg.se.go")
+							.toURI());
+				} catch (Exception x) {
+					logger.error("not able to parse url to visit");
+				}
+
+			} else if (ActionCommand.equals("Rules")) {
+
+				Desktop desktop = Desktop.isDesktopSupported() ? Desktop
+						.getDesktop() : null;
+				try {
+					desktop.browse(new URL(
+							"http://en.wikipedia.org/wiki/Rules_of_Go").toURI());
+				} catch (Exception x) {
+					logger.error("not able to parse url to visit");
+				}
+
+			} else if (ActionCommand.equals("Exit")) {
+				System.exit(0);
+
+			} else if (ActionCommand.equals("New Game")) {
+				controller.createField();
+
+			} else if (ActionCommand.equals("About Go")) {
+				JOptionPane.showMessageDialog(null,
+						"Go is a fucking awesome game!", "About Go",
+						JOptionPane.OK_CANCEL_OPTION);
+
+				operate = false;
+			}
 		}
-
 	}
-
 }

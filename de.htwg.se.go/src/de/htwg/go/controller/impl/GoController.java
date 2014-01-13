@@ -17,7 +17,7 @@ public class GoController extends Observable implements IGoController {
 	@Override
 	public void createField() {
 		gamefield = new GameField();
-		statusLine = "Gamefield successfully created\n" + gamefield.getNext()
+		statusLine = "Gamefield successfully created, \n" + gamefield.getNext()
 				+ " is next";
 		notifyObservers();
 	}
@@ -34,7 +34,7 @@ public class GoController extends Observable implements IGoController {
 		String next = gamefield.getNext();
 		if (gamefield.setStone(x, y)) {
 			statusLine = ("set " + next.toUpperCase() + " at (" + x + "," + y
-					+ ")\n" + gamefield.getNext() + " is next");
+					+ ") \n" + gamefield.getNext() + " is next");
 			status = true;
 
 		} else {
