@@ -17,6 +17,7 @@ import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.border.LineBorder;
 
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.util.observer.Event;
@@ -53,11 +54,14 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		// Framesize//
 		final int framexsize = 750;
-		final int frameysize = 600;
+		final int frameysize = 700;
 
 		// Playpanelsize //
 		final int playxsize = 500;
 		final int playysize = 500;
+
+		final int playxpos = 19;
+		final int playypos = 50;
 
 		// Statspanel //
 		final int statsxsize = 250;
@@ -66,20 +70,20 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int statsypos = 0;
 
 		// whitePoints //
-		final int whiteScorexpos = 0;
-		final int whiteScoreypos = 100;
-		final int whiteScorexsize = 36;
-		final int whiteScoreysize = 36;
+		final int whiteScorexpos = 135;
+		final int whiteScoreypos = 95;
+		final int whiteScorexsize = 80;
+		final int whiteScoreysize = 30;
 
 		// blackPoints //
-		final int blackScorexpos = 0;
-		final int blackScoreypos = 200;
-		final int blackScorexsize = 36;
-		final int blackScoreysize = 36;
+		final int blackScorexpos = 135;
+		final int blackScoreypos = 208;
+		final int blackScorexsize = 80;
+		final int blackScoreysize = 30;
 
 		// statuspanel //
 		final int statusxpos = 0;
-		final int statusypos = 500;
+		final int statusypos = 600;
 
 		final int statusxsize = 750;
 		final int statusysize = 100;
@@ -94,7 +98,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		JMenu menu;
 		JMenuItem menuItem;
 		JFrame frame;
-
 
 		backgroundplay = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
@@ -145,6 +148,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		// Playpanel //
 		panel = new JPanel();
 		panel.setSize(playxsize, playysize);
+		panel.setBounds(playxpos, playypos, playxsize, playysize);
 
 		panel.setLayout(null);
 		wrapper.add(panel);
@@ -167,11 +171,11 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		statspanel.add(blackPoints);
 
 		whiteStatsBackground = new JLabel();
-		whiteStatsBackground.setBounds(0, 100, 180, 92);
+		whiteStatsBackground.setBounds(50, 50, 180, 92);
 		whiteStatsBackground.setIcon(whiteStatsback);
 
 		blackStatsBackground = new JLabel();
-		blackStatsBackground.setBounds(0, 200, 180, 92);
+		blackStatsBackground.setBounds(50, 164, 180, 92);
 		blackStatsBackground.setIcon(blackStatsback);
 
 		statspanel.add(whiteStatsBackground);
@@ -320,9 +324,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
-		controller.setStone((int) (e.getActionCommand().charAt(0) - '0'),
-				(int) (e.getActionCommand().charAt(1) - '0'));
-		repaint();
+
+		if (e.getActionCommand().matches("[0-9][0-9]")) {
+			controller.setStone((int) (e.getActionCommand().charAt(0) - '0'),
+					(int) (e.getActionCommand().charAt(1) - '0'));
+			repaint();
+		}
+
 	}
 
 }
