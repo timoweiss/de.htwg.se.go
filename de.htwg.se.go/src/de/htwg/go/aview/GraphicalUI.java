@@ -42,7 +42,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private JLabel statustext;
 
-	private ImageIcon backgroundImg;
+	
 	private ImageIcon backgroundplay;
 	private ImageIcon whiteButton;
 	private ImageIcon blackButton;
@@ -53,7 +53,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private ImageIcon whiteStatsbackA;
 	private ImageIcon blackStatsbackA;
 
-	private ImageIcon passMove;
+	
 
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
@@ -117,6 +117,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		backgroundplay = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
 
+		ImageIcon passMove;
 		passMove = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/passMove.jpg");
 
@@ -132,6 +133,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		blackStatsbackA = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/blackScoreboardAct.jpg");
 
+		ImageIcon backgroundImg;
 		backgroundImg = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/guiBackground.jpg");
 
