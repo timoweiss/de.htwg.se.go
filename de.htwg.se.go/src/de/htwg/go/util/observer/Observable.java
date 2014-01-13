@@ -4,6 +4,12 @@ import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 
+/**
+ * Observer-Pattern by Marko Boger.
+ * https://github.com/markoboger/de.htwg.se.sudoku
+ *
+ */
+
 public class Observable implements IObservable {
 
 	private List<IObserver> subscribers = new ArrayList<IObserver>(2);
