@@ -1,5 +1,11 @@
 package de.htwg.go.model;
 
+/**
+ * Interface IScore sets the score to a given player.
+ * It's also able to return the current score.
+ *
+ */
+
 public interface IScore {
 	/**
 	 * returns the score value
