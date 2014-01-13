@@ -368,9 +368,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				repaint();
 			}
 		} else if (actionCommand.equals("pass")) {
-			
+
 			guiPass();
-			
+
 		} else if (actionCommand.equals("View Sourcecode")) {
 
 			showCode();
@@ -420,21 +420,20 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 			logger.error("not able to parse url to visit");
 		}
 	}
-	
+
 	private void guiPass() {
-		if (operate) {
+		if (operate && controller.pass()) {
 
-			if (controller.pass()) {
-				JOptionPane.showMessageDialog(
-						null,
-						"Game has ended. white score: "
-								+ controller.getwhitePlayerScore()
-								+ " black player score: "
-								+ controller.getblackPlayerScore(),
-						"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
+			JOptionPane.showMessageDialog(
+					null,
+					"Game has ended. white score: "
+							+ controller.getwhitePlayerScore()
+							+ " black player score: "
+							+ controller.getblackPlayerScore(),
+					"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
 
-				operate = false;
-			}
+			operate = false;
+
 		}
 	}
 }
