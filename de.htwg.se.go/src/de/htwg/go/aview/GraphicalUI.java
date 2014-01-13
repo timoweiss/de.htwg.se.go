@@ -103,6 +103,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int statustxsize = 500;
 		final int statustysize = 20;
 
+		// passbutton //
+		final int passbuttonxpos = 100;
+		final int passbuttonypos = 300;
+		final int passbuttonxsize = 97;
+		final int passbuttonysize = 30;
+
 		JMenuBar menuBar;
 		JMenu menu;
 		JMenuItem menuItem;
@@ -182,7 +188,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				blackScoreysize);
 
 		JButton passButton = new JButton();
-		passButton.setBounds(100, 300, 97, 30);
+		passButton.setBounds(passbuttonxpos, passbuttonypos, passbuttonxsize,
+				passbuttonysize);
 		passButton.addActionListener(this);
 		passButton.setIcon(passMove);
 		passButton.setActionCommand("pass");
@@ -190,12 +197,26 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		statspanel.add(whitePoints);
 		statspanel.add(blackPoints);
 
+		final int whitestatsbackgroundxpos = 50;
+		final int whitestatsbackgroundypos = 50;
+		final int whitestatsbackgroundxsize = 180;
+		final int whitestatsbackgroundysize = 92;
+
 		whiteStatsBackground = new JLabel();
-		whiteStatsBackground.setBounds(50, 50, 180, 92);
+		whiteStatsBackground.setBounds(whitestatsbackgroundxpos,
+				whitestatsbackgroundypos, whitestatsbackgroundxsize,
+				whitestatsbackgroundysize);
 		whiteStatsBackground.setIcon(whiteStatsback);
 
+		final int blackstatsbackgroundxpos = 50;
+		final int blackstatsbackgroundypos = 164;
+		final int blackstatsbackgroundxsize = 180;
+		final int blackstatsbackgroundysize = 92;
+
 		blackStatsBackground = new JLabel();
-		blackStatsBackground.setBounds(50, 164, 180, 92);
+		blackStatsBackground.setBounds(blackstatsbackgroundxpos,
+				blackstatsbackgroundypos, blackstatsbackgroundxsize,
+				blackstatsbackgroundysize);
 		blackStatsBackground.setIcon(blackStatsback);
 
 		statspanel.add(whiteStatsBackground);
@@ -218,9 +239,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		statuspanel.add(statustext);
 		wrapper.add(statuspanel);
 
+		final int backgroundxsize = 750;
+		final int backgroundysize = 600;
+
 		JLabel background = new JLabel();
 		background.setIcon(backgroundImg);
-		background.setBounds(0, 0, 750, 600);
+		background.setBounds(0, 0, backgroundxsize, backgroundysize);
 		wrapper.add(background);
 
 		// Menu//
