@@ -9,7 +9,6 @@ import java.io.File;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
-import javax.swing.BorderFactory;
 import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JFrame;
@@ -35,6 +34,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private JLabel statustext;
 
+	private ImageIcon backgroundImg;
 	private ImageIcon backgroundplay;
 	private ImageIcon whiteButton;
 	private ImageIcon blackButton;
@@ -65,17 +65,17 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int statsxpos = 500;
 		final int statsypos = 0;
 
-		// blackPoints //
-		final int blackScorexpos = 0;
-		final int blackScoreypos = 100;
-		final int blackScorexsize = 36;
-		final int blackScoreysize = 36;
-
 		// whitePoints //
 		final int whiteScorexpos = 0;
-		final int whiteScoreypos = 200;
+		final int whiteScoreypos = 100;
 		final int whiteScorexsize = 36;
 		final int whiteScoreysize = 36;
+
+		// blackPoints //
+		final int blackScorexpos = 0;
+		final int blackScoreypos = 200;
+		final int blackScorexsize = 36;
+		final int blackScoreysize = 36;
 
 		// statuspanel //
 		final int statusxpos = 0;
@@ -95,35 +95,34 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		JMenuItem menuItem;
 		JFrame frame;
 
-		// backgroundplay = new ImageIcon(
-		// "de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
 
 		backgroundplay = new ImageIcon(
-				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\gamefield99.jpg");
+				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
 
 		whiteStatsback = new ImageIcon(
-				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteScoreboard.jpg");
+				"src/de/htwg/go/util/ressources/images/whiteScoreboard.jpg");
 
 		whiteStatsbackA = new ImageIcon(
-				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteScoreboardAct.jpg");
+				"src/de/htwg/go/util/ressources/images/whiteScoreboardAct.jpg");
 
 		blackStatsback = new ImageIcon(
-				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackScoreboard.jpg");
+				"src/de/htwg/go/util/ressources/images/blackScoreboard.jpg");
 
 		blackStatsbackA = new ImageIcon(
-				"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackScoreboardAct.jpg");
+				"src/de/htwg/go/util/ressources/images/blackScoreboardAct.jpg");
+
+		backgroundImg = new ImageIcon(
+				"src/de/htwg/go/util/ressources/images/guiBackground.jpg");
 
 		try {
-			whiteButton = new ImageIcon(
-					ImageIO.read(new File(
-							"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\whiteStone.png")));
+			whiteButton = new ImageIcon(ImageIO.read(new File(
+					"src/de/htwg/go/util/ressources/images/whiteStone.png")));
 
-			blackButton = new ImageIcon(
-					ImageIO.read(new File(
-							"C:\\Users\\michi\\git\\de.htwg.se.go\\de.htwg.se.go\\src\\de\\htwg\\go\\util\\images\\blackStone.png")));
+			blackButton = new ImageIcon(ImageIO.read(new File(
+					"src/de/htwg/go/util/ressources/images/blackStone.png")));
 
 		} catch (IOException e) {
-			e.printStackTrace();
+
 		}
 
 		this.controller = controller;
@@ -148,14 +147,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		panel.setSize(playxsize, playysize);
 
 		panel.setLayout(null);
-		panel.setBorder(BorderFactory.createLineBorder(Color.black));
 		wrapper.add(panel);
 
 		// Statspanel //
 		JPanel statspanel = new JPanel();
 		statspanel.setLayout(null);
 		statspanel.setBounds(statsxpos, statsypos, statsxsize, statsysize);
-		statspanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
 		whitePoints = new JLabel("0");
 		blackPoints = new JLabel("0");
@@ -179,6 +176,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		statspanel.add(whiteStatsBackground);
 		statspanel.add(blackStatsBackground);
+		statspanel.setOpaque(false);
 
 		wrapper.add(statspanel);
 
@@ -188,13 +186,17 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		JPanel statuspanel = new JPanel();
 		statuspanel.setLayout(null);
 		statuspanel.setBounds(statusxpos, statusypos, statusxsize, statusysize);
-		statuspanel.setBorder(BorderFactory.createLineBorder(Color.black));
 
 		statustext = new JLabel("status");
 		statustext.setBounds(statustxpos, statustypos, statustxsize,
 				statustysize);
 		statuspanel.add(statustext);
 		wrapper.add(statuspanel);
+
+		JLabel background = new JLabel();
+		background.setIcon(backgroundImg);
+		background.setBounds(0, 0, 750, 600);
+		wrapper.add(background);
 
 		// Menu//
 		menuBar = new JMenuBar();
