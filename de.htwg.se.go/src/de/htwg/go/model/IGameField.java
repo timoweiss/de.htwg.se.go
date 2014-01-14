@@ -75,4 +75,10 @@ public interface IGameField {
 	 * @return true if both players passed, false if just one players passed
 	 */
 	boolean pass();
+	
+	/**
+	 * returns the size of the gamefield x * x
+	 * @return int
+	 */
+	int getGameFieldSize();
 }
