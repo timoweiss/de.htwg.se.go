@@ -1,2 +1,9 @@
+*.class
+
+# Package Files #
+*.jar
+*.war
+*.DS_Store
+*.ear
 /bin
-/target
+/doc

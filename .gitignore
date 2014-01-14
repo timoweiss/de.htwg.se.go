@@ -3,5 +3,8 @@
 # Package Files #
 *.jar
 *.war
+*.DS_Store
 *.ear
 /bin
+/doc
+/de.htwg.se.go
