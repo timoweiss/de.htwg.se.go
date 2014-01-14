@@ -5,6 +5,8 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.google.inject.Inject;
+
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
@@ -31,15 +33,22 @@ public class GameField extends Observable implements IGameField {
 	private IPlayer blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
-	private static final int LENGTH = 4;
 
+	private static final int LENGTH = 9;
+	
+	// hell of injections?
+	@Inject
 	public GameField() {
 		randomNext();
 		createField();
 
 		whitePlayer = new Player();
 		blackPlayer = new Player();
-
+		
+		//same instance??
+//		this.whitePlayer = iPlayer;
+//		this.blackPlayer = iPlayer;
+		
 		blackList = new TreeSet<ICell>();
 		whiteList = new TreeSet<ICell>();
 
@@ -50,6 +59,7 @@ public class GameField extends Observable implements IGameField {
 	/*
 	 * initializes the field
 	 */
+	//@inject ?
 	private void createField() {
 
 		this.gameField = new Cell[LENGTH][LENGTH];
