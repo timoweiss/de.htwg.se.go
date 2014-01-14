@@ -11,9 +11,9 @@ import de.htwg.go.util.observer.IObservable;
 public interface IGoController extends IObservable {
 
 	/**
-	 * creates a gamefield to play
+	 * creates a gamefield to play (x * x)
 	 */
-	void createField();
+	void createField(int x);
 
 
 	
@@ -86,4 +86,14 @@ public interface IGoController extends IObservable {
 	 */
 	int getGameFieldSize();
 	
+	/**
+	 * stops the game
+	 */
+	void stop();
+	
+	/**
+	 * returns if the game is still running
+	 * @return boolean
+	 */
+	boolean getOperate();
 }

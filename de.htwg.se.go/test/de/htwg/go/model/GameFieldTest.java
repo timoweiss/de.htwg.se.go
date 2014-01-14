@@ -16,7 +16,7 @@ public class GameFieldTest {
 
 	@Before
 	public void setUp() throws Exception {
-		testField = new GameField();
+		testField = new GameField(9);
 		testField.setStone(2, 2, 1);
 		testField.setStone(3, 2, 1);
 		testField.setStone(4, 2, 1);
@@ -27,14 +27,14 @@ public class GameFieldTest {
 		testField.setStone(2, 5, 1);
 		testField.setStone(2, 4, 1);
 
-		testField2 = new GameField();
+		testField2 = new GameField(9);
 		testField2.setStone(6, 6, 2);
 		testField2.setStone(5, 7, 2);
 		testField2.setStone(4, 6, 2);
 		testField2.setStone(5, 5, 2);
 		testField2.setStone(5, 6, 1);
 
-		emptyTestField = new GameField();
+		emptyTestField = new GameField(9);
 	}
 
 	@Test
@@ -122,7 +122,7 @@ public class GameFieldTest {
 
 	@Test
 	public void testtoString() {
-		testField = new GameField();
+		testField = new GameField(9);
 
 		assertEquals(
 				"    0 1 2 3 4 5 6 7 8\n    _ _ _ _ _ _ _ _ _\n0  |0 0 0 0 0 0 0 0 0 \n1  |0 0 0 0 0 0 0 0 0 \n2  |0 0 0 0 0 0 0 0 0 \n3  |0 0 0 0 0 0 0 0 0 \n4  |0 0 0 0 0 0 0 0 0 \n5  |0 0 0 0 0 0 0 0 0 \n6  |0 0 0 0 0 0 0 0 0 \n7  |0 0 0 0 0 0 0 0 0 \n8  |0 0 0 0 0 0 0 0 0 \n",

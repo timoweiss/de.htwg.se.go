@@ -37,5 +37,11 @@ maven-4.0.0.xsd">
                   <scope>provided</scope>
         </dependency>
 
+		<dependency>
+			<groupId>com.google.code.guice</groupId>
+			<artifactId>guice</artifactId>
+			<version>1.0</version>
+			<type>pom</type>
+		</dependency>
 	</dependencies>
 </project>

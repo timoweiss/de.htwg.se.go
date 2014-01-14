@@ -23,10 +23,10 @@ public final class Go {
 	public static void main(final String args[]) {
 
 		PropertyConfigurator.configure("log4j.properties");
-		Injector injector = Guice.createInjector(new GoModule());
-		//IGoController controller = new GoController();
-		IGoController controller = injector.getInstance(IGoController.class);
-		controller.createField();
+
+
+		IGoController controller = new GoController();
+		controller.createField(9);
 
 		tui = new TextUI(controller);
 		new GraphicalUI(controller);
