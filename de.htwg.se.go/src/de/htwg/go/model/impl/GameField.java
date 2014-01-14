@@ -5,8 +5,11 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
+import com.google.inject.Guice;
 import com.google.inject.Inject;
+import com.google.inject.Injector;
 
+import de.htwg.go.GoModule;
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
@@ -35,18 +38,15 @@ public class GameField extends Observable implements IGameField {
 	// size of the gamefield LENGTH x LENGTH
 	private int LENGTH;
 	
-	// hell of injections?
+	
 	@Inject
 	public GameField() {
+		Injector injector = Guice.createInjector(new GoModule());
 		randomNext();
 		createField(5);
 
-		whitePlayer = new Player();
-		blackPlayer = new Player();
-		
-		//same instance??
-//		this.whitePlayer = iPlayer;
-//		this.blackPlayer = iPlayer;
+		this.whitePlayer = injector.getInstance(IPlayer.class);
+		this.blackPlayer = injector.getInstance(IPlayer.class);
 		
 		blackList = new TreeSet<ICell>();
 		whiteList = new TreeSet<ICell>();

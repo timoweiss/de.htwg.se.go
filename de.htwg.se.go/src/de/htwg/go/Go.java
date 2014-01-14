@@ -4,6 +4,9 @@ import java.util.Scanner;
 
 import org.apache.log4j.PropertyConfigurator;
 
+import com.google.inject.Guice;
+import com.google.inject.Injector;
+
 import de.htwg.go.aview.GraphicalUI;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
@@ -20,8 +23,9 @@ public final class Go {
 	public static void main(final String args[]) {
 
 		PropertyConfigurator.configure("log4j.properties");
-
-		IGoController controller = new GoController();
+		Injector injector = Guice.createInjector(new GoModule());
+		//IGoController controller = new GoController();
+		IGoController controller = injector.getInstance(IGoController.class);
 		controller.createField();
 
 		tui = new TextUI(controller);

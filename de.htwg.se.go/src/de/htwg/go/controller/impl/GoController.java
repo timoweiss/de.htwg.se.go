@@ -1,10 +1,12 @@
 package de.htwg.go.controller.impl;
 
+import com.google.inject.Guice;
 import com.google.inject.Inject;
+import com.google.inject.Injector;
 
+import de.htwg.go.GoModule;
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IGameField;
-import de.htwg.go.model.impl.GameField;
 import de.htwg.go.util.observer.Observable;
 
 public class GoController extends Observable implements IGoController {
@@ -15,11 +17,14 @@ public class GoController extends Observable implements IGoController {
 	public GoController() {
 
 	}
-
+	
 	@Override
 	@Inject
 	public void createField() {
-		this.gamefield = new GameField();
+		Injector injector = Guice.createInjector(new GoModule());
+		//this.gamefield = new GameField();
+		this.gamefield = injector.getInstance(IGameField.class);
+		
 		statusLine = "Gamefield successfully created, \n" + gamefield.getNext()
 				+ " is next";
 		notifyObservers();
