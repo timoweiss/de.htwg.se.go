@@ -87,4 +87,9 @@ public class GoController extends Observable implements IGoController {
 		return pass;
 	}
 
+	@Override
+	public int getGameFieldSize() {
+		return gamefield.getGameFieldSize();
+	}
+
 }

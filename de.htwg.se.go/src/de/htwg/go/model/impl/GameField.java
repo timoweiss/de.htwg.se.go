@@ -33,14 +33,13 @@ public class GameField extends Observable implements IGameField {
 	private IPlayer blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
-
-	private static final int LENGTH = 9;
+	private int LENGTH;
 	
 	// hell of injections?
 	@Inject
 	public GameField() {
 		randomNext();
-		createField();
+		createField(4);
 
 		whitePlayer = new Player();
 		blackPlayer = new Player();
@@ -60,8 +59,8 @@ public class GameField extends Observable implements IGameField {
 	 * initializes the field
 	 */
 	//@inject ?
-	private void createField() {
-
+	private void createField(int x) {
+		LENGTH = x;
 		this.gameField = new Cell[LENGTH][LENGTH];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
@@ -302,6 +301,10 @@ public class GameField extends Observable implements IGameField {
 
 		return false;
 
+	}
+	
+	public int getGameFieldSize() {
+		return LENGTH;
 	}
 
 }

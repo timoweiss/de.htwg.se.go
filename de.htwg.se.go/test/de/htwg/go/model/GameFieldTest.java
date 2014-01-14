@@ -136,5 +136,6 @@ public class GameFieldTest {
 		assertFalse(testField2.pass());
 
 	}
+	
 
 }

@@ -80,4 +80,10 @@ public interface IGoController extends IObservable {
 	 */
 	boolean pass();
 	
+	/**
+	 * returns the size of the gamefield
+	 * @return int
+	 */
+	int getGameFieldSize();
+	
 }

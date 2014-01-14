@@ -44,6 +44,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	
 	private ImageIcon backgroundplay;
+	private ImageIcon backgroundplaySmall;
+	
 	private ImageIcon whiteButton;
 	private ImageIcon blackButton;
 
@@ -116,6 +118,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		backgroundplay = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
+		
+		backgroundplaySmall = new ImageIcon(
+				"src/de/htwg/go/util/ressources/images/gamefield44.jpg");
 
 		ImageIcon passMove;
 		passMove = new ImageIcon(
@@ -304,7 +309,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int xBeginningPos = 18;
 		final int yBeginningPos = 20;
 		final int distance = 54;
-		final int gameSize = 4;
+		final int gameSize = controller.getGameFieldSize();
 		final int cellSize = 36;
 
 		// Background //
@@ -356,7 +361,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		background = new JLabel();
 		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
 				backgroundysize);
-		background.setIcon(backgroundplay);
+		if (gameSize == 9) {
+			background.setIcon(backgroundplay);
+		} else if (gameSize == 4) {
+			background.setIcon(backgroundplaySmall);
+		}
+		
 		panel.add(background);
 
 		if (controller.getNext().equals("white")) {
