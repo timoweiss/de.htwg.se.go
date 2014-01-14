@@ -304,7 +304,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int xBeginningPos = 18;
 		final int yBeginningPos = 20;
 		final int distance = 54;
-		final int gameSize = 9;
+		final int gameSize = 4;
 		final int cellSize = 36;
 
 		// Background //
@@ -410,6 +410,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		} else if (actionCommand.equals("New Game")) {
 			controller.createField();
+			operate = true;
 
 		} else if (actionCommand.equals("About Go")) {
 			showAboutDialog();

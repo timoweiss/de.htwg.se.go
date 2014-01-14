@@ -31,7 +31,7 @@ public class GameField extends Observable implements IGameField {
 	private IPlayer blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
-	private static final int LENGTH = 9;
+	private static final int LENGTH = 4;
 
 	public GameField() {
 		randomNext();
@@ -237,6 +237,7 @@ public class GameField extends Observable implements IGameField {
 				if ((this.getCellStatus(cell.getCoords().x, cell.getCoords().y) == 1)) {
 
 					whitePlayer.addScore(minusone);
+					blackPlayer.addScore(1);
 					gameField[cell.getCoords().y][cell.getCoords().x]
 							.setStatus(whiteRemoved);
 
@@ -254,6 +255,7 @@ public class GameField extends Observable implements IGameField {
 				if (this.getCellStatus(cell.getCoords().x, cell.getCoords().y) == 2) {
 
 					blackPlayer.addScore(minusone);
+					whitePlayer.addScore(1);
 					gameField[cell.getCoords().y][cell.getCoords().x]
 							.setStatus(blackRemoved);
 
