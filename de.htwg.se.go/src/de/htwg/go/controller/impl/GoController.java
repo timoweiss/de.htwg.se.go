@@ -1,5 +1,7 @@
 package de.htwg.go.controller.impl;
 
+import com.google.inject.Inject;
+
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.impl.GameField;
@@ -15,8 +17,9 @@ public class GoController extends Observable implements IGoController {
 	}
 
 	@Override
+	@Inject
 	public void createField() {
-		gamefield = new GameField();
+		this.gamefield = new GameField();
 		statusLine = "Gamefield successfully created, \n" + gamefield.getNext()
 				+ " is next";
 		notifyObservers();

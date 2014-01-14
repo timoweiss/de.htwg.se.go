@@ -1,5 +1,7 @@
 package de.htwg.go.model.impl;
 
+import com.google.inject.Inject;
+
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.model.IScore;
 
@@ -7,11 +9,12 @@ public class Player implements IPlayer {
 	private String name;
 	private IScore score;	
 	
+	//@Inject
 	public Player() {
 		this.name = "unknown";
 		score = new Score();
 	}
-	
+	@Inject
 	public Player(String name) {
 		this.name = name;
 		score = new Score();
