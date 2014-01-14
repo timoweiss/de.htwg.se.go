@@ -12,16 +12,20 @@ public class GoController extends Observable implements IGoController {
 	private IGameField gamefield;
 	private String statusLine;
 
-	public GoController() {
+	boolean operate;
 
+	public GoController() {
+		operate = true;
 	}
 
 	@Override
 	@Inject
-	public void createField() {
-		this.gamefield = new GameField();
-		statusLine = "Gamefield successfully created, \n" + gamefield.getNext()
-				+ " is next";
+	public void createField(int LENGTH) {
+		operate = true;
+		this.gamefield = new GameField(LENGTH);
+		statusLine = "Gamefield " + gamefield.getGameFieldSize() + "x"
+				+ gamefield.getGameFieldSize() + " successfully created, \n"
+				+ gamefield.getNext() + " is next";
 		notifyObservers();
 	}
 
@@ -32,6 +36,13 @@ public class GoController extends Observable implements IGoController {
 
 	@Override
 	public boolean setStone(int x, int y) {
+
+		if (!operate) {
+			statusLine = "Game already closed, not allowed to set a stone";
+			notifyObservers();
+			return false;
+		}
+
 		boolean status;
 
 		String next = gamefield.getNext();
@@ -45,11 +56,26 @@ public class GoController extends Observable implements IGoController {
 					+ next + " is still next");
 			status = false;
 		}
+
 		notifyObservers();
+
+		if ((gamefield.getblackPlayer().getScore() + gamefield.getwhitePlayer()
+				.getScore()) == (gamefield.getGameFieldSize() * gamefield
+				.getGameFieldSize())) {
+			this.stop();
+		}
+
 		return status;
 	}
 
 	public void setStone(int x, int y, int status) {
+
+		if (!operate) {
+			statusLine = "Game already closed, not allowed to set a stone";
+			notifyObservers();
+			return;
+		}
+
 		gamefield.setStone(x, y, status);
 		notifyObservers();
 	}
@@ -80,6 +106,12 @@ public class GoController extends Observable implements IGoController {
 
 	@Override
 	public boolean pass() {
+		if (!operate) {
+			statusLine = "Game already closed, not allowed to pass";
+			notifyObservers();
+			return false;
+		}
+
 		boolean pass = gamefield.pass();
 
 		statusLine = "Player passed, " + gamefield.getNext() + " is next";
@@ -90,6 +122,17 @@ public class GoController extends Observable implements IGoController {
 	@Override
 	public int getGameFieldSize() {
 		return gamefield.getGameFieldSize();
+	}
+
+	@Override
+	public void stop() {
+		operate = false;
+		statusLine = "Game has ended";
+		notifyObservers();
+	}
+	
+	public boolean getOperate() {
+		return operate;
 	}
 
 }

@@ -22,7 +22,7 @@ public final class Go {
 		PropertyConfigurator.configure("log4j.properties");
 
 		IGoController controller = new GoController();
-		controller.createField();
+		controller.createField(9);
 
 		tui = new TextUI(controller);
 		new GraphicalUI(controller);

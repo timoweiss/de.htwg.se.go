@@ -37,9 +37,9 @@ public class GameField extends Observable implements IGameField {
 	
 	// hell of injections?
 	@Inject
-	public GameField() {
+	public GameField(int LENGTH) {
 		randomNext();
-		createField(4);
+		createField(LENGTH);
 
 		whitePlayer = new Player();
 		blackPlayer = new Player();
@@ -145,8 +145,14 @@ public class GameField extends Observable implements IGameField {
 	public String toString() {
 		StringBuilder string = new StringBuilder();
 
-		string.append("    0 1 2 3 4 5 6 7 8\n");
-		string.append("    _ _ _ _ _ _ _ _ _\n");
+		if (LENGTH == 9) {
+			string.append("    0 1 2 3 4 5 6 7 8\n");
+			string.append("    _ _ _ _ _ _ _ _ _\n");
+		} else if (LENGTH == 5) {
+			string.append("    0 1 2 3 4\n");
+			string.append("    _ _ _ _ _\n");
+		}
+		
 
 		for (int i = 0; i < gameField.length; i++) {
 			string.append(i + "  |");

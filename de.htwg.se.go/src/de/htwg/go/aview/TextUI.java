@@ -44,6 +44,7 @@ public class TextUI implements IObserver {
 
 			if (controller.pass()) {
 				operate = false;
+				controller.stop();
 				logger.info("game has ended");
 			}
 

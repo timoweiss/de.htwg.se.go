@@ -20,6 +20,7 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
+import javax.swing.JRadioButtonMenuItem;
 
 import org.apache.log4j.Logger;
 
@@ -42,10 +43,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private JLabel statustext;
 
-	
 	private ImageIcon backgroundplay;
 	private ImageIcon backgroundplaySmall;
-	
+
 	private ImageIcon whiteButton;
 	private ImageIcon blackButton;
 
@@ -55,10 +55,11 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private ImageIcon whiteStatsbackA;
 	private ImageIcon blackStatsbackA;
 
-	
-
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
+
+	JRadioButtonMenuItem large;
+	JRadioButtonMenuItem small;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //
@@ -118,9 +119,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		backgroundplay = new ImageIcon(
 				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
-		
+
 		backgroundplaySmall = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/gamefield44.jpg");
+				"src/de/htwg/go/util/ressources/images/gamefield55.jpg");
 
 		ImageIcon passMove;
 		passMove = new ImageIcon(
@@ -261,20 +262,17 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		menu = new JMenu("Game");
 		menuBar.add(menu);
 
-		menuItem = new JMenuItem("New Game");
+		menuItem = new JMenuItem("New Game 9x9");
 		menuItem.addActionListener(this);
-
 		menu.add(menuItem);
+
+		menuItem = new JMenuItem("New Game 5x5");
+		menuItem.addActionListener(this);
+		menu.add(menuItem);
+
+		menu.addSeparator();
 		menuItem = new JMenuItem("Exit");
 		menuItem.addActionListener(this);
-		menu.add(menuItem);
-
-		// Settings //
-		menu = new JMenu("Settings");
-		menuItem.addActionListener(this);
-		menuBar.add(menu);
-
-		menuItem = new JMenuItem("Appearance");
 		menu.add(menuItem);
 
 		// Help //
@@ -363,10 +361,10 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				backgroundysize);
 		if (gameSize == 9) {
 			background.setIcon(backgroundplay);
-		} else if (gameSize == 4) {
+		} else if (gameSize == 5) {
 			background.setIcon(backgroundplaySmall);
 		}
-		
+
 		panel.add(background);
 
 		if (controller.getNext().equals("white")) {
@@ -381,6 +379,12 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	@Override
 	public void update(Event e) {
+		if (!controller.getOperate()) {
+			this.operate = false;
+
+			this.msgend();
+		}
+
 		panel.removeAll();
 		print();
 		panel.updateUI();
@@ -418,8 +422,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		} else if (actionCommand.equals("Exit")) {
 			System.exit(0);
 
-		} else if (actionCommand.equals("New Game")) {
-			controller.createField();
+		} else if (actionCommand.equals("New Game 9x9")) {
+
+			controller.createField(9);
+			operate = true;
+
+		} else if (actionCommand.equals("New Game 5x5")) {
+			controller.createField(5);
 			operate = true;
 
 		} else if (actionCommand.equals("About Go")) {
@@ -461,16 +470,19 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private void guiPass() {
 		if (operate && controller.pass()) {
 
-			JOptionPane.showMessageDialog(
-					null,
-					"Game has ended. white score: "
-							+ controller.getwhitePlayerScore()
-							+ " black player score: "
-							+ controller.getblackPlayerScore(),
-					"Game Dialogue", JOptionPane.OK_CANCEL_OPTION);
+			this.msgend();
 
+			controller.stop();
 			operate = false;
+			statustext.setText(controller.getStatus());
 
 		}
+	}
+
+	private void msgend() {
+		JOptionPane.showMessageDialog(null, "Game has ended. white score: "
+				+ controller.getwhitePlayerScore() + " black player score: "
+				+ controller.getblackPlayerScore(), "Game Dialogue",
+				JOptionPane.OK_CANCEL_OPTION);
 	}
 }
