@@ -39,7 +39,7 @@ public class GameField extends Observable implements IGameField {
 	@Inject
 	public GameField() {
 		randomNext();
-		createField(4);
+		createField(5);
 
 		whitePlayer = new Player();
 		blackPlayer = new Player();

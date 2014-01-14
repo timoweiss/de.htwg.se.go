@@ -120,7 +120,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
 		
 		backgroundplaySmall = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/gamefield44.jpg");
+				"src/de/htwg/go/util/ressources/images/gamefield55.jpg");
 
 		ImageIcon passMove;
 		passMove = new ImageIcon(
@@ -363,7 +363,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				backgroundysize);
 		if (gameSize == 9) {
 			background.setIcon(backgroundplay);
-		} else if (gameSize == 4) {
+		} else if (gameSize == 5) {
 			background.setIcon(backgroundplaySmall);
 		}
 		
