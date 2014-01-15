@@ -57,8 +57,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
 	
-	private final static int NINE = 9;
-	private final static int FIVE = 5;
+	private static final int NINE = 9;
+	private static final int FIVE = 5;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //

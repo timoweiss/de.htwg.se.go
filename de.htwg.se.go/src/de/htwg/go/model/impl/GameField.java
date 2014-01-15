@@ -35,7 +35,7 @@ public class GameField extends Observable implements IGameField {
 	private IPlayer whitePlayer;
 	private IPlayer blackPlayer;
 	
-	private final static int NINE = 9;
+	private static final int NINE = 9;
 
 	// size of the gamefield LENGTH x LENGTH
 	private int length;
