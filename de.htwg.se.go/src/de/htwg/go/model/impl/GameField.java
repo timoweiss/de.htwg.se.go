@@ -34,6 +34,8 @@ public class GameField extends Observable implements IGameField {
 
 	private IPlayer whitePlayer;
 	private IPlayer blackPlayer;
+	
+	private final int nine = 9;
 
 	// size of the gamefield LENGTH x LENGTH
 	private int length;
@@ -147,7 +149,7 @@ public class GameField extends Observable implements IGameField {
 	public String toString() {
 		StringBuilder string = new StringBuilder();
 
-		if (length == 9) {
+		if (length == nine) {
 			string.append("    0 1 2 3 4 5 6 7 8\n");
 			string.append("    _ _ _ _ _ _ _ _ _\n");
 		} else  {
