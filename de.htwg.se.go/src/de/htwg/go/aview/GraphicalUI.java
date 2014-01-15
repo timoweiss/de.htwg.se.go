@@ -344,14 +344,14 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		}
 
 		// background //
-		final int NINE = 9;
-		final int FIVE = 5;
+		final int nine = 9;
+		final int five = 5;
 		background = new JLabel();
 		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
 				backgroundysize);
-		if (gameSize == NINE) {
+		if (gameSize == nine) {
 			background.setIcon(backgroundplay);
-		} else if (gameSize == FIVE) {
+		} else if (gameSize == five) {
 			background.setIcon(backgroundplaySmall);
 		}
 

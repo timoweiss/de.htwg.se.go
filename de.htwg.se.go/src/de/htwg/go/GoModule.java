@@ -3,7 +3,6 @@ package de.htwg.go;
 import com.google.inject.AbstractModule;
 
 import de.htwg.go.controller.IGoController;
-//import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.model.IScore;
 
