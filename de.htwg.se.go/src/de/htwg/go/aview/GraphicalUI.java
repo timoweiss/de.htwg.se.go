@@ -470,8 +470,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private void guiPass() {
 		if (operate && controller.pass()) {
 
-			this.msgend();
-
 			controller.stop();
 			operate = false;
 			statustext.setText(controller.getStatus());

@@ -4121,3 +4121,225 @@ white is next
 INFO AWT-EventQueue-0 de.htwg.go - 
 white Player score: 0
 black Player score: 0
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+black is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 2 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set BLACK at (5,2) 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 1
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 2 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set WHITE at (5,4) 
+black is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 1
+black Player score: 1
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 2 0 0 0 
+3  |0 0 0 0 0 2 0 0 0 
+4  |0 0 0 0 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set BLACK at (5,3) 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 1
+black Player score: 2
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+white is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Player passed, black is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Player passed, white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Game has ended
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+black is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Player passed, white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Player passed, black is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Game has ended
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
