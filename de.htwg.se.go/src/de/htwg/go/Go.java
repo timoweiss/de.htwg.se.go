@@ -18,7 +18,6 @@ public final class Go {
 
 	private static Scanner scanner;
 	private static TextUI tui;
-	private static final int NINE = 9;
 
 	public static void main(final String args[]) {
 
@@ -27,7 +26,7 @@ public final class Go {
 		Injector injector = Guice.createInjector(new GoModule());
 		IGoController controller = injector.getInstance(IGoController.class);
 
-		controller.createField(NINE);
+		controller.createField(9);
 
 		tui = new TextUI(controller);
 		new GraphicalUI(controller);
