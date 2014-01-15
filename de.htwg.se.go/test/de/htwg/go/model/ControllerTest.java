@@ -61,6 +61,9 @@ public class ControllerTest {
 
 		controller.setStone(5, 5, 2);
 		assertEquals(2, controller.getCellStatus(5, 5));
+		
+		controller2.setStone(2, 2, 1);
+		assertEquals("Game already closed, not allowed to set a stone", controller2.getStatus());
 
 	}
 
