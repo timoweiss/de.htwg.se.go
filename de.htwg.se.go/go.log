@@ -2635,6 +2635,7 @@ INFO AWT-EventQueue-0 de.htwg.go -
 white Player score: 9
 black Player score: 0
 =======
+<<<<<<< HEAD
 >>>>>>> branch 'master' of https://github.com/timoweiss/de.htwg.se.go.git
 <<<<<<< HEAD
 INFO main de.htwg.go - 
@@ -2818,4 +2819,167 @@ white is next
 INFO AWT-EventQueue-0 de.htwg.go - 
 white Player score: 1
 black Player score: 1
+=======
 >>>>>>> branch 'master' of https://github.com/timoweiss/de.htwg.se.go.git
+>>>>>>> branch 'master' of https://github.com/timoweiss/de.htwg.se.go.git
+>>>>>>> branch 'master' of https://github.com/timoweiss/de.htwg.se.go.git
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+white is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+ERROR main de.htwg.go - not able to initialize image ressources
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+black is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+black is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 2 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set BLACK at (4,2) 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 1
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 2 0 0 0 0 
+3  |0 0 0 0 1 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set WHITE at (4,3) 
+black is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 1
+black Player score: 1
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 2 0 0 0 0 
+3  |0 0 0 0 1 0 0 0 0 
+4  |0 0 0 0 2 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set BLACK at (4,4) 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 1
+black Player score: 2
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4
+    _ _ _ _ _
+0  |0 0 0 0 0 
+1  |0 0 0 0 0 
+2  |0 0 0 0 0 
+3  |0 0 0 0 0 
+4  |0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Gamefield 5x5 successfully created, 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4
+    _ _ _ _ _
+0  |0 0 0 0 0 
+1  |0 0 0 0 0 
+2  |0 0 0 1 0 
+3  |0 0 0 0 0 
+4  |0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set WHITE at (3,2) 
+black is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 1
+black Player score: 0
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4
+    _ _ _ _ _
+0  |0 0 0 0 0 
+1  |0 0 0 0 0 
+2  |0 0 2 1 0 
+3  |0 0 0 0 0 
+4  |0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+set BLACK at (2,2) 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 1
+black Player score: 1
