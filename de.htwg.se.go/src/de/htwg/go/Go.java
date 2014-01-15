@@ -1,12 +1,9 @@
 package de.htwg.go;
 
 import java.util.Scanner;
-
 import org.apache.log4j.PropertyConfigurator;
-
 import com.google.inject.Guice;
 import com.google.inject.Injector;
-
 import de.htwg.go.aview.GraphicalUI;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
