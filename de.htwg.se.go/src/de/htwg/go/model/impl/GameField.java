@@ -5,11 +5,6 @@ import java.util.LinkedList;
 import java.util.Set;
 import java.util.TreeSet;
 
-import com.google.inject.Guice;
-import com.google.inject.Inject;
-import com.google.inject.Injector;
-
-import de.htwg.go.GoModule;
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
@@ -34,24 +29,21 @@ public class GameField extends Observable implements IGameField {
 
 	private IPlayer whitePlayer;
 	private IPlayer blackPlayer;
-	
+
 	private static final int NINE = 9;
 
 	// size of the gamefield LENGTH x LENGTH
 	private int length;
-	
-	
-	@Inject
+
 	public GameField(int length) {
-		Injector injector = Guice.createInjector(new GoModule());
+
 		randomNext();
 
 		createField(length);
 
-	
-		this.whitePlayer = injector.getInstance(IPlayer.class);
-		this.blackPlayer = injector.getInstance(IPlayer.class);
-		
+		this.whitePlayer = new Player();
+		this.blackPlayer = new Player();
+
 		blackList = new TreeSet<ICell>();
 		whiteList = new TreeSet<ICell>();
 
@@ -62,7 +54,7 @@ public class GameField extends Observable implements IGameField {
 	/*
 	 * initializes the field
 	 */
-	//@inject ?
+	// @inject ?
 	private void createField(int x) {
 		length = x;
 		this.gameField = new Cell[length][length];
@@ -152,11 +144,10 @@ public class GameField extends Observable implements IGameField {
 		if (length == NINE) {
 			string.append("    0 1 2 3 4 5 6 7 8\n");
 			string.append("    _ _ _ _ _ _ _ _ _\n");
-		} else  {
+		} else {
 			string.append("    0 1 2 3 4\n");
 			string.append("    _ _ _ _ _\n");
 		}
-		
 
 		for (int i = 0; i < gameField.length; i++) {
 			string.append(i + "  |");
@@ -312,7 +303,7 @@ public class GameField extends Observable implements IGameField {
 		return false;
 
 	}
-	
+
 	public int getGameFieldSize() {
 		return length;
 	}

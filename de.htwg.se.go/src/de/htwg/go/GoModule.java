@@ -6,7 +6,6 @@ import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.model.IScore;
 
-
 public class GoModule extends AbstractModule {
 	@Override
 	protected void configure() {
