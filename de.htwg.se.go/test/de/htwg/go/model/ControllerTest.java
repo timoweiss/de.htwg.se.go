@@ -9,10 +9,21 @@ import de.htwg.go.controller.impl.GoController;
 
 public class ControllerTest {
 	GoController controller;
+	GoController controller2;
 
 	@Before
 	public void setUp() throws Exception {
 		controller = new GoController();
+
+		controller2 = new GoController();
+		controller2.createField(5);
+
+		for (int j = 0; j < 5; j++) {
+			for (int i = 0; i < 5; i++) {
+				controller2.setStone(i, j);
+			}
+		}
+
 	}
 
 	@Test
@@ -37,6 +48,8 @@ public class ControllerTest {
 		assertEquals(true, controller.setStone(5, 2));
 		assertEquals(false, controller.setStone(100, 100));
 		assertFalse(controller.setStone(5, 2));
+		
+		assertFalse(controller2.setStone(3, 3));
 	}
 
 	@Test
@@ -48,15 +61,19 @@ public class ControllerTest {
 
 		controller.setStone(5, 5, 2);
 		assertEquals(2, controller.getCellStatus(5, 5));
+		
+		controller2.setStone(2, 2, 1);
+		assertEquals("Game already closed, not allowed to set a stone", controller2.getStatus());
 
 	}
 
 	@Test
 	public void testGetStatus() {
 		controller.createField(9);
-		
-		assertEquals("Gamefield 9x9 successfully created, \n" + controller.getNext()
-				+ " is next", controller.getStatus());
+
+		assertEquals(
+				"Gamefield 9x9 successfully created, \n" + controller.getNext()
+						+ " is next", controller.getStatus());
 	}
 
 	@Test
@@ -94,14 +111,38 @@ public class ControllerTest {
 			assertEquals("white", controller.getNext());
 		}
 	}
-	
+
 	@Test
 	public void testpass() {
 		controller.createField(9);
 		assertFalse(controller.pass());
-	
+
 		assertTrue(controller.pass());
 		
+		assertFalse(controller2.pass());
 	}
 
+	@Test
+	public void testGetGameFieldSize() {
+		controller.createField(9);
+		assertEquals(9, controller.getGameFieldSize());
+
+		controller.createField(5);
+		assertEquals(5, controller.getGameFieldSize());
+	}
+
+	@Test
+	public void testStop() {
+		controller.stop();
+		assertFalse(controller.getOperate());
+	}
+	
+	@Test
+	public void testGetOperate() {
+		controller.createField(5);
+		assertTrue(controller.getOperate());
+		
+		controller.stop();
+		assertFalse(controller.getOperate());
+	}
 }

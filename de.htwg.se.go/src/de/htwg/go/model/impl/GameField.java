@@ -36,17 +36,17 @@ public class GameField extends Observable implements IGameField {
 	private IPlayer blackPlayer;
 
 	// size of the gamefield LENGTH x LENGTH
-	private int LENGTH;
+	private int length;
 	
 	
 	@Inject
-	public GameField(int LENGTH) {
+	public GameField(int length) {
 		Injector injector = Guice.createInjector(new GoModule());
 		randomNext();
 
-		createField(LENGTH);
+		createField(length);
 
-
+	
 		this.whitePlayer = injector.getInstance(IPlayer.class);
 		this.blackPlayer = injector.getInstance(IPlayer.class);
 		
@@ -62,8 +62,8 @@ public class GameField extends Observable implements IGameField {
 	 */
 	//@inject ?
 	private void createField(int x) {
-		LENGTH = x;
-		this.gameField = new Cell[LENGTH][LENGTH];
+		length = x;
+		this.gameField = new Cell[length][length];
 		for (int i = 0; i < this.gameField.length; ++i) {
 			for (int j = 0; j < gameField[i].length; ++j) {
 				gameField[i][j] = new Cell(j, i);
@@ -147,10 +147,10 @@ public class GameField extends Observable implements IGameField {
 	public String toString() {
 		StringBuilder string = new StringBuilder();
 
-		if (LENGTH == 9) {
+		if (length == 9) {
 			string.append("    0 1 2 3 4 5 6 7 8\n");
 			string.append("    _ _ _ _ _ _ _ _ _\n");
-		} else if (LENGTH == 5) {
+		} else  {
 			string.append("    0 1 2 3 4\n");
 			string.append("    _ _ _ _ _\n");
 		}
@@ -312,7 +312,7 @@ public class GameField extends Observable implements IGameField {
 	}
 	
 	public int getGameFieldSize() {
-		return LENGTH;
+		return length;
 	}
 
 }

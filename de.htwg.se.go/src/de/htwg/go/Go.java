@@ -10,7 +10,6 @@ import com.google.inject.Injector;
 import de.htwg.go.aview.GraphicalUI;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
-import de.htwg.go.controller.impl.GoController;
 
 public final class Go {
 
@@ -26,8 +25,7 @@ public final class Go {
 
 		Injector injector = Guice.createInjector(new GoModule());
 		IGoController controller = injector.getInstance(IGoController.class);
-		
-		//IGoController controller = new GoController();
+
 		controller.createField(9);
 
 		tui = new TextUI(controller);

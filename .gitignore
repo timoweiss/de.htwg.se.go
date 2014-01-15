@@ -4,6 +4,6 @@
 *.war
 *.DS_Store
 *.ear
-go.log
+*.log
 /bin
 /doc

@@ -9,16 +9,16 @@ public class GoController extends Observable implements IGoController {
 
 	private IGameField gamefield;
 	private String statusLine;
-	boolean operate;
+	private boolean operate;
 
 	public GoController() {
 		operate = true;
 	}
 	
 	@Override
-	public void createField(int LENGTH) {
+	public void createField(int length) {
 		operate = true;
-		gamefield = new GameField(LENGTH);
+		gamefield = new GameField(length);
 		
 		statusLine = "Gamefield " + gamefield.getGameFieldSize() + "x"
 				+ gamefield.getGameFieldSize() + " successfully created, \n"

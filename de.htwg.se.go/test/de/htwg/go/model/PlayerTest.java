@@ -15,13 +15,11 @@ public class PlayerTest {
 	@Before
 	public void setUp() throws Exception {
 		unknownPlayer = new Player();
-		knownPlayer = new Player("known");
 	}
 
 	@Test
 	public void testGetName() {
 		assertEquals("unknown", unknownPlayer.getName());
-		assertEquals("known", knownPlayer.getName());
 	}
 
 	@Test
