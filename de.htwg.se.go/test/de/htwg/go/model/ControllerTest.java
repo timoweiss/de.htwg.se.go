@@ -54,7 +54,8 @@ public class ControllerTest {
 	@Test
 	public void testGetStatus() {
 		controller.createField(9);
-		assertEquals("Gamefield successfully created, \n" + controller.getNext()
+		
+		assertEquals("Gamefield 9x9 successfully created, \n" + controller.getNext()
 				+ " is next", controller.getStatus());
 	}
 
