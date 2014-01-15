@@ -10,7 +10,6 @@ import com.google.inject.Injector;
 import de.htwg.go.aview.GraphicalUI;
 import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
-import de.htwg.go.controller.impl.GoController;
 
 public final class Go {
 

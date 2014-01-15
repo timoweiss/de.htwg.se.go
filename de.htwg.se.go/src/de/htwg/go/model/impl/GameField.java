@@ -46,7 +46,7 @@ public class GameField extends Observable implements IGameField {
 
 		createField(LENGTH);
 
-
+	
 		this.whitePlayer = injector.getInstance(IPlayer.class);
 		this.blackPlayer = injector.getInstance(IPlayer.class);
 		
