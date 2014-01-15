@@ -56,13 +56,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
-	
+
 	private static final int NINE = 9;
 	private static final int FIVE = 5;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //
-		
+
 		// Framesize//
 		final int framexsize = 750;
 		final int frameysize = 650;
@@ -299,21 +299,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private void print() {
 		JButton cell;
-		JLabel background;
-
+		final int gameSize = controller.getGameFieldSize();
 		// Magic Numbers //
 		// Cells //
 		final int xBeginningPos = 18;
 		final int yBeginningPos = 20;
 		final int distance = 54;
-		final int gameSize = controller.getGameFieldSize();
 		final int cellSize = 36;
-
-		// Background //
-		final int backgroundxpos = 0;
-		final int backgroundypos = 0;
-		final int backgroundxsize = 500;
-		final int backgroundysize = 500;
 
 		// Labels //
 		int x = xBeginningPos;
@@ -346,7 +338,21 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 			y = yBeginningPos;
 		}
 
+		printBackGorund();
+
+	}
+
+	private void printBackGorund() {
+		JLabel background;
 		// background //
+
+		// Background //
+		final int backgroundxpos = 0;
+		final int backgroundypos = 0;
+		final int backgroundxsize = 500;
+		final int backgroundysize = 500;
+		final int gameSize = controller.getGameFieldSize();
+
 		background = new JLabel();
 		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
 				backgroundysize);
@@ -365,7 +371,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 			blackStatsBackground.setIcon(blackStatsbackA);
 			whiteStatsBackground.setIcon(whiteStatsback);
 		}
-
 	}
 
 	@Override
