@@ -317,7 +317,7 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 				cell.setActionCommand(i + "" + j);
 				cell.addActionListener(this);
 				cell.setSize(cellSize, cellSize);
-				cell.setOpaque(true);
+				cell.setOpaque(false);
 				cell.setLocation(x, y);
 				cell.setOpaque(false);
 				cell.setContentAreaFilled(false);
