@@ -57,8 +57,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
 	
-	private final int nine = 9;
-	private final int five = 5;
+	private final static int NINE = 9;
+	private final static int FIVE = 5;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //
@@ -350,9 +350,9 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		background = new JLabel();
 		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
 				backgroundysize);
-		if (gameSize == nine) {
+		if (gameSize == NINE) {
 			background.setIcon(backgroundplay);
-		} else if (gameSize == five) {
+		} else if (gameSize == FIVE) {
 			background.setIcon(backgroundplaySmall);
 		}
 
@@ -415,11 +415,11 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		} else if (actionCommand.equals("New Game 9x9")) {
 
-			controller.createField(nine);
+			controller.createField(NINE);
 			operate = true;
 
 		} else if (actionCommand.equals("New Game 5x5")) {
-			controller.createField(five);
+			controller.createField(FIVE);
 			operate = true;
 
 		} else if (actionCommand.equals("About Go")) {
