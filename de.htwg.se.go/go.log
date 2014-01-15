@@ -285,6 +285,7 @@ black is next
 INFO AWT-EventQueue-0 de.htwg.go - 
 white Player score: 12
 black Player score: 0
+<<<<<<< HEAD
 INFO main de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
@@ -380,3 +381,24 @@ black is next
 INFO AWT-EventQueue-0 de.htwg.go - 
 white Player score: 2
 black Player score: 2
+=======
+INFO main de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 0 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO main de.htwg.go - 
+Gamefield 9x9 successfully created, 
+white is next
+INFO main de.htwg.go - 
+white Player score: 0
+black Player score: 0
+>>>>>>> branch 'master' of https://github.com/timoweiss/de.htwg.se.go.git
