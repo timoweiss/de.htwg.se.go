@@ -117,37 +117,37 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		JFrame frame;
 
 		backgroundplay = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/gamefield99.jpg");
+				"src/de/htwg/go/util/ressources/gamefield99.jpg");
 
 		backgroundplaySmall = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/gamefield55.jpg");
+				"src/de/htwg/go/util/ressources/gamefield55.jpg");
 
 		ImageIcon passMove;
 		passMove = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/passMove.jpg");
+				"src/de/htwg/go/util/ressources/passMove.jpg");
 
 		whiteStatsback = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/whiteScoreboard.jpg");
+				"src/de/htwg/go/util/ressources/whiteScoreboard.jpg");
 
 		whiteStatsbackA = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/whiteScoreboardAct.jpg");
+				"src/de/htwg/go/util/ressources/whiteScoreboardAct.jpg");
 
 		blackStatsback = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/blackScoreboard.jpg");
+				"src/de/htwg/go/util/ressources/blackScoreboard.jpg");
 
 		blackStatsbackA = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/blackScoreboardAct.jpg");
+				"src/de/htwg/go/util/ressources/blackScoreboardAct.jpg");
 
 		ImageIcon backgroundImg;
 		backgroundImg = new ImageIcon(
-				"src/de/htwg/go/util/ressources/images/guiBackground.jpg");
+				"src/de/htwg/go/util/ressources/guiBackground.jpg");
 
 		try {
 			whiteButton = new ImageIcon(ImageIO.read(new File(
-					"src/de/htwg/go/util/ressources/images/whiteStone.png")));
+					"src/de/htwg/go/util/ressources/whiteStone.png")));
 
 			blackButton = new ImageIcon(ImageIO.read(new File(
-					"src/de/htwg/go/util/ressources/images/blackStone.png")));
+					"src/de/htwg/go/util/ressources/blackStone.png")));
 
 		} catch (IOException e) {
 			logger.error("not able to initialize image ressources");
