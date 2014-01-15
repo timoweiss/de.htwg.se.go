@@ -40,11 +40,11 @@ public class GameField extends Observable implements IGameField {
 	
 	
 	@Inject
-	public GameField(int LENGTH) {
+	public GameField(int length) {
 		Injector injector = Guice.createInjector(new GoModule());
 		randomNext();
 
-		createField(LENGTH);
+		createField(length);
 
 	
 		this.whitePlayer = injector.getInstance(IPlayer.class);

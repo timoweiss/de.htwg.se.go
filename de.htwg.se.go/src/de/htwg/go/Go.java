@@ -25,8 +25,7 @@ public final class Go {
 
 		Injector injector = Guice.createInjector(new GoModule());
 		IGoController controller = injector.getInstance(IGoController.class);
-		
-		//IGoController controller = new GoController();
+
 		controller.createField(9);
 
 		tui = new TextUI(controller);

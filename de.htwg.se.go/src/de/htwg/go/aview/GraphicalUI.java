@@ -20,7 +20,6 @@ import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JOptionPane;
 import javax.swing.JPanel;
-import javax.swing.JRadioButtonMenuItem;
 
 import org.apache.log4j.Logger;
 
@@ -57,9 +56,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
-
-	JRadioButtonMenuItem large;
-	JRadioButtonMenuItem small;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //
@@ -317,34 +313,26 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		final int backgroundysize = 500;
 
 		// Labels //
-
 		int x = xBeginningPos;
 		int y = yBeginningPos;
 
 		for (int i = 0; i < gameSize; i++) {
-
 			for (int j = 0; j < gameSize; j++) {
-
 				cell = new JButton();
 				cell.setActionCommand(i + "" + j);
 				cell.addActionListener(this);
-
 				cell.setSize(cellSize, cellSize);
 				cell.setOpaque(true);
 				cell.setLocation(x, y);
-
 				cell.setOpaque(false);
 				cell.setContentAreaFilled(false);
 				cell.setBorderPainted(false);
 
 				if (controller.getCellStatus(i, j) == 1) {
-
 					cell.setIcon(whiteButton);
 				} else if (controller.getCellStatus(i, j) == 2) {
-
 					cell.setIcon(blackButton);
 				} else {
-
 					cell.setBackground(Color.green);
 				}
 
@@ -356,12 +344,14 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		}
 
 		// background //
+		final int NINE = 9;
+		final int FIVE = 5;
 		background = new JLabel();
 		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
 				backgroundysize);
-		if (gameSize == 9) {
+		if (gameSize == NINE) {
 			background.setIcon(backgroundplay);
-		} else if (gameSize == 5) {
+		} else if (gameSize == FIVE) {
 			background.setIcon(backgroundplaySmall);
 		}
 
