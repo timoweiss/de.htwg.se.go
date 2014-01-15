@@ -56,10 +56,13 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 	private JLabel whiteStatsBackground;
 	private JLabel blackStatsBackground;
+	
+	private final int nine = 9;
+	private final int five = 5;
 
 	public GraphicalUI(IGoController controller) {
 		// Magic Numbers //
-
+		
 		// Framesize//
 		final int framexsize = 750;
 		final int frameysize = 650;
@@ -344,8 +347,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		}
 
 		// background //
-		final int nine = 9;
-		final int five = 5;
 		background = new JLabel();
 		background.setBounds(backgroundxpos, backgroundypos, backgroundxsize,
 				backgroundysize);
@@ -414,11 +415,11 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 
 		} else if (actionCommand.equals("New Game 9x9")) {
 
-			controller.createField(9);
+			controller.createField(nine);
 			operate = true;
 
 		} else if (actionCommand.equals("New Game 5x5")) {
-			controller.createField(5);
+			controller.createField(five);
 			operate = true;
 
 		} else if (actionCommand.equals("About Go")) {
