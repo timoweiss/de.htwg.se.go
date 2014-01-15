@@ -5,8 +5,6 @@ import com.google.inject.AbstractModule;
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.model.IScore;
-import de.htwg.go.model.impl.Player;
-import de.htwg.go.model.impl.Score;
 
 public class GoModule extends AbstractModule {
 	@Override
