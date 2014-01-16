@@ -100,4 +100,5 @@ The usage is like stealing candy from a baby.
 8  |0 0 0 0 0 0 0 0 0
 ```
 (yes, we know, the shift of the negativ numbers suck)
+
 ![image](http://timo-weiss.com/htwg.se.go/screens/screenGameSituation2.png)
