@@ -84,3 +84,19 @@ The usage is like stealing candy from a baby.
 ![image](http://timo-weiss.com/htwg.se.go/screens/screenGameSituation.png)
 
 * After setting a white stone to the pos 42, the gamefield will look like as follows:
+
+```
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 1 1 1 0 0 0 0 
+3  |0 0 1 -2 -2 1 0 0 0 
+4  |0 0 1 0 1 1 0 0 0 
+5  |0 0 0 1 0 0 0 0 0 
+6  |0 2 0 0 0 0 2 2 0 
+7  |0 2 2 0 0 2 2 0 0 
+8  |0 0 0 0 0 0 0 0 0
+```
+(yes, we know, the shift of the negativ numbers sucks)
+![image](http://timo-weiss.com/htwg.se.go/screens/screenGameSituation2.png)
