@@ -1,24 +1,27 @@
 # Go
----
 A Java implementation of the board-game "Go".
 ## What
----
 This Project is a implementation of the board-game "Go", written in Java.
 
 It show several concepts of software engineering.
-(Such as XP :....)
 
 * Layered architecture
 * components and interfaces
 
 
-
 ## Why
----
 The project was built in the context of the lecture "Software Engineering" at the University of Applied Science Konstanz, Germany.
 
+#Documentation
+See the current [Javadoc](http://michaelknoch.de/sego/doc/).
+
+#Getting support
+Feel free to contact us if you have any questions:
+
+* [Michael Knoch](https://twitter.com/Michael85069009)
+* [Timo Weiß](https://twitter.com/Timo_Weiss)
+
 ## How
----
 If you run the application, it will initialize a simple Text-UI (as you can see below).
 The usage is like stealing candy from a baby.
 
