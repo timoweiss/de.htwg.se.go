@@ -5,7 +5,8 @@ This Project is a implementation of the board-game "Go", written in Java.
 
 It show several concepts of software engineering.
 
-* Layered architecture
+* layered architecture
+* observer pattern
 * components and interfaces
 
 
@@ -98,5 +99,5 @@ The usage is like stealing candy from a baby.
 7  |0 2 2 0 0 2 2 0 0 
 8  |0 0 0 0 0 0 0 0 0
 ```
-(yes, we know, the shift of the negativ numbers sucks)
+(yes, we know, the shift of the negativ numbers suck)
 ![image](http://timo-weiss.com/htwg.se.go/screens/screenGameSituation2.png)
