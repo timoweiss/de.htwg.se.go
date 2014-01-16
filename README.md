@@ -22,7 +22,10 @@ Feel free to contact us if you have any questions:
 * [Timo Weiß](https://twitter.com/Timo_Weiss)
 
 ## How
-If you run the application, it will initialize a simple Text-UI (as you can see below).
+If you run the application, it will initialize a simple Text-UI and Graphical-UI (as you can see below).
+
+If the state of the game changes (eg. setting a stone in the TUI), both views will render again (Observer-Pattern).
+
 The usage is like stealing candy from a baby.
 
 
@@ -43,7 +46,8 @@ The usage is like stealing candy from a baby.
 ```
 
 ![image](http://timo-weiss.com/htwg.se.go/screens/screenGuiInit.png)
-1. To set a stone to the field, just type in the choords (eg. 55)
+
+* To set a stone to the field, just type in the choords into the command-line or click in the GUI the desired postition (eg. 55)
 
 ```
 	0 1 2 3 4 5 6 7 8
@@ -60,3 +64,23 @@ The usage is like stealing candy from a baby.
 
 ```
 ![image](http://timo-weiss.com/htwg.se.go/screens/screenGui55.png)
+
+
+* The following example shows a game-situation, by which the player with the white stone can surround his opponent by setting his stone to 42
+
+```
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 1 1 0 0 0 0 0 
+3  |0 0 1 2 2 1 0 0 0 
+4  |0 0 1 0 1 1 0 0 0 
+5  |0 0 0 1 0 0 0 0 0 
+6  |0 2 0 0 0 0 2 2 0 
+7  |0 2 2 0 0 2 2 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+```
+![image](http://timo-weiss.com/htwg.se.go/screens/screenGameSituation.png)
+
+* After setting a white stone to the pos 42, the gamefield will look like as follows:
