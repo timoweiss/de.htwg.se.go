@@ -179,7 +179,6 @@ public class GameField extends Observable implements IGameField {
 			gegner = 2;
 		} else {
 			gegner = 1;
-
 		}
 
 		try {
@@ -192,14 +191,11 @@ public class GameField extends Observable implements IGameField {
 					whiteRegions.add(region);
 				}
 			}
-
 			return fenced;
-
 		} catch (IndexOutOfBoundsException e) {
 			return false;
 		} finally {
 			resetAllChecks();
-
 		}
 	}
 
