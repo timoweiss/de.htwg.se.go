@@ -93,6 +93,10 @@ public class GameField extends Observable implements IGameField {
 	 * sets a Stone with x and y
 	 */
 	public boolean setStone(int x, int y) {
+		if (x < 0 || y < 0) {
+			return false;
+		}
+		
 		if (gameField.length - 1 < x || gameField.length - 1 < y) {
 			return false;
 		} else if (getCellStatus(x, y) != 0) {
