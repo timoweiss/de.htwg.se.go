@@ -1,5 +1,5 @@
 *.class
-
+.idea
 # Package Files #
 *.war
 *.DS_Store
