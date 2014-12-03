@@ -7,129 +7,132 @@ import de.htwg.go.util.observer.Observable;
 
 public class GoController extends Observable implements IGoController {
 
-	private IGameField gamefield;
-	private String statusLine;
-	private boolean operate;
+    private IGameField gamefield;
+    private String statusLine;
+    private boolean operate;
 
-	public GoController() {
-		operate = true;
-	}
-	
-	@Override
-	public void createField(int length) {
-		operate = true;
-		gamefield = new GameField(length);
-		
-		statusLine = "Gamefield " + gamefield.getGameFieldSize() + "x"
-				+ gamefield.getGameFieldSize() + " successfully created, \n"
-				+ gamefield.getNext() + " is next";
-		notifyObservers();
-	}
+    public GoController() {
+        operate = true;
+    }
 
-	@Override
-	public String tuiToString() {
-		return gamefield.toString();
-	}
+    @Override
+    public void createField(int length) {
+        operate = true;
+        gamefield = new GameField(length);
 
-	@Override
-	public boolean setStone(int x, int y) {
+        statusLine = "Gamefield " + gamefield.getGameFieldSize() + "x"
+                + gamefield.getGameFieldSize() + " successfully created, \n"
+                + gamefield.getNext() + " is next";
+        notifyObservers();
+    }
 
-		if (!operate) {
-			statusLine = "Game already closed, not allowed to set a stone";
-			notifyObservers();
-			return false;
-		}
+    @Override
+    public String tuiToString() {
+        return gamefield.toString();
+    }
 
-		boolean status;
+    @Override
+    public boolean setStone(int x, int y) {
 
-		String next = gamefield.getNext();
-		if (gamefield.setStone(x, y)) {
-			statusLine = ("set " + next.toUpperCase() + " at (" + x + "," + y
-					+ ") \n" + gamefield.getNext() + " is next");
-			status = true;
+        if (!operate) {
+            statusLine = "Game already closed, not allowed to set a stone";
+            notifyObservers();
+            return false;
+        }
 
-		} else {
-			statusLine = ("unable to set stone at (" + x + "," + y + ")\n"
-					+ next + " is still next");
-			status = false;
-		}
+        boolean status;
 
-		notifyObservers();
+        String next = gamefield.getNext();
+        if (gamefield.setStone(x, y)) {
+            statusLine = ("set " + next.toUpperCase() + " at (" + x + "," + y
+                    + ") \n" + gamefield.getNext() + " is next");
+            status = true;
 
-		if ((gamefield.getblackPlayer().getScore() + gamefield.getwhitePlayer()
-				.getScore()) == (gamefield.getGameFieldSize() * gamefield
-				.getGameFieldSize())) {
-			this.stop();
-		}
+        } else {
+            statusLine = ("unable to set stone at (" + x + "," + y + ")\n"
+                    + next + " is still next");
+            status = false;
+        }
 
-		return status;
-	}
+        notifyObservers();
 
-	public void setStone(int x, int y, int status) {
+        if ((gamefield.getblackPlayer().getScore() + gamefield.getwhitePlayer()
+                .getScore()) == (gamefield.getGameFieldSize() * gamefield
+                .getGameFieldSize())) {
+            this.stop();
+        }
 
-		if (!operate) {
-			statusLine = "Game already closed, not allowed to set a stone";
-			notifyObservers();
-			return;
-		}
+        return status;
+    }
 
-		gamefield.setStone(x, y, status);
-		notifyObservers();
-	}
+    public void setStone(int x, int y, int status) {
 
-	public String getStatus() {
-		return statusLine;
-	}
+        if (!operate) {
+            statusLine = "Game already closed, not allowed to set a stone";
+            notifyObservers();
+            return;
+        }
 
-	@Override
-	public int getwhitePlayerScore() {
-		return gamefield.getwhitePlayer().getScore();
-	}
+        gamefield.setStone(x, y, status);
+        notifyObservers();
+    }
 
-	@Override
-	public int getblackPlayerScore() {
-		return gamefield.getblackPlayer().getScore();
-	}
+    public String getStatus() {
+        return statusLine;
+    }
 
-	@Override
-	public int getCellStatus(int x, int y) {
-		return gamefield.getCellStatus(x, y);
-	}
+    @Override
+    public int getwhitePlayerScore() {
+        return gamefield.getwhitePlayer().getScore();
+    }
 
-	@Override
-	public String getNext() {
-		return gamefield.getNext();
-	}
+    @Override
+    public int getblackPlayerScore() {
+        return gamefield.getblackPlayer().getScore();
+    }
 
-	@Override
-	public boolean pass() {
-		if (!operate) {
-			statusLine = "Game already closed, not allowed to pass";
-			notifyObservers();
-			return false;
-		}
+    @Override
+    public int getCellStatus(int x, int y) {
+        return gamefield.getCellStatus(x, y);
+    }
 
-		boolean pass = gamefield.pass();
+    @Override
+    public String getNext() {
+        return gamefield.getNext();
+    }
 
-		statusLine = "Player passed, " + gamefield.getNext() + " is next";
-		notifyObservers();
-		return pass;
-	}
+    @Override
+    public boolean pass() {
+        if (!operate) {
+            statusLine = "Game already closed, not allowed to pass";
+            notifyObservers();
+            return false;
+        }
 
-	@Override
-	public int getGameFieldSize() {
-		return gamefield.getGameFieldSize();
-	}
+        boolean pass = gamefield.pass();
+        if (pass) {
+            stop();
+        } else {
+            statusLine = "Player passed, " + gamefield.getNext() + " is next";
+            notifyObservers();
+        }
+        return pass;
+    }
 
-	@Override
-	public void stop() {
-		operate = false;
-		statusLine = "Game has ended";
-		notifyObservers();
-	}
-	
-	public boolean getOperate() {
-		return operate;
-	}
+    @Override
+    public int getGameFieldSize() {
+        return gamefield.getGameFieldSize();
+    }
+
+    @Override
+    public void stop() {
+        operate = false;
+        statusLine = "Game has ended";
+        notifyObservers();
+    }
+
+    public boolean getOperate() {
+        return operate;
+    }
 
 }
