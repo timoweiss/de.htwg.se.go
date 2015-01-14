@@ -308,4 +308,9 @@ public class GameField extends Observable implements IGameField {
 		return length;
 	}
 
+    @Override
+    public boolean passed() {
+        return pass;
+    }
+
 }

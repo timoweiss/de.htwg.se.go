@@ -81,4 +81,6 @@ public interface IGameField {
 	 * @return int
 	 */
 	int getGameFieldSize();
+
+    boolean passed();
 }

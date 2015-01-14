@@ -96,4 +96,10 @@ public interface IGoController extends IObservable {
 	 * @return boolean
 	 */
 	boolean getOperate();
+
+    /**
+     * returns true when one player passed
+     * @return boolean
+     */
+    boolean getPassed();
 }

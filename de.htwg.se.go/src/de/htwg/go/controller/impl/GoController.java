@@ -135,4 +135,9 @@ public class GoController extends Observable implements IGoController {
         return operate;
     }
 
+    @Override
+    public boolean getPassed() {
+        return gamefield.passed();
+    }
+
 }
