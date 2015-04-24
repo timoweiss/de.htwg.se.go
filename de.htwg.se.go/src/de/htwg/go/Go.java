@@ -7,15 +7,14 @@ import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
 import org.apache.log4j.PropertyConfigurator;
 
-import org.apache.logging.log4j.LogManager;
-import org.apache.logging.log4j.Logger;
+
 
 import java.util.Scanner;
 
 public final class Go {
 
 	private Go() {
-		//PropertyConfigurator.configure("log4j.properties");
+		PropertyConfigurator.configure("log4j.properties");
 		Injector injector = Guice.createInjector(new GoModule());
 		controller = injector.getInstance(IGoController.class);
 		controller.createField(9);
