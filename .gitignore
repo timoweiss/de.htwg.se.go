@@ -8,3 +8,5 @@ go.iml
 *.log
 /bin
 /doc
+**/*.iml
+MANIFEST.MF
