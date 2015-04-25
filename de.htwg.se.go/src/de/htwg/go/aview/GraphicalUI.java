@@ -61,7 +61,6 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 	private static final int FIVE = 5;
 
 	public GraphicalUI(IGoController controller) {
-		// Magic Numbers //
 
 		// Framesize//
 		final int framexsize = 750;
