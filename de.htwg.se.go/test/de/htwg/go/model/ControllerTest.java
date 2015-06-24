@@ -13,9 +13,9 @@ public class ControllerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		controller = new GoController();
+		//controller = new GoController();
 
-		controller2 = new GoController();
+		//controller2 = new GoController();
 		controller2.createField(5);
 
 		for (int j = 0; j < 5; j++) {
