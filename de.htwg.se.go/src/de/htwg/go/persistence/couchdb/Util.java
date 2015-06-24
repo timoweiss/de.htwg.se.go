@@ -68,6 +68,21 @@ public class Util {
         persistentGameField.setWhitePlayer(persistencePlayerWhitePlayer);
 
 
+        PersistenceCell a[][] = new PersistenceCell[0][];
+        for(int i = 0; i < gameField.getGameField().length; i++) {
+            for(int j = 0; j < gameField.getGameField()[i].length; j++) {
+                PersistenceCell persistenceCell = new PersistenceCell();
+                persistenceCell.setCoordX(gameField.getGameField()[i][j].getCoords().x);
+                persistenceCell.setCoordY(gameField.getGameField()[i][j].getCoords().y);
+
+                a[i][j] = persistenceCell;
+
+            }
+        }
+        persistentGameField.setGameField(a);
+
+
+
 
         return persistentGameField;
     }
