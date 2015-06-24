@@ -50,9 +50,97 @@ public class GameField extends Observable implements IGameField {
 		whiteRegions = new LinkedList<Set<ICell>>();
 	}
 
-	/*
-	 * initializes the field
-	 */
+    public boolean isPass() {
+        return pass;
+    }
+
+    public void setPass(boolean pass) {
+        this.pass = pass;
+    }
+
+    public void setId(String id) {
+        this.id = id;
+    }
+
+    public ICell[][] getGameField() {
+        return gameField;
+    }
+
+    public void setGameField(ICell[][] gameField) {
+        this.gameField = gameField;
+    }
+
+    public boolean isWhiteIsNext() {
+        return whiteIsNext;
+    }
+
+    public void setWhiteIsNext(boolean whiteIsNext) {
+        this.whiteIsNext = whiteIsNext;
+    }
+
+    public Set<ICell> getBlackList() {
+        return blackList;
+    }
+
+    public void setBlackList(Set<ICell> blackList) {
+        this.blackList = blackList;
+    }
+
+    public Set<ICell> getWhiteList() {
+        return whiteList;
+    }
+
+    public void setWhiteList(Set<ICell> whiteList) {
+        this.whiteList = whiteList;
+    }
+
+    public Collection<Set<ICell>> getBlackRegions() {
+        return blackRegions;
+    }
+
+    public void setBlackRegions(Collection<Set<ICell>> blackRegions) {
+        this.blackRegions = blackRegions;
+    }
+
+    public Collection<Set<ICell>> getWhiteRegions() {
+        return whiteRegions;
+    }
+
+    public void setWhiteRegions(Collection<Set<ICell>> whiteRegions) {
+        this.whiteRegions = whiteRegions;
+    }
+
+    public IPlayer getWhitePlayer() {
+        return whitePlayer;
+    }
+
+    public void setWhitePlayer(IPlayer whitePlayer) {
+        this.whitePlayer = whitePlayer;
+    }
+
+    public IPlayer getBlackPlayer() {
+        return blackPlayer;
+    }
+
+    public void setBlackPlayer(IPlayer blackPlayer) {
+        this.blackPlayer = blackPlayer;
+    }
+
+    public static int getNine() {
+        return NINE;
+    }
+
+    public int getLength() {
+        return length;
+    }
+
+    public void setLength(int length) {
+        this.length = length;
+    }
+
+    /*
+         * initializes the field
+         */
 	// @inject ?
 	private void createField(int x) {
 		length = x;
