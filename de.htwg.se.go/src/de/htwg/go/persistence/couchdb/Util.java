@@ -12,7 +12,7 @@ public class Util {
     public PersistenceGameField getTransformedGameField(IGameField gameField) {
         persistentGameField = new PersistenceGameField();
         persistentGameField.setId(gameField.getId());
-        persistentGameField.setLength(gameField);
+        persistentGameField.setLength(gameField.getLength());
 
         return null;
     }
