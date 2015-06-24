@@ -1,6 +1,9 @@
 package de.htwg.go.controller;
 
+import de.htwg.go.model.IGameField;
 import de.htwg.go.util.observer.IObservable;
+
+import java.util.List;
 
 /**	
  * Interface IGoController builds the bridge 
@@ -105,4 +108,8 @@ public interface IGoController extends IObservable {
 
 
 	public void saveGame();
+
+	public List<IGameField> getAllGames();
+
+	public void loadGameById(String id);
 }

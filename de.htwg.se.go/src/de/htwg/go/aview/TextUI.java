@@ -1,10 +1,13 @@
 package de.htwg.go.aview;
 
+import de.htwg.go.model.IGameField;
 import org.apache.log4j.Logger;
 
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.util.observer.Event;
 import de.htwg.go.util.observer.IObserver;
+
+import java.util.List;
 
 public class TextUI implements IObserver {
 
@@ -52,16 +55,18 @@ public class TextUI implements IObserver {
 			logger.info("Saved Game");
 
 		} else if (line.equals("-getsaved")) {
-			controller.saveGame();
-			logger.info("All games");
+			logger.info("Get all Games");
+			List<IGameField> games = controller.getAllGames();
+
+			for (int i = 0; i < games.size(); i++) {
+				logger.info(games.get(i).getId());
+			}
 
 		} else if (line.contains("-load")) {
-			controller.saveGame();
-			logger.info("load Game");
+			logger.info("Load a Game with ID " + line.replace("-load", ""));
+			controller.loadGameById(line.replace("-load", ""));
+			controller.notifyObservers();
 
-			
-			System.out.println(line);
-			System.out.println(line);
 
 		} else if (line.matches("[0-9][0-9]")) {
 			controller.setStone(Character.getNumericValue(line.charAt(0)),

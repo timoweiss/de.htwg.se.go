@@ -7,6 +7,8 @@ import de.htwg.go.model.impl.GameField;
 import de.htwg.go.persistence.IGameFieldDAO;
 import de.htwg.go.util.observer.Observable;
 
+import java.util.List;
+
 public class GoController extends Observable implements IGoController {
 
     private IGameField gamefield;
@@ -22,6 +24,14 @@ public class GoController extends Observable implements IGoController {
 
     public void saveGame() {
         this.database.saveGame(gamefield);
+    }
+
+    public List<IGameField> getAllGames() {
+        return this.database.getAllGames();
+    }
+
+    public void loadGameById(String id) {
+        this.gamefield = this.database.getGameById(id);
     }
 
     @Override
