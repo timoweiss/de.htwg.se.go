@@ -2,6 +2,7 @@ package de.htwg.go.persistence.couchdb;
 
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
+import de.htwg.go.model.IPlayer;
 
 import java.util.HashSet;
 import java.util.Set;
@@ -44,9 +45,17 @@ public class Util {
             setPersistenceCellWhiteList.add(persistenceCell);
         }
 
-        persistentGameField.setWhitePlayer(gameField.getWhitePlayer());
-        persistentGameField.setBlackPlayer(gameField.getBlackPlayer());
+        PersistencePlayer persistencePlayerBlackPlayer = new PersistencePlayer();
+        IPlayer playerBlackPlayer = gameField.getblackPlayer();
+        persistencePlayerBlackPlayer.setName(playerBlackPlayer.getName());
+        persistencePlayerBlackPlayer.setScore(playerBlackPlayer.getScore());
 
+        PersistencePlayer persistencePlayerWhitePlayer = new PersistencePlayer();
+        IPlayer playerWhitePlayer = gameField.getWhitePlayer();
+        persistencePlayerWhitePlayer.setName(playerWhitePlayer.getName());
+        persistencePlayerWhitePlayer.setScore(playerWhitePlayer.getScore());
+
+        persistentGameField.set
 
 
         return null;
