@@ -1,4 +1,8 @@
 package de.htwg.go.model;
+
+import java.util.Collection;
+import java.util.Set;
+
 /**
  * Represents the Gamefield of the Game.
  * Provides serveral methods for the general game functionality
@@ -85,4 +89,43 @@ public interface IGameField {
 	int getGameFieldSize();
 
     boolean passed();
+
+
+    public ICell[][] getGameField();
+
+    public void setGameField(ICell[][] gameField);
+
+    public boolean isWhiteIsNext();
+
+    public void setWhiteIsNext(boolean whiteIsNext);
+
+    public Set<ICell> getBlackList();
+
+    public void setBlackList(Set<ICell> blackList);
+
+    public Set<ICell> getWhiteList();
+
+    public void setWhiteList(Set<ICell> whiteList);
+
+    public Collection<Set<ICell>> getBlackRegions();
+
+    public void setBlackRegions(Collection<Set<ICell>> blackRegions);
+
+    public Collection<Set<ICell>> getWhiteRegions();
+
+    public void setWhiteRegions(Collection<Set<ICell>> whiteRegions);
+
+    public IPlayer getWhitePlayer();
+
+    public void setWhitePlayer(IPlayer whitePlayer);
+
+    public IPlayer getBlackPlayer();
+
+    public void setBlackPlayer(IPlayer blackPlayer);
+
+    public static int getNine();
+
+    public int getLength();
+
+    public void setLength(int length);
 }
