@@ -55,7 +55,10 @@ public class Util {
         persistencePlayerWhitePlayer.setName(playerWhitePlayer.getName());
         persistencePlayerWhitePlayer.setScore(playerWhitePlayer.getScore());
 
+        persistentGameField.setBlackPlayer(persistencePlayerBlackPlayer);
+        persistentGameField.setWhitePlayer(persistencePlayerWhitePlayer);
 
-        return null;
+
+        return persistentGameField;
     }
 }
