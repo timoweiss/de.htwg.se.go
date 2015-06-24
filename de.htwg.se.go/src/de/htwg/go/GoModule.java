@@ -21,8 +21,8 @@ public class GoModule extends AbstractModule {
 		bind(IGoController.class).to(
 				de.htwg.go.controller.impl.GoController.class).in(Singleton.class);
 
-        bind(IGameFieldDAO.class).to(de.htwg.go.persistence.db4o.GameFieldDb4oDAO.class);
         //bind(IGameFieldDAO.class).to(de.htwg.go.persistence.db4o.GameFieldDb4oDAO.class);
+        bind(IGameFieldDAO.class).to(de.htwg.go.persistence.couchdb.GameFieldCouchdbDAO.class);
         //bind(IGameFieldDAO.class).to(de.htwg.go.persistence.db4o.GameFieldDb4oDAO.class);
 
 		Multibinder<GoPlugins> plugins = Multibinder.newSetBinder(binder(), GoPlugins.class);
