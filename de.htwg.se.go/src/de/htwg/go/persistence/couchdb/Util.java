@@ -33,6 +33,8 @@ public class Util {
             setPersistenceCellBlackList.add(persistenceCell);
         }
 
+        persistentGameField.setBlackList(setPersistenceCellBlackList);
+
         // verbose getWhiteList stuff
         Set<PersistenceCell> setPersistenceCellWhiteList = new HashSet<PersistenceCell>();
         for (ICell current: gameField.getWhiteList()) {
@@ -45,6 +47,8 @@ public class Util {
             setPersistenceCellWhiteList.add(persistenceCell);
         }
 
+        persistentGameField.setWhiteList(setPersistenceCellWhiteList);
+
         PersistencePlayer persistencePlayerBlackPlayer = new PersistencePlayer();
         IPlayer playerBlackPlayer = gameField.getblackPlayer();
         persistencePlayerBlackPlayer.setName(playerBlackPlayer.getName());
@@ -55,7 +59,11 @@ public class Util {
         persistencePlayerWhitePlayer.setName(playerWhitePlayer.getName());
         persistencePlayerWhitePlayer.setScore(playerWhitePlayer.getScore());
 
+        persistentGameField.setBlackPlayer(persistencePlayerBlackPlayer);
+        persistentGameField.setWhitePlayer(persistencePlayerWhitePlayer);
 
-        return null;
+
+
+        return persistentGameField;
     }
 }
