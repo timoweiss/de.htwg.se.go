@@ -11,3 +11,4 @@ go.iml
 **/*.iml
 MANIFEST.MF
 *.data
+.data
