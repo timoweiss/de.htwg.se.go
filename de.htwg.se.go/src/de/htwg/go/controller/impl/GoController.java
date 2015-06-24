@@ -26,6 +26,11 @@ public class GoController extends Observable implements IGoController {
         this.database.saveGame(gamefield);
     }
 
+    @Override
+    public void deleteGameById(String id) {
+        this.database.deleteGameById(id);
+    }
+
     public List<IGameField> getAllGames() {
         return this.database.getAllGames();
     }
@@ -158,5 +163,7 @@ public class GoController extends Observable implements IGoController {
     public boolean getPassed() {
         return gamefield.passed();
     }
+
+
 
 }

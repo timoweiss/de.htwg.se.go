@@ -112,4 +112,6 @@ public interface IGoController extends IObservable {
 	public List<IGameField> getAllGames();
 
 	public void loadGameById(String id);
+
+	public void deleteGameById(String id);
 }

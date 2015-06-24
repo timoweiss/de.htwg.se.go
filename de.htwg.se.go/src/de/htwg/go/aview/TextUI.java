@@ -62,6 +62,10 @@ public class TextUI implements IObserver {
 				logger.info(games.get(i).getId());
 			}
 
+		} else if (line.contains("-delete")) {
+			logger.info("Delete Game with ID " + line.replace("-delete", ""));
+			controller.deleteGameById(line.replace("-delete", ""));
+
 		} else if (line.contains("-load")) {
 			logger.info("Load a Game with ID " + line.replace("-load", ""));
 			controller.loadGameById(line.replace("-load", ""));
