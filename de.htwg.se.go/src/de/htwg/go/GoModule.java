@@ -2,6 +2,7 @@ package de.htwg.go;
 
 import com.google.inject.AbstractModule;
 
+import com.google.inject.Singleton;
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.model.IScore;
@@ -16,10 +17,11 @@ public class GoModule extends AbstractModule {
 		bind(IScore.class).to(de.htwg.go.model.impl.Score.class);
 
 		bind(IGoController.class).to(
-				de.htwg.go.controller.impl.GoController.class);
+				de.htwg.go.controller.impl.GoController.class).in(Singleton.class);
 
         bind(IGameFieldDAO.class).to(de.htwg.go.persistence.db4o.GameFieldDb4oDAO.class);
         //bind(IGameFieldDAO.class).to(de.htwg.go.persistence.db4o.GameFieldDb4oDAO.class);
         //bind(IGameFieldDAO.class).to(de.htwg.go.persistence.db4o.GameFieldDb4oDAO.class);
+
 	}
 }

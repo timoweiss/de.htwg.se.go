@@ -4,6 +4,8 @@ import de.htwg.go.model.IGameField;
 import de.htwg.go.persistence.IGameFieldDAO;
 import org.ektorp.CouchDbConnector;
 
+import java.util.List;
+
 public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
     private CouchDbConnector db = null;
@@ -20,6 +22,16 @@ public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
     @Override
     public void deleteGameById(String id) {
+
+    }
+
+    @Override
+    public List<IGameField> getAllGames() {
+        return null;
+    }
+
+    @Override
+    public void closeDB() {
 
     }
 
