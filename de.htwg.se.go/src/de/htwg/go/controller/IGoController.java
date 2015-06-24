@@ -102,4 +102,7 @@ public interface IGoController extends IObservable {
      * @return boolean
      */
     boolean getPassed();
+
+
+	public void saveGame();
 }
