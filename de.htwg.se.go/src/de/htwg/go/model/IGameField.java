@@ -123,8 +123,6 @@ public interface IGameField {
 
     public void setBlackPlayer(IPlayer blackPlayer);
 
-    public static int getNine();
-
     public int getLength();
 
     public void setLength(int length);
