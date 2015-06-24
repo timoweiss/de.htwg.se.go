@@ -1,6 +1,5 @@
 package de.htwg.go.persistence.couchdb;
 
-import de.htwg.go.model.IScore;
 import org.ektorp.support.CouchDbDocument;
 
 /**
@@ -8,7 +7,7 @@ import org.ektorp.support.CouchDbDocument;
  */
 public class PersistencePlayer extends CouchDbDocument {
     private String name;
-    private IScore score;
+    private int score;
 
     public String getName() {
         return name;
@@ -18,11 +17,11 @@ public class PersistencePlayer extends CouchDbDocument {
         this.name = name;
     }
 
-    public IScore getScore() {
+    public int getScore() {
         return score;
     }
 
-    public void setScore(IScore score) {
+    public void setScore(int score) {
         this.score = score;
     }
 }
