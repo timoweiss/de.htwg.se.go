@@ -16,8 +16,11 @@ public final class Go {
 	private Go() {
 		PropertyConfigurator.configure("log4j.properties");
 		Injector injector = Guice.createInjector(new GoModule());
+
 		controller = injector.getInstance(IGoController.class);
 		controller.createField(9);
+
+		injector.getInstance(GraphicalUI.class);
 	}
 
 	private static Scanner scanner;
@@ -37,7 +40,9 @@ public final class Go {
 		Go.getInstance();
 
 		tui = new TextUI(getInstance().controller);
-		new GraphicalUI(getInstance().controller);
+		//new GraphicalUI(getInstance().controller);
+
+
 
 		boolean goAhead = true;
 		scanner = new Scanner(System.in);

@@ -9,18 +9,13 @@ import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
+import java.util.Set;
 
 import javax.imageio.ImageIO;
-import javax.swing.ImageIcon;
-import javax.swing.JButton;
-import javax.swing.JFrame;
-import javax.swing.JLabel;
-import javax.swing.JMenu;
-import javax.swing.JMenuBar;
-import javax.swing.JMenuItem;
-import javax.swing.JOptionPane;
-import javax.swing.JPanel;
+import javax.swing.*;
 
+import com.google.inject.Inject;
+import de.htwg.go.plugins.GoPlugins;
 import org.apache.log4j.Logger;
 
 import de.htwg.go.controller.IGoController;
@@ -60,7 +55,8 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
     private static final int NINE = 9;
     private static final int FIVE = 5;
 
-    public GraphicalUI(IGoController controller) {
+    @Inject
+    public GraphicalUI(IGoController controller, Set<GoPlugins> plugins) {
 
         // Framesize//
         final int framexsize = 750;
@@ -296,9 +292,43 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
         menuItem.addActionListener(this);
         menu.add(menuItem);
 
+        // Plugins //
+        menu = new JMenu("Plugins");
+        menuItem.addActionListener(this);
+        menuBar.add(menu);
+
+
+        for (GoPlugins current : plugins) {
+            addPluginItem(current, menu);
+        }
+        menuBar.add(menu);
+
+
         frame.setJMenuBar(menuBar);
         frame.setVisible(true);
 
+
+    }
+
+    private void addPluginItem(final GoPlugins plugin, JMenu pluginMenu) {
+        final JCheckBoxMenuItem checkbox = new JCheckBoxMenuItem(plugin.getName());
+
+        checkbox.addActionListener(new ActionListener() {
+
+            @Override
+            public void actionPerformed(ActionEvent arg0) {
+                if (checkbox.isSelected()) {
+                    controller.addObserver(plugin);
+                    plugin.enable(controller);
+                } else {
+                    controller.removeObserver(plugin);
+                    plugin.deenable();
+                }
+            }
+        });
+
+        // add to plugin menu
+        pluginMenu.add(checkbox);
     }
 
     private void print() {
