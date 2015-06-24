@@ -20,7 +20,8 @@ public class Util {
         persistentGameField.setPass(gameField.passed());
         persistentGameField.setWhiteIsNext(gameField.isWhiteIsNext());
 
-        Set<PersistenceCell> setPersistenceCell = new HashSet<PersistenceCell>();
+        // verbose getBlackList stuff
+        Set<PersistenceCell> setPersistenceCellBlackList = new HashSet<PersistenceCell>();
         for (ICell current: gameField.getBlackList()) {
             PersistenceCell persistenceCell = new PersistenceCell();
 
@@ -28,9 +29,21 @@ public class Util {
             persistenceCell.setCoords(current.getCoords());
             persistenceCell.setStatus(current.getStatus());
 
-            setPersistenceCell.add(persistenceCell);
+            setPersistenceCellBlackList.add(persistenceCell);
         }
-        persistentGameField.setBlackList(setPersistenceCell);
+
+        // verbose getWhiteList stuff
+        Set<PersistenceCell> setPersistenceCellWhiteList = new HashSet<PersistenceCell>();
+        for (ICell current: gameField.getWhiteList()) {
+            PersistenceCell persistenceCell = new PersistenceCell();
+
+            persistenceCell.setChecked(current.isChecked());
+            persistenceCell.setCoords(current.getCoords());
+            persistenceCell.setStatus(current.getStatus());
+
+            setPersistenceCellWhiteList.add(persistenceCell);
+        }
+
         return null;
     }
 }
