@@ -9,4 +9,20 @@ import org.ektorp.support.CouchDbDocument;
 public class PersistencePlayer extends CouchDbDocument {
     private String name;
     private IScore score;
+
+    public String getName() {
+        return name;
+    }
+
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public IScore getScore() {
+        return score;
+    }
+
+    public void setScore(IScore score) {
+        this.score = score;
+    }
 }
