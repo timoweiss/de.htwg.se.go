@@ -47,6 +47,10 @@ public class TextUI implements IObserver {
 				logger.info("game has ended");
 			}
 
+		} else if (line.equals("-save")) {
+			controller.saveGame();
+			logger.info("Saved Game");
+
 		} else if (line.matches("[0-9][0-9]")) {
 			controller.setStone(Character.getNumericValue(line.charAt(0)),
 					Character.getNumericValue(line.charAt(1)));
