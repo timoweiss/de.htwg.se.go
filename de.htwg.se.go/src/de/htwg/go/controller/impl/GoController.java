@@ -1,8 +1,10 @@
 package de.htwg.go.controller.impl;
 
+import com.google.inject.Inject;
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.impl.GameField;
+import de.htwg.go.persistence.IGameFieldDAO;
 import de.htwg.go.util.observer.Observable;
 
 public class GoController extends Observable implements IGoController {
@@ -10,9 +12,16 @@ public class GoController extends Observable implements IGoController {
     private IGameField gamefield;
     private String statusLine;
     private boolean operate;
+    private IGameFieldDAO database;
 
-    public GoController() {
+    @Inject
+    public GoController(IGameFieldDAO gamefield) {
         operate = true;
+        this.database = gamefield;
+    }
+
+    public void saveGame() {
+        this.database.saveGame(gamefield);
     }
 
     @Override

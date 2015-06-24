@@ -1,22 +1,20 @@
 package de.htwg.go.persistence.db4o;
 
-import de.htwg.go.model.IGameField;
-import de.htwg.go.persistence.IGameFieldDAO;
-
 import com.db4o.Db4oEmbedded;
 import com.db4o.ObjectContainer;
-import com.db4o.query.Query;
+import de.htwg.go.model.IGameField;
+import de.htwg.go.persistence.IGameFieldDAO;
 
 /**
  * Created by timoweiss on 24/06/15.
  */
 public class GameFieldDb4oDAO implements IGameFieldDAO {
 
-    private ObjectContainer db;
+    private ObjectContainer db = Db4oEmbedded.openFile(Db4oEmbedded.newConfiguration(), "db4o_go.data");
 
     @Override
     public void saveGame(IGameField gameField) {
-
+        this.db.store(gameField);
     }
 
     @Override
