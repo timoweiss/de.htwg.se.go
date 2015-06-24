@@ -48,5 +48,11 @@ maven-4.0.0.xsd">
             <version>1.2.2</version>
         </dependency>
 
+        <dependency>
+            <groupId>com.db4o</groupId>
+            <artifactId>db4o-core-java5</artifactId>
+            <version>8.0.184.15484</version>
+        </dependency>
+
 	</dependencies>
 </project>
