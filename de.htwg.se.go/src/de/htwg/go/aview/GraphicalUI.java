@@ -116,37 +116,37 @@ public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 		JFrame frame;
 
 		backgroundplay = new ImageIcon(
-				"../app/assets/images/gamefield99.jpg");
+				"./images/gamefield99.jpg");
 
 		backgroundplaySmall = new ImageIcon(
-				"../app/assets/images/gamefield55.jpg");
+				"./images/gamefield55.jpg");
 
 		ImageIcon passMove;
 		passMove = new ImageIcon(
-				"../app/assets/images/passMove.jpg");
+				"./images/passMove.jpg");
 
 		whiteStatsback = new ImageIcon(
-				"../app/assets/images/whiteScoreboard.jpg");
+				"./images/whiteScoreboard.jpg");
 
 		whiteStatsbackA = new ImageIcon(
-				"../app/assets/images/whiteScoreboardAct.jpg");
+				"./images/whiteScoreboardAct.jpg");
 
 		blackStatsback = new ImageIcon(
-				"../app/assets/images/blackScoreboard.jpg");
+				"./images/blackScoreboard.jpg");
 
 		blackStatsbackA = new ImageIcon(
-				"../app/assets/images/blackScoreboardAct.jpg");
+				"./images/blackScoreboardAct.jpg");
 
 		ImageIcon backgroundImg;
 		backgroundImg = new ImageIcon(
-				"../app/assets/images/guiBackground.jpg");
+				"./images/guiBackground.jpg");
 
 		try {
 			whiteButton = new ImageIcon(ImageIO.read(new File(
-					"../app/assets/images/whiteStone.png")));
+					"./images/whiteStone.png")));
 
 			blackButton = new ImageIcon(ImageIO.read(new File(
-					"../app/assets/images/blackStone.png")));
+					"./images/blackStone.png")));
 
 		} catch (IOException e) {
 			logger.error("not able to initialize image ressources");
