@@ -44,6 +44,11 @@ public class Util {
             setPersistenceCellWhiteList.add(persistenceCell);
         }
 
+        persistentGameField.setWhitePlayer(gameField.getWhitePlayer());
+        persistentGameField.setBlackPlayer(gameField.getBlackPlayer());
+
+
+
         return null;
     }
 }
