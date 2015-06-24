@@ -126,4 +126,8 @@ public interface IGameField {
     public int getLength();
 
     public void setLength(int length);
+
+    public void setPass(boolean pass);
+
+    public void setId(String id);
 }

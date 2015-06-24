@@ -13,6 +13,8 @@ public class Util {
         persistentGameField = new PersistenceGameField();
         persistentGameField.setId(gameField.getId());
         persistentGameField.setLength(gameField.getLength());
+        persistentGameField.setPass(gameField.passed());
+        persistentGameField.setWhiteIsNext(gameField.isWhiteIsNext());
 
         return null;
     }
