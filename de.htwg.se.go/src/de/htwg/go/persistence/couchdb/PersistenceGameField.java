@@ -1,7 +1,5 @@
 package de.htwg.go.persistence.couchdb;
 
-import de.htwg.go.model.ICell;
-import de.htwg.go.model.IPlayer;
 import org.ektorp.support.CouchDbDocument;
 
 import java.util.Collection;
@@ -14,7 +12,7 @@ public class PersistenceGameField extends CouchDbDocument{
     private boolean pass = false;
 
     private String id;
-    private ICell gameField[][];
+    private PersistenceCell gameField[][];
     private boolean whiteIsNext = true;
 
     private Set<PersistenceCell> blackList;
@@ -23,8 +21,8 @@ public class PersistenceGameField extends CouchDbDocument{
     private Collection<Set<PersistenceCell>> blackRegions;
     private Collection<Set<PersistenceCell>> whiteRegions;
 
-    private IPlayer whitePlayer;
-    private IPlayer blackPlayer;
+    private PersistencePlayer whitePlayer;
+    private PersistencePlayer blackPlayer;
 
     // size of the gamefield LENGTH x LENGTH
     private int length;
@@ -53,11 +51,11 @@ public class PersistenceGameField extends CouchDbDocument{
         this.id = id;
     }
 
-    public ICell[][] getGameField() {
+    public PersistenceCell[][] getGameField() {
         return gameField;
     }
 
-    public void setGameField(ICell[][] gameField) {
+    public void setGameField(PersistenceCell[][] gameField) {
         this.gameField = gameField;
     }
 
@@ -101,19 +99,19 @@ public class PersistenceGameField extends CouchDbDocument{
         this.whiteRegions = whiteRegions;
     }
 
-    public IPlayer getWhitePlayer() {
+    public PersistencePlayer getWhitePlayer() {
         return whitePlayer;
     }
 
-    public void setWhitePlayer(IPlayer whitePlayer) {
+    public void setWhitePlayer(PersistencePlayer whitePlayer) {
         this.whitePlayer = whitePlayer;
     }
 
-    public IPlayer getBlackPlayer() {
+    public PersistencePlayer getBlackPlayer() {
         return blackPlayer;
     }
 
-    public void setBlackPlayer(IPlayer blackPlayer) {
+    public void setBlackPlayer(PersistencePlayer blackPlayer) {
         this.blackPlayer = blackPlayer;
     }
 
