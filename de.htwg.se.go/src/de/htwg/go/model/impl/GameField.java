@@ -1,14 +1,11 @@
 package de.htwg.go.model.impl;
 
-import java.util.Collection;
-import java.util.LinkedList;
-import java.util.Set;
-import java.util.TreeSet;
-
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
-import de.htwg.go.util.observer.*;
+import de.htwg.go.util.observer.Observable;
+
+import java.util.*;
 
 /**
  * @author Timo Weiss, Michael Knoch
@@ -18,6 +15,7 @@ public class GameField extends Observable implements IGameField {
 
 	private boolean pass = false;
 
+    private String id;
 	private ICell gameField[][];
 	private boolean whiteIsNext = true;
 
@@ -37,6 +35,7 @@ public class GameField extends Observable implements IGameField {
 
 	public GameField(int length) {
 
+        id = UUID.randomUUID().toString();
 		randomNext();
 
 		createField(length);
@@ -89,9 +88,14 @@ public class GameField extends Observable implements IGameField {
 		}
 	}
 
-	/*
-	 * sets a Stone with x and y
-	 */
+    @Override
+    public String getId() {
+        return this.id;
+    }
+
+    /*
+     * sets a Stone with x and y
+     */
 	public boolean setStone(int x, int y) {
 		if (x < 0 || y < 0) {
 			return false;

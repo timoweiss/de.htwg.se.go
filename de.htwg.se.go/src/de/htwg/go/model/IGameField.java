@@ -12,6 +12,8 @@ public interface IGameField {
 	 */
 	String getNext();
 
+    String getId();
+
 	/**
 	 * sets a stone at x,y
 	 * @param x x-coordinate
