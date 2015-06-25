@@ -2,10 +2,7 @@ package de.htwg.go.persistence.hibernate;
 
 import de.htwg.go.persistence.couchdb.PersistenceCell;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
 import java.io.Serializable;
 import java.util.Collection;
 import java.util.Set;
@@ -23,26 +20,38 @@ public class PersistentGame implements Serializable {
     private PersistentCell gameField[][];
     private boolean whiteIsNext = true;
 
-    private Set<PersistenceCell> blackList;
-    private Set<PersistenceCell> whiteList;
+    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PersistentCell.class)
+    private Set<PersistentCell> blackList;
 
-    private Collection<Set<PersistenceCell>> blackRegions;
-    private Collection<Set<PersistenceCell>> whiteRegions;
+    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PersistentCell.class)
+    private Set<PersistentCell> whiteList;
 
+    //@OneToMany(mappedBy = "game")
+   /* private Collection<Set<PersistenceCell>> blackRegions;
+    private Collection<Set<PersistenceCell>> whiteRegions;*/
+
+    @OneToOne
     private PersistentPlayer whitePlayer;
+
+    @OneToOne
     private PersistentPlayer blackPlayer;
 
     // size of the gamefield LENGTH x LENGTH
     private int length;
 
+    private Integer value = 0;
+
+
+
+    @Id
+    @Column(name = "id")
+    private String id;
+
     public PersistentGame() {
 
     }
 
-    private String id;
 
-
-    @Id
     public String getId() {
         return id;
     }
@@ -75,23 +84,23 @@ public class PersistentGame implements Serializable {
         this.whiteIsNext = whiteIsNext;
     }
 
-    public Set<PersistenceCell> getBlackList() {
+    public Set<PersistentCell> getBlackList() {
         return blackList;
     }
 
-    public void setBlackList(Set<PersistenceCell> blackList) {
+    public void setBlackList(Set<PersistentCell> blackList) {
         this.blackList = blackList;
     }
 
-    public Set<PersistenceCell> getWhiteList() {
+    public Set<PersistentCell> getWhiteList() {
         return whiteList;
     }
 
-    public void setWhiteList(Set<PersistenceCell> whiteList) {
+    public void setWhiteList(Set<PersistentCell> whiteList) {
         this.whiteList = whiteList;
     }
 
-    public Collection<Set<PersistenceCell>> getBlackRegions() {
+   /* public Collection<Set<PersistenceCell>> getBlackRegions() {
         return blackRegions;
     }
 
@@ -106,7 +115,7 @@ public class PersistentGame implements Serializable {
     public void setWhiteRegions(Collection<Set<PersistenceCell>> whiteRegions) {
         this.whiteRegions = whiteRegions;
     }
-
+*/
     public PersistentPlayer getWhitePlayer() {
         return whitePlayer;
     }
@@ -130,4 +139,6 @@ public class PersistentGame implements Serializable {
     public void setLength(int length) {
         this.length = length;
     }
+
+
 }

@@ -17,5 +17,6 @@
         <!-- Mapped classes -->
         <mapping class="de.htwg.go.persistence.hibernate.PersistentGame" />
         <mapping class="de.htwg.go.persistence.hibernate.PersistentPlayer" />
+        <mapping class="de.htwg.go.persistence.hibernate.PersistentCell" />
     </session-factory>
 </hibernate-configuration>
