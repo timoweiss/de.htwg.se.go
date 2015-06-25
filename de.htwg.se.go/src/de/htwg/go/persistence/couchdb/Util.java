@@ -4,6 +4,7 @@ import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
 
+import java.awt.*;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -27,7 +28,9 @@ public class Util {
             PersistenceCell persistenceCell = new PersistenceCell();
 
             persistenceCell.setChecked(current.isChecked());
-            persistenceCell.setCoords(current.getCoords());
+            Point point = current.getCoords();
+            persistenceCell.setCoordX(point.x);
+            persistenceCell.setCoordY(point.y);
             persistenceCell.setStatus(current.getStatus());
 
             setPersistenceCellBlackList.add(persistenceCell);
@@ -41,7 +44,9 @@ public class Util {
             PersistenceCell persistenceCell = new PersistenceCell();
 
             persistenceCell.setChecked(current.isChecked());
-            persistenceCell.setCoords(current.getCoords());
+            Point point = current.getCoords();
+            persistenceCell.setCoordX(point.x);
+            persistenceCell.setCoordY(point.y);
             persistenceCell.setStatus(current.getStatus());
 
             setPersistenceCellWhiteList.add(persistenceCell);
@@ -61,6 +66,22 @@ public class Util {
 
         persistentGameField.setBlackPlayer(persistencePlayerBlackPlayer);
         persistentGameField.setWhitePlayer(persistencePlayerWhitePlayer);
+
+
+        PersistenceCell a[][] = new PersistenceCell[gameField.getGameField().length][gameField.getGameField().length];
+        for(int i = 0; i < gameField.getGameField().length; i++) {
+            for(int j = 0; j < gameField.getGameField()[i].length; j++) {
+                PersistenceCell persistenceCell = new PersistenceCell();
+                persistenceCell.setCoordX(gameField.getGameField()[i][j].getCoords().x);
+                persistenceCell.setCoordY(gameField.getGameField()[i][j].getCoords().y);
+                System.out.println(i);
+                System.out.println(j);
+                a[i][j] = persistenceCell;
+
+            }
+        }
+        persistentGameField.setGameField(a);
+
 
 
 

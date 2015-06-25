@@ -2,15 +2,14 @@ package de.htwg.go.persistence.couchdb;
 
 import org.ektorp.support.CouchDbDocument;
 
-import java.awt.*;
-
 /**
  * Created by timoweiss on 24/06/15.
  */
 public class PersistenceCell extends CouchDbDocument {
 
     private int status;
-    private Point coords;
+    private int coordX;
+    private int coordY;
     private boolean checked;
 
     public int getStatus() {
@@ -21,12 +20,20 @@ public class PersistenceCell extends CouchDbDocument {
         this.status = status;
     }
 
-    public Point getCoords() {
-        return coords;
+    public int getCoordX() {
+        return coordX;
     }
 
-    public void setCoords(Point coords) {
-        this.coords = coords;
+    public int getCoordY() {
+        return coordY;
+    }
+
+    public void setCoordX(int coordX) {
+        this.coordX = coordX;
+    }
+
+    public void setCoordY(int coordY) {
+        this.coordY = coordY;
     }
 
     public boolean isChecked() {
