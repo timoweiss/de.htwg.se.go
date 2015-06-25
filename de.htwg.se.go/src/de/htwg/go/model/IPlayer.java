@@ -26,4 +26,8 @@ public interface IPlayer {
 	 */	
 	int addScore(int scoreToAdd);
 
+    public void setName(String name);
+
+    public void setScore(int score);
+
 }

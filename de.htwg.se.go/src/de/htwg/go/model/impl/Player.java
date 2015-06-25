@@ -26,4 +26,11 @@ public class Player implements IPlayer {
 		return score.addPoints(scoreToAdd);
 	}
 
+    public void setName(String name) {
+        this.name = name;
+    }
+
+    public void setScore(int score) {
+        this.score.addPoints(score);
+    }
 }
