@@ -4,6 +4,7 @@ import de.htwg.go.model.IGameField;
 import de.htwg.go.persistence.IGameFieldDAO;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
+import org.ektorp.DocumentNotFoundException;
 import org.ektorp.http.HttpClient;
 import org.ektorp.http.StdHttpClient;
 import org.ektorp.impl.StdCouchDbInstance;
@@ -38,7 +39,12 @@ public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
     @Override
     public IGameField getGameById(String id) {
-        return null;
+        try {
+            PersistenceGameField game = db.get(PersistenceGameField.class, id);
+            return util.getReTransformedGameField(game);
+        } catch (DocumentNotFoundException e) {
+            return null;
+        }
     }
 
     @Override
