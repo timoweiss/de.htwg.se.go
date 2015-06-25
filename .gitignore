@@ -12,3 +12,4 @@ go.iml
 MANIFEST.MF
 **/*.data
 .data
+target/
