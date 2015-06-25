@@ -3,6 +3,9 @@ package de.htwg.go.persistence.couchdb;
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
+import de.htwg.go.model.impl.Cell;
+import de.htwg.go.model.impl.GameField;
+import de.htwg.go.model.impl.Player;
 
 import java.awt.*;
 import java.util.HashSet;
@@ -13,10 +16,10 @@ import java.util.Set;
  */
 public class Util {
 
-    PersistenceGameField persistentGameField;
+
 
     public PersistenceGameField getTransformedGameField(IGameField gameField) {
-        persistentGameField = new PersistenceGameField();
+        PersistenceGameField persistentGameField = new PersistenceGameField();
         persistentGameField.setId(gameField.getId());
         persistentGameField.setLength(gameField.getLength());
         persistentGameField.setPass(gameField.passed());
@@ -86,5 +89,68 @@ public class Util {
 
 
         return persistentGameField;
+    }
+
+    public IGameField getReTransformedGameField(PersistenceGameField gameField) {
+
+        IGameField nonPersistentGamefield = new GameField(gameField.getLength());
+        nonPersistentGamefield.setId(gameField.getId());
+        nonPersistentGamefield.setLength(gameField.getLength());
+        nonPersistentGamefield.setPass(gameField.isPass());
+        nonPersistentGamefield.setWhiteIsNext(gameField.isWhiteIsNext());
+
+        // verbose getBlackList stuff
+        Set<ICell> setCellBlackList = new HashSet<ICell>();
+        for (PersistenceCell current: gameField.getBlackList()) {
+
+            Cell cell = new Cell(current.getCoordX(), current.getCoordY());
+
+            cell.setChecked(current.isChecked());
+            cell.setStatus(current.getStatus());
+
+            setCellBlackList.add(cell);
+        }
+
+        nonPersistentGamefield.setBlackList(setCellBlackList);
+
+        // verbose getWhiteList stuff
+        Set<ICell> setCellWhiteList = new HashSet<ICell>();
+        for (PersistenceCell current: gameField.getWhiteList()) {
+
+            Cell cell = new Cell(current.getCoordX(), current.getCoordY());
+
+            cell.setChecked(current.isChecked());
+            cell.setStatus(current.getStatus());
+
+            setCellWhiteList.add(cell);
+        }
+
+        nonPersistentGamefield.setWhiteList(setCellWhiteList);
+
+        IPlayer nonPerBlackPlayer = new Player();
+        PersistencePlayer psbp = gameField.getBlackPlayer();
+        nonPerBlackPlayer.setName(psbp.getName());
+        nonPerBlackPlayer.setScore(psbp.getScore());
+        nonPersistentGamefield.setBlackPlayer(nonPerBlackPlayer);
+
+        IPlayer nonPerWhitePlayer = new Player();
+        PersistencePlayer pswp = gameField.getWhitePlayer();
+        nonPerWhitePlayer.setName(pswp.getName());
+        nonPerWhitePlayer.setScore(pswp.getScore());
+        nonPersistentGamefield.setWhitePlayer(nonPerWhitePlayer);
+
+
+        Cell b[][] = new Cell[gameField.getGameField().length][gameField.getGameField().length];
+        for(int i = 0; i < gameField.getGameField().length; i++) {
+            for(int j = 0; j < gameField.getGameField()[i].length; j++) {
+                Cell npCell = new Cell(gameField.getGameField()[i][j].getCoordX(), gameField.getGameField()[i][j].getCoordY());
+
+                b[i][j] = npCell;
+
+            }
+        }
+        nonPersistentGamefield.setGameField(b);
+
+        return nonPersistentGamefield;
     }
 }
