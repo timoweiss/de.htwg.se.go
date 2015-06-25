@@ -49,7 +49,7 @@ public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
     @Override
     public void deleteGameById(String id) {
-
+        db.delete(util.getTransformedGameField(getGameById(id)));
     }
 
     @Override
