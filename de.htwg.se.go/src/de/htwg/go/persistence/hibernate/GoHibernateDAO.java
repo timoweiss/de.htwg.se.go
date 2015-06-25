@@ -1,11 +1,14 @@
 package de.htwg.go.persistence.hibernate;
 
 import de.htwg.go.model.IGameField;
+import de.htwg.go.model.impl.GameField;
 import de.htwg.go.persistence.IGameFieldDAO;
+import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 
+import java.util.ArrayList;
 import java.util.List;
 
 /**
@@ -76,32 +79,52 @@ public class GoHibernateDAO implements IGameFieldDAO {
 
     @Override
     public List<IGameField> getAllGames() {
-        return null;
+
+        this.session.beginTransaction();
+
+        Criteria criteria = this.session.createCriteria(PersistentGame.class);
+
+        @SuppressWarnings("unchecked")
+        List<PersistentGame> results = criteria.list();
+
+        List<IGameField> games = new ArrayList<IGameField>();
+        for (PersistentGame current : results) {
+            IGameField game = transformFromHibernate(current);
+            games.add(game);
+        }
+
+        return games;
+
     }
 
     @Override
     public void closeDB() {
-
+        System.out.println("Close Success");
     }
 
     @Override
     public void updateGameById(String id, IGameField gameField) {
-
+        saveGame(gameField);
     }
 
     @Override
     public boolean contains(String id) {
-        return false;
+        return getGameById(id) != null;
     }
 
 
     private IGameField transformFromHibernate(PersistentGame persistentGame) {
-        return null;
+        IGameField gamefield = new GameField(persistentGame.getLength());
+
+        gamefield.setBlackPlayer(persistentGame.getBlackPlayer());
+
+        return gamefield;
+
     }
 
 
     private PersistentGame transformToHibernate(IGameField gameField) {
-        return null;
+        
     }
 
 }

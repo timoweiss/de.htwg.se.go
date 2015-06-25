@@ -50,6 +50,7 @@ public class GameFieldDb4oDAO implements IGameFieldDAO {
 
     @Override
     public void closeDB() {
+        System.out.println("Close Success");
         db.close();
     }
 
