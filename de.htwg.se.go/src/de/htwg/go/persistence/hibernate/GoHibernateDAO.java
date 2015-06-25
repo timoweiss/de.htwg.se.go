@@ -116,15 +116,14 @@ public class GoHibernateDAO implements IGameFieldDAO {
     private IGameField transformFromHibernate(PersistentGame persistentGame) {
         IGameField gamefield = new GameField(persistentGame.getLength());
 
-        gamefield.setBlackPlayer(persistentGame.getBlackPlayer());
-
         return gamefield;
 
     }
 
 
     private PersistentGame transformToHibernate(IGameField gameField) {
-        
+
+        return new PersistentGame();
     }
 
 }
