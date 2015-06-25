@@ -8,9 +8,12 @@ import org.ektorp.DocumentNotFoundException;
 import org.ektorp.http.HttpClient;
 import org.ektorp.http.StdHttpClient;
 import org.ektorp.impl.StdCouchDbInstance;
+import org.ektorp.ViewQuery;
 
 import java.net.MalformedURLException;
 import java.util.List;
+
+import java.util.ArrayList;
 
 public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
@@ -54,7 +57,14 @@ public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
     @Override
     public List<IGameField> getAllGames() {
-        return null;
+        ViewQuery query = new ViewQuery().allDocs().includeDocs(true);
+
+        List<IGameField> goGames = new ArrayList<IGameField>();
+        for (PersistenceGameField pGameField : db.queryView(query, PersistenceGameField.class)) {
+            goGames.add(util.getReTransformedGameField(pGameField));
+        }
+
+        return goGames;
     }
 
     @Override
@@ -62,9 +72,10 @@ public class GameFieldCouchdbDAO implements IGameFieldDAO {
 
     }
 
+    // TODO, not sure whether its done or not
     @Override
     public void updateGameById(String id, IGameField gameField) {
-
+        saveGame(gameField);
     }
 
     @Override
