@@ -1,11 +1,20 @@
 package de.htwg.go.model.impl;
 
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.Props;
+import akka.pattern.Patterns;
+import akka.util.Timeout;
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.util.observer.Observable;
+import scala.concurrent.Await;
+import scala.concurrent.Awaitable;
+import scala.concurrent.duration.Duration;
 
 import java.util.*;
+import java.util.concurrent.Future;
 
 /**
  * @author Timo Weiss, Michael Knoch
@@ -33,6 +42,7 @@ public class GameField extends Observable implements IGameField {
 	// size of the gamefield LENGTH x LENGTH
 	private int length;
 
+
 	public GameField(int length) {
 
         id = UUID.randomUUID().toString();
@@ -48,6 +58,27 @@ public class GameField extends Observable implements IGameField {
 
 		blackRegions = new LinkedList<Set<ICell>>();
 		whiteRegions = new LinkedList<Set<ICell>>();
+
+
+		final ActorSystem system = ActorSystem.create("actor");
+		final ActorRef myActor = system.actorOf(Props.create(Actor.class), "actor");
+
+		Timeout timeout = new Timeout(Duration.create(5, "seconds"));
+		scala.concurrent.Future<Object> future1 = Patterns.ask(myActor, new ActorMessage(this), timeout);
+
+		try {
+			Result res = (Result) Await.result((Awaitable<Object>) future1, timeout.duration());
+			System.out.println("got a message");
+			System.out.println("got a message");
+			System.out.println("got a message");
+
+			System.out.println(res.getResult());
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+
+
 	}
 
     public boolean isPass() {
@@ -185,6 +216,7 @@ public class GameField extends Observable implements IGameField {
      * sets a Stone with x and y
      */
 	public boolean setStone(int x, int y) {
+
 		if (x < 0 || y < 0) {
 			return false;
 		}
@@ -206,6 +238,7 @@ public class GameField extends Observable implements IGameField {
 			blackPlayer.addScore(1);
 			moveEnd();
 		}
+
 
 		whiteIsNext = !whiteIsNext;
 		pass = false;
