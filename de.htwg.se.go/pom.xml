@@ -54,6 +54,13 @@
             <version>8.0.184.15484</version>
         </dependency>
 
+		<!-- akka -->
+		<dependency>
+			<groupId>com.typesafe.akka</groupId>
+			<version>2.3.11</version>
+			<artifactId>akka-actor_2.10</artifactId>
+		</dependency>
+
 
 		<!-- Hibernate Database -->
 		<dependency>
