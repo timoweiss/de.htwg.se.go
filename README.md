@@ -10,6 +10,7 @@ It show several concepts of software engineering.
 * components and interfaces
 
 
+
 ## Why
 The project was built in the context of the lecture "Software Engineering" at the University of Applied Science Konstanz, Germany.
 
