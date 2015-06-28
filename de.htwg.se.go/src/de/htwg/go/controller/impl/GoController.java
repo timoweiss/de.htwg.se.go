@@ -1,8 +1,13 @@
 package de.htwg.go.controller.impl;
 
+import akka.actor.ActorRef;
+import akka.actor.ActorSystem;
+import akka.actor.Props;
 import com.google.inject.Inject;
 import de.htwg.go.controller.IGoController;
 import de.htwg.go.model.IGameField;
+import de.htwg.go.model.impl.Actor;
+import de.htwg.go.model.impl.ActorMessage;
 import de.htwg.go.model.impl.GameField;
 import de.htwg.go.persistence.IGameFieldDAO;
 import de.htwg.go.util.observer.Observable;
@@ -15,6 +20,9 @@ public class GoController extends Observable implements IGoController {
     private String statusLine;
     private boolean operate;
     private IGameFieldDAO database;
+
+    final ActorSystem actorSystem = ActorSystem.create("actor-system");
+    final ActorRef actorRef = actorSystem.actorOf(Props.create(Actor.class), "actor");
 
     @Inject
     public GoController(IGameFieldDAO gamefield) {
@@ -47,7 +55,10 @@ public class GoController extends Observable implements IGoController {
         statusLine = "Gamefield " + gamefield.getGameFieldSize() + "x"
                 + gamefield.getGameFieldSize() + " successfully created, \n"
                 + gamefield.getNext() + " is next";
-        notifyObservers();
+
+
+        //update
+        actorRef.tell(new ActorMessage("update", this), null);
     }
 
     @Override
@@ -60,7 +71,9 @@ public class GoController extends Observable implements IGoController {
 
         if (!operate) {
             statusLine = "Game already closed, not allowed to set a stone";
-            notifyObservers();
+            //update
+            actorRef.tell(new ActorMessage("update", this), null);
+
             return false;
         }
 
@@ -78,7 +91,8 @@ public class GoController extends Observable implements IGoController {
             status = false;
         }
 
-        notifyObservers();
+        //update
+        actorRef.tell(new ActorMessage("update", this), null);
 
         if ((gamefield.getblackPlayer().getScore() + gamefield.getwhitePlayer()
                 .getScore()) == (gamefield.getGameFieldSize() * gamefield
@@ -93,12 +107,14 @@ public class GoController extends Observable implements IGoController {
 
         if (!operate) {
             statusLine = "Game already closed, not allowed to set a stone";
-            notifyObservers();
+            //update
+            actorRef.tell(new ActorMessage("update", this), null);
             return;
         }
 
         gamefield.setStone(x, y, status);
-        notifyObservers();
+        //update
+        actorRef.tell(new ActorMessage("update", this), null);
     }
 
     public String getStatus() {
@@ -129,7 +145,8 @@ public class GoController extends Observable implements IGoController {
     public boolean pass() {
         if (!operate) {
             statusLine = "Game already closed, not allowed to pass";
-            notifyObservers();
+            //update
+            actorRef.tell(new ActorMessage("update", this), null);
             return false;
         }
 
@@ -138,7 +155,8 @@ public class GoController extends Observable implements IGoController {
             stop();
         } else {
             statusLine = "Player passed, " + gamefield.getNext() + " is next";
-            notifyObservers();
+            //update
+            actorRef.tell(new ActorMessage("update", this), null);
         }
         return pass;
     }
@@ -152,7 +170,8 @@ public class GoController extends Observable implements IGoController {
     public void stop() {
         operate = false;
         statusLine = "Game has ended";
-        notifyObservers();
+        //update
+        actorRef.tell(new ActorMessage("update", this), null);
     }
 
     public boolean getOperate() {

@@ -31,8 +31,8 @@ public class GameField extends Observable implements IGameField {
 	private Set<ICell> blackList;
 	private Set<ICell> whiteList;
 
-	private Collection<Set<ICell>> blackRegions;
-	private Collection<Set<ICell>> whiteRegions;
+	public Collection<Set<ICell>> blackRegions;
+	public Collection<Set<ICell>> whiteRegions;
 
 	private IPlayer whitePlayer;
 	private IPlayer blackPlayer;
@@ -58,26 +58,6 @@ public class GameField extends Observable implements IGameField {
 
 		blackRegions = new LinkedList<Set<ICell>>();
 		whiteRegions = new LinkedList<Set<ICell>>();
-
-
-		final ActorSystem system = ActorSystem.create("actor");
-		final ActorRef myActor = system.actorOf(Props.create(Actor.class), "actor");
-
-		Timeout timeout = new Timeout(Duration.create(5, "seconds"));
-		scala.concurrent.Future<Object> future1 = Patterns.ask(myActor, new ActorMessage(this), timeout);
-
-		try {
-			Result res = (Result) Await.result((Awaitable<Object>) future1, timeout.duration());
-			System.out.println("got a message");
-			System.out.println("got a message");
-			System.out.println("got a message");
-
-			System.out.println(res.getResult());
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-
 
 	}
 

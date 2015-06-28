@@ -12,17 +12,22 @@ public class Actor extends UntypedActor {
 
     LoggingAdapter log = Logging.getLogger(getContext().system(), this);
 
-
     public Actor() {
-        log.info("SimpleActor constructor");
+        log.info("Update Actor created");
     }
 
     @Override
     public void onReceive(Object msg) throws Exception {
+        log.info("Msg Received");
         if (msg instanceof ActorMessage) {
-            int result =  ((ActorMessage) msg).getGameFieldSize();
+            String message = ((ActorMessage) msg).getMessage();
 
-            getSender().tell(new Result(result), getSelf());
+            if (message == "update") {
+                log.info("There was an update, updating");
+                ((ActorMessage) msg).getController().notifyObservers();
+            }
+
         }
     }
+
 }
