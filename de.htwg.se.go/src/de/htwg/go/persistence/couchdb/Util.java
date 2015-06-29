@@ -77,6 +77,7 @@ public class Util {
                 PersistenceCell persistenceCell = new PersistenceCell();
                 persistenceCell.setCoordX(gameField.getGameField()[i][j].getCoords().x);
                 persistenceCell.setCoordY(gameField.getGameField()[i][j].getCoords().y);
+                persistenceCell.setStatus(gameField.getGameField()[i][j].getStatus());
                 System.out.println(i);
                 System.out.println(j);
                 a[i][j] = persistenceCell;
@@ -144,7 +145,8 @@ public class Util {
         for(int i = 0; i < gameField.getGameField().length; i++) {
             for(int j = 0; j < gameField.getGameField()[i].length; j++) {
                 Cell npCell = new Cell(gameField.getGameField()[i][j].getCoordX(), gameField.getGameField()[i][j].getCoordY());
-
+                npCell.setStatus(gameField.getGameField()[i][j].getStatus());
+                System.out.println(gameField.getGameField()[i][j].getStatus());
                 b[i][j] = npCell;
 
             }
