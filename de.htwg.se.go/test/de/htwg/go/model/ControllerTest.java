@@ -13,8 +13,8 @@ public class ControllerTest {
 
 	@Before
 	public void setUp() throws Exception {
-		//controller = new GoController();
-		//controller2 = new GoController();
+		controller = new GoController(null);
+		controller2 = new GoController(null);
 
 		controller2.createField(5);
 
