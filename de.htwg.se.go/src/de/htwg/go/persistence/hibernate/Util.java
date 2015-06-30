@@ -1,5 +1,6 @@
 package de.htwg.go.persistence.hibernate;
 
+import com.google.gson.Gson;
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
@@ -15,6 +16,8 @@ import java.util.Set;
  * Created by michaelknoch on 25.06.15.
  */
 public class Util {
+
+    // lokal --> DB
     public static PersistentGameField getTransformedGameField(IGameField gameField) {
         PersistentGameField persistentGameField = new PersistentGameField();
         persistentGameField.setId(gameField.getId());
@@ -23,36 +26,12 @@ public class Util {
         persistentGameField.setWhiteIsNext(gameField.isWhiteIsNext());
 
         // verbose getBlackList stuff
-        Set<PersistentCell> setPersistenceCellBlackList = new HashSet<PersistentCell>();
-        for (ICell current: gameField.getBlackList()) {
-            PersistentCell persistenceCell = new PersistentCell();
+        Gson jsonField = new Gson();
+        persistentGameField.setBlackList(jsonField.toJson(gameField.getBlackList()));
 
-            persistenceCell.setChecked(current.isChecked());
-            Point point = current.getCoords();
-            persistenceCell.setCoordX(point.x);
-            persistenceCell.setCoordY(point.y);
-            persistenceCell.setStatus(current.getStatus());
 
-            setPersistenceCellBlackList.add(persistenceCell);
-        }
-
-        persistentGameField.setBlackList(setPersistenceCellBlackList);
-
-        // verbose getWhiteList stuff
-        Set<PersistentCell> setPersistenceCellWhiteList = new HashSet<PersistentCell>();
-        for (ICell current: gameField.getWhiteList()) {
-            PersistentCell persistenceCell = new PersistentCell();
-
-            persistenceCell.setChecked(current.isChecked());
-            Point point = current.getCoords();
-            persistenceCell.setCoordX(point.x);
-            persistenceCell.setCoordY(point.y);
-            persistenceCell.setStatus(current.getStatus());
-
-            setPersistenceCellWhiteList.add(persistenceCell);
-        }
-
-        persistentGameField.setWhiteList(setPersistenceCellWhiteList);
+        Gson jsonField2 = new Gson();
+        persistentGameField.setWhiteList(jsonField2.toJson(gameField.getWhiteList()));
 
         PersistentPlayer persistencePlayerBlackPlayer = new PersistentPlayer();
         IPlayer playerBlackPlayer = gameField.getblackPlayer();
@@ -68,20 +47,8 @@ public class Util {
         persistentGameField.setWhitePlayer(persistencePlayerWhitePlayer);
 
 
-        PersistentCell a[][] = new PersistentCell[gameField.getGameField().length][gameField.getGameField().length];
-        for(int i = 0; i < gameField.getGameField().length; i++) {
-            for(int j = 0; j < gameField.getGameField()[i].length; j++) {
-                PersistentCell persistenceCell = new PersistentCell();
-                persistenceCell.setCoordX(gameField.getGameField()[i][j].getCoords().x);
-                persistenceCell.setCoordY(gameField.getGameField()[i][j].getCoords().y);
-                persistenceCell.setStatus(gameField.getGameField()[i][j].getStatus());
-                a[i][j] = persistenceCell;
-
-            }
-        }
-        persistentGameField.setGameField(a);
-
-
+        Gson jsonField3 = new Gson();
+        persistentGameField.setGameField(jsonField3.toJson(gameField.getGameField()));
 
 
         return persistentGameField;
@@ -95,7 +62,7 @@ public class Util {
         nonPersistentGamefield.setPass(gameField.isPass());
         nonPersistentGamefield.setWhiteIsNext(gameField.isWhiteIsNext());
 
-        // verbose getBlackList stuff
+       /* // verbose getBlackList stuff
         Set<ICell> setCellBlackList = new HashSet<ICell>();
         for (PersistentCell current: gameField.getBlackList()) {
 
@@ -107,7 +74,11 @@ public class Util {
             setCellBlackList.add(cell);
         }
 
-        nonPersistentGamefield.setBlackList(setCellBlackList);
+        Gson gson = new Gson();
+
+
+
+        nonPersistentGamefield.setBlackList(gson.fromJson(gameField.getBlackList(), Set<ICell>.class));
 
         // verbose getWhiteList stuff
         Set<ICell> setCellWhiteList = new HashSet<ICell>();
@@ -145,7 +116,7 @@ public class Util {
 
             }
         }
-        nonPersistentGamefield.setGameField(b);
+        nonPersistentGamefield.setGameField(b);*/
 
         return nonPersistentGamefield;
     }

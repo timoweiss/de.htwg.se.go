@@ -32,20 +32,13 @@ public class GoHibernateDAO implements IGameFieldDAO {
             PersistentGameField pGame = Util.getTransformedGameField(gameField);
 
             this.session.saveOrUpdate(pGame);
-            for (PersistentCell current:pGame.getBlackList()) {
-                this.session.saveOrUpdate(current);
-            }
 
-            for (PersistentCell current:pGame.getWhiteList()) {
-                this.session.saveOrUpdate(current);
-            }
-      /*      for (Set<PersistenceCell> current:pGame.getBlackRegions()) {
-                this.session.saveOrUpdate(current);
-            }
+                this.session.saveOrUpdate(pGame.getBlackList());
+                this.session.saveOrUpdate(pGame.getWhiteList());
 
-            for (Set<PersistenceCell> current:pGame.getWhiteRegions()) {
-                this.session.saveOrUpdate(current);
-            }*/
+                this.session.saveOrUpdate(pGame.getBlackRegions());
+                this.session.saveOrUpdate(pGame.getWhiteRegions());
+
 
             tx.commit();
         } catch (HibernateException ex) {
@@ -74,21 +67,11 @@ public class GoHibernateDAO implements IGameFieldDAO {
             PersistentGameField pGame = (PersistentGameField) this.session.get(
                     PersistentGameField.class, id);
 
+                this.session.delete(pGame.getBlackList());
+                this.session.delete(pGame.getWhiteList());
 
-            for (PersistentCell current:pGame.getBlackList()) {
-                this.session.delete(current);
-            }
-
-            for (PersistentCell current:pGame.getWhiteList()) {
-                this.session.delete(current);
-            }
-          /*  for (Set<PersistenceCell> current:pGame.getBlackRegions()) {
-                this.session.delete(current);
-            }
-
-            for (Set<PersistenceCell> current:pGame.getWhiteRegions()) {
-                this.session.delete(current);
-            }*/
+                this.session.delete(pGame.getBlackRegions());
+                this.session.delete(pGame.getWhiteRegions());
 
 
             this.session.delete(pGame);

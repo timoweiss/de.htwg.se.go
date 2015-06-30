@@ -17,18 +17,16 @@ public class PersistentGameField implements Serializable {
 
     private boolean pass = false;
 
-    private PersistentCell gameField[][];
+    private String gameField;
     private boolean whiteIsNext = true;
 
-    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PersistentCell.class)
-    private Set<PersistentCell> blackList;
+    private String blackList;
 
-    @OneToMany(mappedBy = "game", cascade=CascadeType.ALL, fetch = FetchType.LAZY, targetEntity = PersistentCell.class)
-    private Set<PersistentCell> whiteList;
+    private String whiteList;
 
     //@OneToMany(mappedBy = "game")
-   /* private Collection<Set<PersistenceCell>> blackRegions;
-    private Collection<Set<PersistenceCell>> whiteRegions;*/
+    private String blackRegions;
+    private String whiteRegions;
 
     @OneToOne
     private PersistentPlayer whitePlayer;
@@ -68,11 +66,11 @@ public class PersistentGameField implements Serializable {
         this.pass = pass;
     }
 
-    public PersistentCell[][] getGameField() {
+    public String getGameField() {
         return gameField;
     }
 
-    public void setGameField(PersistentCell[][] gameField) {
+    public void setGameField(String gameField) {
         this.gameField = gameField;
     }
 
@@ -84,38 +82,37 @@ public class PersistentGameField implements Serializable {
         this.whiteIsNext = whiteIsNext;
     }
 
-    public Set<PersistentCell> getBlackList() {
+    public String getBlackList() {
         return blackList;
     }
 
-    public void setBlackList(Set<PersistentCell> blackList) {
+    public void setBlackList(String blackList) {
         this.blackList = blackList;
     }
 
-    public Set<PersistentCell> getWhiteList() {
+    public String getWhiteList() {
         return whiteList;
     }
 
-    public void setWhiteList(Set<PersistentCell> whiteList) {
+    public void setWhiteList(String whiteList) {
         this.whiteList = whiteList;
     }
 
-   /* public Collection<Set<PersistenceCell>> getBlackRegions() {
+    public String getBlackRegions() {
         return blackRegions;
     }
 
-    public void setBlackRegions(Collection<Set<PersistenceCell>> blackRegions) {
+    public void setBlackRegions(String blackRegions) {
         this.blackRegions = blackRegions;
     }
 
-    public Collection<Set<PersistenceCell>> getWhiteRegions() {
+    public String getWhiteRegions() {
         return whiteRegions;
     }
 
-    public void setWhiteRegions(Collection<Set<PersistenceCell>> whiteRegions) {
+    public void setWhiteRegions(String whiteRegions) {
         this.whiteRegions = whiteRegions;
     }
-*/
     public PersistentPlayer getWhitePlayer() {
         return whitePlayer;
     }

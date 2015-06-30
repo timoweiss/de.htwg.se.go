@@ -1,165 +1,146 @@
-DEBUG main org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
-DEBUG main org.apache.http.wire - << "{"ok":true,"id":"20c6b2d0-c683-4b58-bc11-524a768681b8","rev":"1-46426ba316547cd837b728de0e95287b"}[\n]"
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
-INFO main de.htwg.go - Saved Game
-INFO main de.htwg.go - Get all Games
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Stale connection check
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/_all_docs?include_docs=true HTTP/1.1
-DEBUG main org.apache.http.wire - >> "GET /htwg_go/_all_docs?include_docs=true HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - >> "[\r][\n]"
-DEBUG main org.apache.http.headers - >> GET /htwg_go/_all_docs?include_docs=true HTTP/1.1
-DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
-DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
-DEBUG main org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
-DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
-DEBUG main org.apache.http.wire - << "ETag: "2170GOGNWGIOEHCQULYDRVGFN"[\r][\n]"
-DEBUG main org.apache.http.wire - << "Date: Sat, 27 Jun 2015 17:38:36 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << Transfer-Encoding: chunked
-DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
-DEBUG main org.apache.http.headers - << ETag: "2170GOGNWGIOEHCQULYDRVGFN"
-DEBUG main org.apache.http.headers - << Date: Sat, 27 Jun 2015 17:38:36 GMT
-DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
-DEBUG main org.apache.http.wire - << "25[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"total_rows":6,"offset":0,"rows":[[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1403[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","key":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","value":{"rev":"1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2"},"doc":{"_id":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","_rev":"1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2","gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"c"
-DEBUG main org.apache.http.wire - << "oordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checked":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":4,"coordY":2,"status":-2},{"checked":false,"coordX":6,"coordY":5,"status":2},{"checked":false,"coordX":7,"coordY":6,"status":2},{"checked":false,"coordX":7,"coordY":5,"status":2},{"checked":false,"coordX":7,"coordY":4,"status":2}],"whiteList":[{"checked":false,"coordX":3,"coordY":3,"status":1},{"checked":false,"coordX":5,"coordY":2,"status":1},{"checked":false,"coordX":5,"coordY":3,"status":1},{"checked":false,"coordX":4,"coordY":4,"status":1},{"checked":false,"coordX":3,"coordY":2,"status":1},{"checked":false,"coordX":4,"coordY":1,"status":1}],"whitePlayer":{"score":8,"name":"unknown"},"blackPlayer":{"score":4,"name":"unknown"},"length":9,"pass":false}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "123a[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"20c6b2d0-c683-4b58-bc11-524a768681b8","key":"20c6b2d0-c683-4b58-bc11-524a768681b8","value":{"rev":"1-46426ba316547cd837b728de0e95287b"},"doc":{"_id":"20c6b2d0-c683-4b58-bc11-524a768681b8","_rev":"1-46426ba316547cd837b728de0e95287b","length":9,"pass":false,"gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"stat"
-DEBUG main org.apache.http.wire - << "us":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checked":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"che"
-DEBUG main org.apache.http.wire - << "cked":false,"coordX":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":3,"coordY":5,"status":2}],"whiteList":[{"checked":false,"coordX":4,"coordY":4,"status":1}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1}}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "12a0[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"9f251236-0cd0-479d-86c1-af97703f94e1","key":"9f251236-0cd0-479d-86c1-af97703f94e1","value":{"rev":"1-d837ce63a4a285fa27968269aab3ad42"},"doc":{"_id":"9f251236-0cd0-479d-86c1-af97703f94e1","_rev":"1-d837ce63a4a285fa27968269aab3ad42","length":9,"pass":false,"gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coo"
-DEBUG main org.apache.http.wire - << "rdY":8,"status":0},{"check"
-DEBUG main org.apache.http.wire - << "ed":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":3,"coordY":3,"status":2},{"checked":false,"coordX":3,"coordY":5,"status":2}],"whiteList":[{"checked":false,"coordX":5,"coordY":4,"status":1},{"checked":false,"coordX":5,"coordY":2,"status":1}],"whitePlayer":{"name":"unknown","score":2},"blackPlayer":{"name":"unknown","score":2}}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "15a0[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"cac7fa08-5763-4d06-8a53-5e83983707e7","key":"cac7fa08-5763-4d06-8a53-5e83983707e7","value":{"rev":"1-426c38f6de2a33eee7bd3a8804aa7135"},"doc":{"_id":"cac7fa08-5763-4d06-8a53-5e83983707e7","_rev":"1-426c38f6de2a33eee7bd3a8804aa7135","gameField":[[{"checked":false,"status":0,"coordX":0,"coordY":0},{"checked":false,"status":0,"coordX":1,"coordY":0},{"checked":false,"status":0,"coordX":2,"coordY":0},{"checked":false,"status":0,"coordX":3,"coordY":0},{"checked":false,"status":0,"coordX":4,"coordY":0},{"checked":false,"status":0,"coordX":5,"coordY":0},{"checked":false,"status":0,"coo"
-DEBUG main org.apache.http.wire - << "rdX":6,"coordY":0},{"checked":false,"status":0,"coordX":7,"coordY":0},{"checked":false,"status":0,"coordX":8,"coordY":0}],[{"checked":false,"status":0,"coordX":0,"coordY":1},{"checked":false,"status":0,"coordX":1,"coordY":1},{"checked":false,"status":0,"coordX":2,"coordY":1},{"checked":false,"status":0,"coordX":3,"coordY":1},{"checked":false,"status":0,"coordX":4,"coordY":1},{"checked":false,"status":0,"coordX":5,"coordY":1},{"checked":false,"status":0,"coordX":6,"coordY":1},{"checked":false,"status":0,"coordX":7,"coordY":1},{"checked":false,"status":0,"coordX":8,"coordY":1}],[{"checked":false,"status":0,"coordX":0,"coordY":2},{"checked":false,"status":0,"coordX":1,"coordY":2},{"checked":false,"status":0,"coordX":2,"coordY":2},{"checked":false,"status":0,"coordX":3,"coordY":2},{"checked":false,"status":0,"coordX":4,"coordY":2},{"checked":false,"status":0,"coordX":5,"coordY":2},{"checked":false,"status":0,"coordX":6,"coordY":2},{"checked":false,"status":0,"coordX":7,"coordY":2},{"checked":false,"status":0,"coordX":8,"coordY":2}],[{"checked":false,"status":0,"coordX":0,"coordY":3},{"checked":false,"status":0,"coordX":1,"coordY":3},{"checked":false,"status":0,"coordX":2,"coordY":3},{"checked":false,"status":0,"coordX":3,"coordY":3},{"checked":false,"status":0,"coordX":4,"coordY":3},{"checked":false,"status":0,"coordX":5,"coor"
-DEBUG main org.apache.http.wire - << "dY":3},{"checked":false,"status":0,"coordX":6,"coordY":3},{"checked":false,"status":0,"coordX":7,"coordY":3},{"checked":false,"status":0,"coordX":8,"coordY":3}],[{"checked":false,"status":0,"coordX":0,"coordY":4},{"checked":false,"status":0,"coordX":1,"coordY":4},{"checked":false,"status":0,"coordX":2,"coordY":4},{"checked":false,"status":0,"coordX":3,"coordY":4},{"checked":false,"status":0,"coordX":4,"coordY":4},{"checked":false,"status":0,"coordX":5,"coordY":4},{"checked":false,"status":0,"coordX":6,"coordY":4},{"checked":false,"status":0,"coordX":7,"coordY":4},{"checked":false,"status":0,"coordX":8,"coordY":4}],[{"checked":false,"status":0,"coordX":0,"coordY":5},{"checked":false,"status":0,"coordX":1,"coordY":5},{"checked":false,"status":0,"coordX":2,"coordY":5},{"checked":false,"status":0,"coordX":3,"coordY":5},{"checked":false,"status":0,"coordX":4,"coordY":5},{"checked":false,"status":0,"coordX":5,"coordY":5},{"checked":false,"status":0,"coordX":6,"coordY":5},{"checked":false,"status":0,"coordX":7,"coordY":5},{"checked":false,"status":0,"coordX":8,"coordY":5}],[{"checked":false,"status":0,"coordX":0,"coordY":6},{"checked":false,"status":0,"coordX":1,"coordY":6},{"checked":false,"status":0,"coordX":2,"coordY":6},{"checked":false,"status":0,"coordX":3,"coordY":6},{"checked":false,"status":0,"coordX":4,"coordY":6},{"checked":false,"status":0,"coordX":5,"coordY":6},{"checked":false,"status":0,"coordX":6,"coordY":6},{"checked":false,"status":0,"coordX":7,"coordY":6},{"checked":false,"status":0,"coordX":8,"coordY":6}],[{"checked":false,"status":0,"coordX":0,"coordY":7},{"checked":false,"status":0,"coordX":1,"coordY":7},{"checked":false,"status":0,"coordX":2,"coordY":7},{"checked":false,"status":0,"coordX":3,"coordY":7},{"checked":false,"status":0,"coordX":4,"coordY":7},{"checked":false,"status":0,"coordX":5,"coordY":7},{"checked":false,"status":0,"coordX":6,"coordY":7},{"checked":false,"status":0,"coordX":7,"coordY":7},{"checked":false,"status":0,"coordX":8,"coordY":7}],[{"checked":false,"status":0,"coordX":0,"coordY":8},{"checked":false,"status":0,"coordX":1,"coordY":8},{"checked":false,"status":0,"coordX":2,"coordY":8},{"checked":false,"status":0,"coordX":3,"coordY":8},{"checked":false,"status":0,"coordX":4,"coordY":8},{"checked":false,"status":0,"coordX":5,"coordY":8},{"checked":false,"status":0,"coordX":6,"coordY":8},{"checked":false,"status":0,"coordX":7,"coordY":8},{"checked":false,"status":0,"coordX":8,"coordY":8}]],"whiteIsNext":false,"blackList":[{"checked":false,"status":2,"coordX":4,"coordY":3},{"checked":false,"status":2,"coordX":7,"coordY":3},{"checked":false,"status":2,"coordX":2,"coordY":3},{"checked":false,"status":2,"coordX"
-DEBUG main org.apache.http.wire - << "":5,"coordY":5},{"checked":false,"status":2,"coordX":6,"coordY":2},{"checked":false,"status":2,"coordX":3,"coordY":2},{"checked":false,"status":2,"coordX":3,"coordY":4},{"checked":false,"status":2,"coordX":4,"coordY":4},{"checked":false,"status":2,"coordX":5,"coordY":2},{"checked":false,"status":2,"coordX":6,"coordY":4}],"whiteList":[{"checked":false,"status":-1,"coordX":3,"coordY":3},{"checked":false,"status":1,"coordX":6,"coordY":6},{"checked":false,"status":1,"coordX":2,"coordY":6},{"checked":false,"status":1,"coordX":7,"coordY":7},{"checked":false,"status":1,"coordX":3,"coordY":6},{"checked":false,"status":1,"coordX":4,"coordY":2},{"checked":false,"status":1,"coordX":4,"coordY":6},{"checked":false,"status":1,"coordX":5,"coordY":7},{"checked":false,"status":-1,"coordX":6,"coordY":3}],"whitePlayer":{"score":7,"name":"unknown"},"blackPlayer":{"score":14,"name":"unknown"},"pass":false,"length":9}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1208[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","key":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","value":{"rev":"1-207f013a289bbadbf5ad9f012945beae"},"doc":{"_id":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","_rev":"1-207f013a289bbadbf5ad9f012945beae","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY""
-DEBUG main org.apache.http.wire - << ":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":false,"blackList":[],"whiteList":[{"status":1,"checked":false,"coordX":6,"coordY":4}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":0},"pass":false}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1239[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","key":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","value":{"rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93"},"doc":{"_id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","_rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coord"
-DEBUG main org.apache.http.wire - << "Y":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":4,"coordY":2}],"whiteList":[{"status":1,"checked":false,"coordX":3,"coordY":2}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1},"pass":false}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "4[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "]}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "0[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
-INFO main de.htwg.go - 09a738f9-ce7a-4b76-8aa2-f8b91b264b2a
-INFO main de.htwg.go - 20c6b2d0-c683-4b58-bc11-524a768681b8
-INFO main de.htwg.go - 9f251236-0cd0-479d-86c1-af97703f94e1
-INFO main de.htwg.go - cac7fa08-5763-4d06-8a53-5e83983707e7
-INFO main de.htwg.go - d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad
-INFO main de.htwg.go - ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ",[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"cac7fa08-5763-4d06-8a53-5e83983707e7","key":"cac7fa08-5763-4d06-8a53-5e83983707e7","value":{"rev":"1-426c38f6de2a33eee7bd3a8804aa7135"},"doc":{"_id":"cac7fa08-5763-4d06-8a53-5e83983707e7","_rev":"1-426c38f6de2a33eee7bd3a8804aa7135","gameField":[[{"checked":false,"status":0,"coordX":0,"coordY":0},{"checked":false,"status":0,"coordX":1,"coordY":0},{"checked":false,"status":0,"coordX":2,"coordY":0},{"checked":false,"status":0,"coordX":3,"coordY":0},{"checked":false,"status":0,"coordX":4,"coordY":0},{"checked":false,"status":0,"coordX":5,"coordY":0},{"checked":false,"status":0,"coordX":6,"coordY":0},{"checked":false,"status":0,"coordX":7,"coordY":0},{"checked":false,"status":0,"coordX":8,"coordY":0}],[{"checked":false,"status":0,"coordX":0,"coordY":1},{"checked":false,"status":0,"coordX":1,"coordY":1},{"checked":false,"status":0,"coordX":2,"coordY":1},{"checked":false,"status":0,"coordX":3,"coordY":1},{"checked":false,"status":0,"coordX":4,"coordY":1},{"checked":false,"status":0,"coordX":5,"coordY":1},{"checked":false,"status":0,"coordX":6,"coordY":1},{"checked":false,"status":0,"coordX":7,"coordY":1},{"checked":false,"status":0,"coordX":8,"coordY":1}],[{"checked":false,"status":0,"coordX":0,"coordY":2},{"checked":false,"status":0,"coordX":1,"coordY":2},{"checked":false,"status":0,"coordX":2,"coordY":2},{"check"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ed":false,"status":0,"coordX":3,"coordY":2},{"checked":false,"status":0,"coordX":4,"coordY":2},{"checked":false,"status":0,"coordX":5,"coordY":2},{"checked":false,"status":0,"coordX":6,"coordY":2},{"checked":false,"status":0,"coordX":7,"coordY":2},{"checked":false,"status":0,"coordX":8,"coordY":2}],[{"checked":false,"status":0,"coordX":0,"coordY":3},{"checked":false,"status":0,"coordX":1,"coordY":3},{"checked":false,"status":0,"coordX":2,"coordY":3},{"checked":false,"status":0,"coordX":3,"coordY":3},{"checked":false,"status":0,"coordX":4,"coordY":3},{"checked":false,"status":0,"coordX":5,"coordY":3},{"checked":false,"status":0,"coordX":6,"coordY":3},{"checked":false,"status":0,"coordX":7,"coordY":3},{"checked":false,"status":0,"coordX":8,"coordY":3}],[{"checked":false,"status":0,"coordX":0,"coordY":4},{"checked":false,"status":0,"coordX":1,"coordY":4},{"checked":false,"status":0,"coordX":2,"coordY":4},{"checked":false,"status":0,"coordX":3,"coordY":4},{"checked":false,"status":0,"coordX":4,"coordY":4},{"checked":false,"status":0,"coordX":5,"coordY":4},{"checked":false,"status":0,"coordX":6,"coordY":4},{"checked":false,"status":0,"coordX":7,"coordY":4},{"checked":false,"status":0,"coordX":8,"coordY":4}],[{"checked":false,"status":0,"coordX":0,"coordY":5},{"checked":false,"status":0,"coordX":1,"coordY":5},{"checked":false,"status":0,"coordX":2,"coordY":5},{"checked":false,"status":0,"coordX":3,"coordY":5},{"checked":false,"status":0,"coordX":4,"coordY":5},{"checked":false,"status":0,"coordX":5,"coordY":5},{"checked":false,"status":0,"coordX":6,"coordY":5},{"checked":false,"status":0,"coordX":7,"coordY":5},{"checked":false,"status":0,"coordX":8,"coordY":5}],[{"checked":false,"status":0,"coordX":0,"coordY":6},{"checked":false,"status":0,"coordX":1,"coordY":6},{"checked":false,"status":0,"coordX":2,"coordY":6},{"checked":false,"status":0,"coordX":3,"coordY":6},{"checked":false,"status":0,"coordX":4,"coordY":6},{"checked":false,"status":0,"coordX":5,"coordY":6},{"checked":false,"status":0,"coordX":6,"coordY":6},{"checked":false,"status":0,"coordX":7,"coordY":6},{"checked":false,"status":0,"coordX":8,"coordY":6}],[{"checked":false,"status":0,"coordX":0,"coordY":7},{"checked":false,"status":0,"coordX":1,"coordY":7},{"checked":false,"status":0,"coordX":2,"coordY":7},{"checked":false,"status":0,"coordX":3,"coordY":7},{"checked":false,"status":0,"coordX":4,"coordY":7},{"checked":false,"status":0,"coordX":5,"coordY":7},{"checked":false,"status":0,"coordX":6,"coordY":7},{"checked":false,"status":0,"coordX":7,"coordY":7},{"checked":false,"status":0,"coordX":8,"coordY":7}],[{"checked":false,"status":0,"coordX":0,"coordY":8},{"checked":false,"status":0,"coordX":1,"coordY":8},{"checked":false,"status":0,"coordX":2,"coordY":8},{"checked":false,"status":0,"coordX":3,"coordY":8},{"checked":false,"status":0,"coordX":4,"coordY":8},{"checked":false,"status":0,"coordX":5,"coordY":8},{"checked":false,"status":0,"coordX":6,"coordY":8},{"checked":false,"status":0,"coordX":7,"coordY":8},{"checked":false,"status":0,"coordX":8,"coordY":8}]],"whiteIsNext":false,"blackList":[{"checked":false,"status":2,"coordX":4,"coordY":3},{"checked":false,"status":2,"coordX":7,"coordY":3},{"checked":false,"status":2,"coordX":2,"coordY":3},{"checked":false,"status":2,"coordX":5,"coordY":5},{"checked":false,"status":2,"coordX":6,"coordY":2},{"checked":false,"status":2,"coordX":3,"coordY":2},{"checked":false,"status":2,"coordX":3,"coordY":4},{"checked":false,"status":2,"coordX":4,"coordY":4},{"checked":false,"status":2,"coordX":5,"coordY":2},{"checked":false,"status":2,"coordX":6,"coordY":4}],"whiteList":[{"checked":false,"status":-1,"coordX":3,"coordY":3},{"checked":false,"status":1,"coordX":6,"coordY":6},{"checked":false,"status":1,"coordX":2,"coordY":6},{"checked":false,"status":1,"coordX":7,"coordY":7},{"checked":false,"status":1,"coordX":3,"coordY":6},{"checked":false,"status":1,"coordX":4,"coordY":2},{"checked":false,"status":1,"coordX":4,"coordY":6},{"checked":false,""
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "status":1,"coordX":5,"coordY":7},{"checked":false,"status":-1,"coordX":6,"coordY":3}],"whitePlayer":{"score":7,"name":"unknown"},"blackPlayer":{"score":14,"name":"unknown"},"pass":false,"length":9}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "1208[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ",[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","key":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","value":{"rev":"1-207f013a289bbadbf5ad9f012945beae"},"doc":{"_id":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","_rev":"1-207f013a289bbadbf5ad9f012945beae","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coord"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Y":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":false,"blackList":[],"whiteList":[{"status":1,"checked":false,"coordX":6,"coordY":4}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":0},"pass":false}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "1239[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ",[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","key":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","value":{"rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93"},"doc":{"_id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","_rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY""
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":4,"coordY":2}],"whiteList":[{"status":1,"checked":false,"coordX":3,"coordY":2}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1},"pass":false}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "6d7[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ",[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"f61769c9-1fea-4f90-bcca-3e31029ae2f8","key":"f61769c9-1fea-4f90-bcca-3e31029ae2f8","value":{"rev":"1-2661f6eb04e083959e274c1da29adc18"},"doc":{"_id":"f61769c9-1fea-4f90-bcca-3e31029ae2f8","_rev":"1-2661f6eb04e083959e274c1da29adc18","length":5,"pass":false,"gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":2},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0}]],"whiteIsNext":true,"blackList":[{"checked":false,"coordX":0,"coordY":0,"status":2}],"whiteList":[],"whitePlayer":{"name":"unknown","score":0},"blackPlayer":{"name":"unknown","score":1}}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "6d8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ",[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"faeb566b-dfb5-41ab-94ff-43dee1325a3a","key":"faeb566b-dfb5-41ab-94ff-43dee1325a3a","value":{"rev":"1-1f13660ac8c9d2cee085abd5a7ca7970"},"doc":{"_id":"faeb566b-dfb5-41ab-94ff-43dee1325a3a","_rev":"1-1f13660ac8c9d2cee085abd5a7ca7970","length":5,"gameField":[[{"status":1,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4}]],"whiteIsNext":false,"blackList":[],"whiteList":[{"status":1,"checked":false,"coordX":0,"coordY":0}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":0},"pass":false}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "4[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "]}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /htwg_go/a9a32883-b582-4938-a11d-61649ae5ade3]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/a9a32883-b582-4938-a11d-61649ae5ade3 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /htwg_go/a9a32883-b582-4938-a11d-61649ae5ade3 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /htwg_go/a9a32883-b582-4938-a11d-61649ae5ade3 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-2566d4dc479171375d1d217d04df53d3"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:26:33 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 1600[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-2566d4dc479171375d1d217d04df53d3"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:26:33 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 1600
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"_id":"a9a32883-b582-4938-a11d-61649ae5ade3","_rev":"1-2566d4dc479171375d1d217d04df53d3","length":5,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "4},{"status":0,"checked":false,"coordX":4,"coordY":4}]],"pass":false,"whiteIsNext":false,"blackList":[],"whiteList":[{"status":1,"checked":false,"coordX":0,"coordY":0}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":0}}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
 INFO AWT-EventQueue-0 de.htwg.go - 
-    0 1 2 3 4 5 6 7 8
-    _ _ _ _ _ _ _ _ _
-0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 0 0 0 0 0 0 0 
-2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 0 0 0 0 0 0 
-4  |0 0 0 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
-7  |0 0 0 0 0 0 0 0 0 
-8  |0 0 0 0 0 0 0 0 0 
+    0 1 2 3 4
+    _ _ _ _ _
+0  |0 0 0 0 0 
+1  |0 0 0 0 0 
+2  |0 0 0 0 0 
+3  |0 0 0 0 0 
+4  |0 0 0 0 0 
 
 INFO AWT-EventQueue-0 de.htwg.go - 
 Gamefield 9x9 successfully created, 
-black is next
+white is next
 INFO AWT-EventQueue-0 de.htwg.go - 
-white Player score: 0
+white Player score: 1
 black Player score: 0
-INFO main de.htwg.go - Load a Game with ID ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9
-DEBUG main org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
-DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9]
-DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Stale connection check
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9 HTTP/1.1
-DEBUG main org.apache.http.wire - >> "GET /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9 HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - >> "[\r][\n]"
-DEBUG main org.apache.http.headers - >> GET /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9 HTTP/1.1
-DEBUG main org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
-DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
-DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
-DEBUG main org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
-DEBUG main org.apache.http.wire - << "ETag: "1-eb4fc4c198c43fb0cc9ea17a4252aa93"[\r][\n]"
-DEBUG main org.apache.http.wire - << "Date: Sat, 27 Jun 2015 17:38:45 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Length: 4513[\r][\n]"
-DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
-DEBUG main org.apache.http.headers - << ETag: "1-eb4fc4c198c43fb0cc9ea17a4252aa93"
-DEBUG main org.apache.http.headers - << Date: Sat, 27 Jun 2015 17:38:45 GMT
-DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-DEBUG main org.apache.http.headers - << Content-Length: 4513
-DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
-DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
-DEBUG main org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
-DEBUG main org.apache.http.wire - << "{"_id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","_rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1"
-DEBUG main org.apache.http.wire - << ","coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5"
-DEBUG main org.apache.http.wire - << ","coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":4,"coordY":2}],"whiteList":[{"status":1,"checked":false,"coordX":3,"coordY":2}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1},"pass":false}[\n]"
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
-INFO main de.htwg.go - 
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /htwg_go/ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-eb4fc4c198c43fb0cc9ea17a4252aa93"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:26:38 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 4513[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-eb4fc4c198c43fb0cc9ea17a4252aa93"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:26:38 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 4513
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"_id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","_rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ","coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,""
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":4,"coordY":2}],"whiteList":[{"status":1,"checked":false,"coordX":3,"coordY":2}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1},"pass":false}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+INFO AWT-EventQueue-0 de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
 0  |0 0 0 0 0 0 0 0 0 
@@ -172,163 +153,77 @@ INFO main de.htwg.go -
 7  |0 0 0 0 0 0 0 0 0 
 8  |0 0 0 0 0 0 0 0 0 
 
-INFO main de.htwg.go - 
+INFO AWT-EventQueue-0 de.htwg.go - 
 Gamefield 9x9 successfully created, 
-black is next
-INFO main de.htwg.go - 
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
 white Player score: 1
 black Player score: 1
-INFO main de.htwg.go - Get all Games
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Stale connection check
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/_all_docs?include_docs=true HTTP/1.1
-DEBUG main org.apache.http.wire - >> "GET /htwg_go/_all_docs?include_docs=true HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - >> "[\r][\n]"
-DEBUG main org.apache.http.headers - >> GET /htwg_go/_all_docs?include_docs=true HTTP/1.1
-DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
-DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
-DEBUG main org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
-DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
-DEBUG main org.apache.http.wire - << "ETag: "2170GOGNWGIOEHCQULYDRVGFN"[\r][\n]"
-DEBUG main org.apache.http.wire - << "Date: Sat, 27 Jun 2015 17:39:37 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << Transfer-Encoding: chunked
-DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
-DEBUG main org.apache.http.headers - << ETag: "2170GOGNWGIOEHCQULYDRVGFN"
-DEBUG main org.apache.http.headers - << Date: Sat, 27 Jun 2015 17:39:37 GMT
-DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
-DEBUG main org.apache.http.wire - << "25[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"total_rows":6,"offset":0,"rows":[[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1403[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","key":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","value":{"rev":"1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2"},"doc":{"_id":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","_rev":"1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2","gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checke"
-DEBUG main org.apache.http.wire - << "d":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":4,"coordY":2,"status":-2},{"checked":false,"coordX":6,"coordY":5,"status":2},{"checked":false,"coordX":7,"coordY":6,"status":2},{"checked":false,"coordX":7,"coordY":5,"status":2},{"checked":false,"coordX":7,"coordY":4,"status":2}],"whiteList":[{"checked":false,"coordX":3,"coordY":3,"status":1},{"checked":false,"coordX":5,"coordY":2,"status":1},{"checked":false,"coordX":5,"coordY":3,"status":1},{"checked":false,"coordX":4,"coordY":4,"status":1},{"checked":false,"coordX":3,"coordY":2,"status":1},{"checked":false,"coordX":4,"coordY":1,"status":1}],"whitePlayer":{"score":8,"name":"unknown"},"blackPlayer":{"score":4,"name":"unknown"},"length":9,"pass":false}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "123a[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"20c6b2d0-c683-4b58-bc11-524a768681b8","key":"20c6b2d0-c683-4b58-bc11-524a768681b8","value":{"rev":"1-46426ba316547cd837b728de0e95287b"},"doc":{"_id":"20c6b2d0-c683-4b58-bc11-524a768681b8","_rev":"1-46426ba316547cd837b728de0e95287b","length":9,"pass":false,"gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"c"
-DEBUG main org.apache.http.wire - << "oordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checked":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":3,"coordY":5,"status":2}],"whiteList":[{"checked":false,"coordX":4,"coordY":4,"status":1}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1}}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "12a0[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"9f251236-0cd0-479d-86c1-af97703f94e1","key":"9f251236-0cd0-479d-86c1-af97703f94e1","value":{"rev":"1-d837ce63a4a285fa27968269aab3ad42"},"doc":{"_id":"9f251236-0cd0-479d-86c1-af97703f94e1","_rev":"1-d837ce63a4a285fa27968269aab3ad42","length":9,"pass":false,"gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coord"
-DEBUG main org.apache.http.wire - << "Y":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checked":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":3,"coordY":3,"status":2},{"checked":false,"coordX":3,"coordY":5,"status":2}],"whiteList":[{"checked":false,"coordX":5,"coordY":4,"status":1},{"checked":false,"coordX":5,"coordY":2,"status":1}],"whitePlayer":{"name":"unknown","score":2},"blackPlayer":{"name":"unknown","score":2}}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "15a0[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"cac7fa08-5763-4d06-8a53-5e83983707e7","key":"cac7fa08-5763-4d06-8a53-5e83983707e7","value":{"rev":"1-426c38f6de2a33eee7bd3a8804aa7135"},"doc":{"_id":"cac7fa08-5763-4d06-8a53-5e83983707e7","_rev":"1-426c38f6de2a33eee7bd3a8804aa7135","gameField":[[{"checked":false,"status":0,"coordX":0,"coordY":0},{"checked":false,"status":0,"coordX":1,"coordY":0},{"checked":false,"status":0,"coordX":2,"coordY":0},{"checked":false,"status":0,"coordX":3,"coordY":0},{"checked":false,"status":0,"coordX":4,"coordY":0},{"checked":false,"status":0,"coordX":5,"coordY":0},{"checked":false,"status":0,"coordX":6,"coordY":0},{"checked":false,"status":0,"coordX":7,"coordY":0},{"checked":false,"status":0,"coordX":8,"coordY":0}],[{"checked":false,"status":0,"coordX":0,"coordY":1},{"checked":false,"status":0,"coordX":1,"coordY":1},{"checked":false,"status":0,"coordX":2,"coordY":1},{"checked":false,"status":0,"coordX":3,"coordY":1},{"checked":false,"status":0,"coordX":4,"coordY":1},{"checked":false,"status":0,"coordX":5,"coordY":1},{"checked":false,"status":0,"coordX":6,"coordY":1},{"checked":false,"status":0,"coordX":7,"coordY":1},{"checked":false,"status":0,"coordX":8,"coordY":1}],[{"checked":false,"status":0,"coordX":0,"coordY":2},{"checked":false,"status":0,"coordX":1,"coordY":2},{"checked":false,"status":0,"coordX":2,"coordY":2},{"checked":false,"status":0,"coordX":3,"coordY":2},{"checked":false,"status":0,"coordX":4,"coordY":2},{"checked":false,"status":0,"coordX":5,"coordY":2},{"checked":false,"status":0,"coordX":6,"coordY":2},{"checked":false,"status":0,"coordX":7,"coordY":2},{"checked":false,"status":0,"coordX":8,"coordY":2}],[{"checked":false,"status":0,"coordX":0,"coordY":3},{"checked":false,"status":0,"coordX":1,"coordY":3},{"checked":false,"status":0,"coordX":2,"coordY":3},{"checked":false,"status":0,"coordX":3,"coordY":3},{"checked":false,"status":0,"coordX":4,"coordY":3},{"checked":false,"status":0,"coordX":5,"coordY":3},{"checked":false,"status":0,"coordX":6,"coordY":3},{"checked":false,"status":0,"coordX":7,"coordY":3},{"checked":false,"status":0,"coordX":8,"coordY":3}],[{"checked":false,"status":0,"coordX":0,"coordY":4},{"checked":false,"status":0,"coordX":1,"coordY":4},{"checked":false,"status":0,"coordX":2,"coordY":4},{"checked":false,"status":0,"coordX":3,"coordY":4},{"checked":false,"status":0,"coordX":4,"coordY":4},{"checked":false,"status":0,"coordX":5,"coordY":4},{"checked":false,"status":0,"coordX":6,"coordY":4},{"checked":false,"status":0,"coordX":7,"coordY":4},{"checked":false,"status":0,"coordX":8,"coordY":4}],[{"checked":false,"status":0,"coordX":0,"coordY":5},{"checked":false,"status":0,"coordX":1,"coordY":5},{"checked":false,"status":0,"coordX":2,"coordY":5},{"checked":false,"status":0,"coordX":3,"coordY":5},{"checked":false,"status":0,"coordX":4,"coordY":5},{"checked":false,"status":0,"coordX":5,"coordY":5},{"checked":false,"status":0,"coordX":6,"coordY":5},{"checked":false,"status":0,"coordX":7,"coordY":5},{"checked":false,"status":0,"coordX":8,"coordY":5}],[{"checked":false,"status":0,"coordX":0,"coordY":6},{"checked":false,"status":0,"coordX":1,"coordY":6},{"checked":false,"status":0,"coordX":2,"coordY":6},{"checked":false,"status":0,"coordX":3,"coordY":6},{"checked":false,"status":0,"coordX":4,"coordY":6},{"checked":false,"status":0,"coordX":5,"coordY":6},{"checked":false,"status":0,"coordX":6,"coordY":6},{"checked":false,"status":0,"coordX":7,"coordY":6},{"checked":false,"status":0,"coordX":8,"coordY":6}],[{"checked":false,"status":0,"coordX":0,"coordY":7},{"checked":false,"status":0,"coordX":1,"coordY":7},{"checked":false,"status":0,"coordX":2,"coordY":7},{"checked":false,"status":0,"coordX":3,"coordY":7},{"checked":false,"status":0,"coordX":4,"coordY":7},{"checked":false,"status":0,"coordX":5,"coordY":7},{"checked":false,"status":0,"coordX":6,"coordY":7},{"checked":false,"status":0,"coordX":7,"coordY":7},{"checked":false,"status":0,"coordX":8,"coordY":7}],[{"checked":false,"status":0,"coordX":0,"coordY":8},{"che"
-DEBUG main org.apache.http.wire - << "cked":false,"status":0,"coordX":1,"coordY":8},{"checked":false,"status":0,"coordX":2,"coordY":8},{"checked":false,"status":0,"coordX":3,"coordY":8},{"checked":false,"status":0,"coordX":4,"coordY":8},{"checked":false,"status":0,"coordX":5,"coordY":8},{"checked":false,"status":0,"coordX":6,"coordY":8},{"checked":false,"status":0,"coordX":7,"coordY":8},{"checked":false,"status":0,"coordX":8,"coordY":8}]],"whiteIsNext":false,"blackList":[{"checked":false,"status":2,"coordX":4,"coordY":3},{"checked":false,"status":2,"coordX":7,"coordY":3},{"checked":false,"status":2,"coordX":2,"coordY":3},{"checked":false,"status":2,"coordX":5,"coordY":5},{"checked":false,"status":2,"coordX":6,"coordY":2},{"checked":false,"status":2,"coordX":3,"coordY":2},{"checked":false,"status":2,"coordX":3,"coordY":4},{"checked":false,"status":2,"coordX":4,"coordY":4},{"checked":false,"status":2,"coordX":5,"coordY":2},{"checked":false,"status":2,"coordX":6,"coordY":4}],"whiteList":[{"checked":false,"status":-1,"coordX":3,"coordY":3},{"checked":false,"status":1,"coordX":6,"coordY":6},{"checked":false,"status":1,"coordX":2,"coordY":6},{"checked":false,"status":1,"coordX":7,"coordY":7},{"checked":false,"status":1,"coordX":3,"coordY":6},{"checked":false,"status":1,"coordX":4,"coordY":2},{"checked":false,"status":1,"coordX":4,"coordY":6},{"checked":false,"status":1,"coordX":5,"coordY":7},{"checked":false,"status":-1,"coordX":6,"coordY":3}],"whitePlayer":{"score":7,"name":"unknown"},"blackPlayer":{"score":14,"name":"unknown"},"pass":false,"length":9}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1208[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","key":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","value":{"rev":"1-207f013a289bbadbf5ad9f012945beae"},"doc":{"_id":"d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad","_rev":"1-207f013a289bbadbf5ad9f012945beae","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY""
-DEBUG main org.apache.http.wire - << ":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked"
-DEBUG main org.apache.http.wire - << "":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":false,"blackList":[],"whiteList":[{"status":1,"checked":false,"coordX":6,"coordY":4}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":0},"pass":false}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1239[\r][\n]"
-DEBUG main org.apache.http.wire - << ",[\r][\n]"
-DEBUG main org.apache.http.wire - << "{"id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","key":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","value":{"rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93"},"doc":{"_id":"ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9","_rev":"1-eb4fc4c198c43fb0cc9ea17a4252aa93","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":0,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":0,"checked":false,"coordX":3,"coordY":3},{"status":0,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":0,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":0,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":0,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":0,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coord"
-DEBUG main org.apache.http.wire - << "Y":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":4,"coordY":2}],"whiteList":[{"status":1,"checked":false,"coordX":3,"coordY":2}],"whitePlayer":{"name":"unknown","score":1},"blackPlayer":{"name":"unknown","score":1},"pass":false}}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "4[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "]}"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "1[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.wire - << "0[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
-INFO main de.htwg.go - 09a738f9-ce7a-4b76-8aa2-f8b91b264b2a
-INFO main de.htwg.go - 20c6b2d0-c683-4b58-bc11-524a768681b8
-INFO main de.htwg.go - 9f251236-0cd0-479d-86c1-af97703f94e1
-INFO main de.htwg.go - cac7fa08-5763-4d06-8a53-5e83983707e7
-INFO main de.htwg.go - d7696ec1-ab96-4cd6-a2e4-1c0cfa2e68ad
-INFO main de.htwg.go - ed2a4467-dbcc-424c-8870-6d7c5e4c8aa9
-INFO main de.htwg.go - Load a Game with ID 09a738f9-ce7a-4b76-8aa2-f8b91b264b2a
-DEBUG main org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
-DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /htwg_go/09a738f9-ce7a-4b76-8aa2-f8b91b264b2a]
-DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Stale connection check
-DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
-DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/09a738f9-ce7a-4b76-8aa2-f8b91b264b2a HTTP/1.1
-DEBUG main org.apache.http.wire - >> "GET /htwg_go/09a738f9-ce7a-4b76-8aa2-f8b91b264b2a HTTP/1.1[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
-DEBUG main org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
-DEBUG main org.apache.http.wire - >> "[\r][\n]"
-DEBUG main org.apache.http.headers - >> GET /htwg_go/09a738f9-ce7a-4b76-8aa2-f8b91b264b2a HTTP/1.1
-DEBUG main org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
-DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
-DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
-DEBUG main org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
-DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
-DEBUG main org.apache.http.wire - << "ETag: "1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2"[\r][\n]"
-DEBUG main org.apache.http.wire - << "Date: Sat, 27 Jun 2015 17:39:43 GMT[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Length: 4974[\r][\n]"
-DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
-DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
-DEBUG main org.apache.http.headers - << ETag: "1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2"
-DEBUG main org.apache.http.headers - << Date: Sat, 27 Jun 2015 17:39:43 GMT
-DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-DEBUG main org.apache.http.headers - << Content-Length: 4974
-DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
-DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
-DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
-DEBUG main org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
-DEBUG main org.apache.http.wire - << "{"_id":"09a738f9-ce7a-4b76-8aa2-f8b91b264b2a","_rev":"1-2ccb9d41aaf4fa8d0eb6e8d78b59a6c2","gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX":1,"coordY":4,"status":0"
-DEBUG main org.apache.http.wire - << "},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":0},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":0},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":0},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":0},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checked":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX":5,"coordY":8,"status":0"
-DEBUG main org.apache.http.wire - << "},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":false,"blackList":[{"checked":false,"coordX":4,"coordY":2,"status":-2},{"checked":false,"coordX":6,"coordY":5,"status":2},{"checked":false,"coordX":7,"coordY":6,"status":2},{"checked":false,"coordX":7,"coordY":5,"status":2},{"checked":false,"coordX":7,"coordY":4,"status":2}],"whiteList":[{"checked":false,"coordX":3,"coordY":3,"status":1},{"checked":false,"coordX":5,"coordY":2,"status":1},{"checked":false,"coordX":5,"coordY":3,"status":1},{"checked":false,"coordX":4,"coordY":4,"status":1},{"checked":false,"coordX":3,"coordY":2,"status":1},{"checked":false,"coordX":4,"coordY":1,"status":1}],"whitePlayer":{"score":8,"name":"unknown"},"blackPlayer":{"score":4,"name":"unknown"},"length":9,"pass":false}[\n]"
-DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
-DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
-INFO main de.htwg.go - 
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /htwg_go/758f88d8-419e-444e-9225-00d530917530]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/758f88d8-419e-444e-9225-00d530917530 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /htwg_go/758f88d8-419e-444e-9225-00d530917530 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /htwg_go/758f88d8-419e-444e-9225-00d530917530 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-4a3b4fe4b4e9b656d4cb5d0d17dea11a"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:26:40 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 4615[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-4a3b4fe4b4e9b656d4cb5d0d17dea11a"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:26:40 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 4615
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"_id":"758f88d8-419e-444e-9225-00d530917530","_rev":"1-4a3b4fe4b4e9b656d4cb5d0d17dea11a","length":9,"pass":false,"gameField":[[{"checked":false,"coordX":0,"coordY":0,"status":0},{"checked":false,"coordX":1,"coordY":0,"status":0},{"checked":false,"coordX":2,"coordY":0,"status":0},{"checked":false,"coordX":3,"coordY":0,"status":0},{"checked":false,"coordX":4,"coordY":0,"status":0},{"checked":false,"coordX":5,"coordY":0,"status":0},{"checked":false,"coordX":6,"coordY":0,"status":0},{"checked":false,"coordX":7,"coordY":0,"status":0},{"checked":false,"coordX":8,"coordY":0,"status":0}],[{"checked":false,"coordX":0,"coordY":1,"status":0},{"checked":false,"coordX":1,"coordY":1,"status":0},{"checked":false,"coordX":2,"coordY":1,"status":0},{"checked":false,"coordX":3,"coordY":1,"status":0},{"checked":false,"coordX":4,"coordY":1,"status":0},{"checked":false,"coordX":5,"coordY":1,"status":0},{"checked":false,"coordX":6,"coordY":1,"status":0},{"checked":false,"coordX":7,"coordY":1,"status":0},{"checked":false,"coordX":8,"coordY":1,"status":0}],[{"checked":false,"coordX":0,"coordY":2,"status":0},{"checked":false,"coordX":1,"coordY":2,"status":0},{"checked":false,"coordX":2,"coordY":2,"status":0},{"checked":false,"coordX":3,"coordY":2,"status":0},{"checked":false,"coordX":4,"coordY":2,"status":0},{"checked":false,"coordX":5,"coordY":2,"status":0},{"checked":false,"coordX":6,"coordY":2,"status":0},{"checked":false,"coordX":7,"coordY":2,"status":0},{"checked":false,"coordX":8,"coordY":2,"status":0}],[{"checked":false,"coordX":0,"coordY":3,"status":0},{"checked":false,"coordX":1,"coordY":3,"status":0},{"checked":false,"coordX":2,"coordY":3,"status":0},{"checked":false,"coordX":3,"coordY":3,"status":0},{"checked":false,"coordX":4,"coordY":3,"status":0},{"checked":false,"coordX":5,"coordY":3,"status":0},{"checked":false,"coordX":6,"coordY":3,"status":0},{"checked":false,"coordX":7,"coordY":3,"status":0},{"checked":false,"coordX":8,"coordY":3,"status":0}],[{"checked":false,"coordX":0,"coordY":4,"status":0},{"checked":false,"coordX""
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ":1,"coordY":4,"status":0},{"checked":false,"coordX":2,"coordY":4,"status":0},{"checked":false,"coordX":3,"coordY":4,"status":1},{"checked":false,"coordX":4,"coordY":4,"status":0},{"checked":false,"coordX":5,"coordY":4,"status":0},{"checked":false,"coordX":6,"coordY":4,"status":0},{"checked":false,"coordX":7,"coordY":4,"status":0},{"checked":false,"coordX":8,"coordY":4,"status":0}],[{"checked":false,"coordX":0,"coordY":5,"status":0},{"checked":false,"coordX":1,"coordY":5,"status":0},{"checked":false,"coordX":2,"coordY":5,"status":1},{"checked":false,"coordX":3,"coordY":5,"status":0},{"checked":false,"coordX":4,"coordY":5,"status":2},{"checked":false,"coordX":5,"coordY":5,"status":0},{"checked":false,"coordX":6,"coordY":5,"status":0},{"checked":false,"coordX":7,"coordY":5,"status":0},{"checked":false,"coordX":8,"coordY":5,"status":0}],[{"checked":false,"coordX":0,"coordY":6,"status":0},{"checked":false,"coordX":1,"coordY":6,"status":0},{"checked":false,"coordX":2,"coordY":6,"status":0},{"checked":false,"coordX":3,"coordY":6,"status":2},{"checked":false,"coordX":4,"coordY":6,"status":0},{"checked":false,"coordX":5,"coordY":6,"status":0},{"checked":false,"coordX":6,"coordY":6,"status":0},{"checked":false,"coordX":7,"coordY":6,"status":0},{"checked":false,"coordX":8,"coordY":6,"status":0}],[{"checked":false,"coordX":0,"coordY":7,"status":0},{"checked":false,"coordX":1,"coordY":7,"status":0},{"checked":false,"coordX":2,"coordY":7,"status":0},{"checked":false,"coordX":3,"coordY":7,"status":0},{"checked":false,"coordX":4,"coordY":7,"status":0},{"checked":false,"coordX":5,"coordY":7,"status":0},{"checked":false,"coordX":6,"coordY":7,"status":0},{"checked":false,"coordX":7,"coordY":7,"status":0},{"checked":false,"coordX":8,"coordY":7,"status":0}],[{"checked":false,"coordX":0,"coordY":8,"status":0},{"checked":false,"coordX":1,"coordY":8,"status":0},{"checked":false,"coordX":2,"coordY":8,"status":0},{"checked":false,"coordX":3,"coordY":8,"status":0},{"checked":false,"coordX":4,"coordY":8,"status":0},{"checked":false,"coordX""
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ":5,"coordY":8,"status":0},{"checked":false,"coordX":6,"coordY":8,"status":0},{"checked":false,"coordX":7,"coordY":8,"status":0},{"checked":false,"coordX":8,"coordY":8,"status":0}]],"whiteIsNext":true,"blackList":[{"checked":false,"coordX":4,"coordY":5,"status":2},{"checked":false,"coordX":3,"coordY":6,"status":2}],"whiteList":[{"checked":false,"coordX":3,"coordY":4,"status":1},{"checked":false,"coordX":2,"coordY":5,"status":1}],"whitePlayer":{"name":"unknown","score":2},"blackPlayer":{"name":"unknown","score":2}}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+INFO AWT-EventQueue-0 de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
 0  |0 0 0 0 0 0 0 0 0 
 1  |0 0 0 0 0 0 0 0 0 
 2  |0 0 0 0 0 0 0 0 0 
 3  |0 0 0 0 0 0 0 0 0 
-4  |0 0 0 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
+4  |0 0 0 1 0 0 0 0 0 
+5  |0 0 1 0 2 0 0 0 0 
+6  |0 0 0 2 0 0 0 0 0 
 7  |0 0 0 0 0 0 0 0 0 
 8  |0 0 0 0 0 0 0 0 0 
 
-INFO main de.htwg.go - 
+INFO AWT-EventQueue-0 de.htwg.go - 
 Gamefield 9x9 successfully created, 
-black is next
-INFO main de.htwg.go - 
-white Player score: 8
-black Player score: 4
+white is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 2
+black Player score: 2
 DEBUG main org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
 DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
 DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
@@ -350,19 +245,19 @@ DEBUG main org.apache.http.headers - >> HEAD /htwg_go/ HTTP/1.1
 DEBUG main org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
 DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
 DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
-DEBUG main org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG main org.apache.http.wire - << "HTTP/1.1 404 Object Not Found[\r][\n]"
 DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
-DEBUG main org.apache.http.wire - << "Date: Sat, 27 Jun 2015 17:45:39 GMT[\r][\n]"
+DEBUG main org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:04 GMT[\r][\n]"
 DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Length: 234[\r][\n]"
+DEBUG main org.apache.http.wire - << "Content-Length: 44[\r][\n]"
 DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
 DEBUG main org.apache.http.wire - << "[\r][\n]"
-DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
-DEBUG main org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Object Not Found
+DEBUG main org.apache.http.headers - << HTTP/1.1 404 Object Not Found
 DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
-DEBUG main org.apache.http.headers - << Date: Sat, 27 Jun 2015 17:45:39 GMT
+DEBUG main org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:04 GMT
 DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-DEBUG main org.apache.http.headers - << Content-Length: 234
+DEBUG main org.apache.http.headers - << Content-Length: 44
 DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
 DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
 DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
@@ -390,19 +285,106 @@ DEBUG main org.apache.http.headers - >> HEAD /htwg_go/ HTTP/1.1
 DEBUG main org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
 DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
 DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG main org.apache.http.wire - << "HTTP/1.1 404 Object Not Found[\r][\n]"
+DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG main org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:04 GMT[\r][\n]"
+DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG main org.apache.http.wire - << "Content-Length: 44[\r][\n]"
+DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG main org.apache.http.wire - << "[\r][\n]"
+DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 404 Object Not Found
+DEBUG main org.apache.http.headers - << HTTP/1.1 404 Object Not Found
+DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG main org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:04 GMT
+DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG main org.apache.http.headers - << Content-Length: 44
+DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG main org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG main org.apache.http.impl.client.cache.CacheInvalidator - Request should not be cached
+DEBUG main org.apache.http.impl.client.cache.CacheInvalidator - parent entry: null
+DEBUG main org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG main org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG main org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Sending request: PUT /htwg_go/ HTTP/1.1
+DEBUG main org.apache.http.wire - >> "PUT /htwg_go/ HTTP/1.1[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Content-Length: 0[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG main org.apache.http.wire - >> "[\r][\n]"
+DEBUG main org.apache.http.headers - >> PUT /htwg_go/ HTTP/1.1
+DEBUG main org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG main org.apache.http.headers - >> Content-Length: 0
+DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG main org.apache.http.wire - << "HTTP/1.1 201 Created[\r][\n]"
+DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG main org.apache.http.wire - << "Location: http://lenny2.in.htwg-konstanz.de:5984/htwg_go[\r][\n]"
+DEBUG main org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:04 GMT[\r][\n]"
+DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG main org.apache.http.wire - << "Content-Length: 12[\r][\n]"
+DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG main org.apache.http.wire - << "[\r][\n]"
+DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 201 Created
+DEBUG main org.apache.http.headers - << HTTP/1.1 201 Created
+DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG main org.apache.http.headers - << Location: http://lenny2.in.htwg-konstanz.de:5984/htwg_go
+DEBUG main org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:04 GMT
+DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG main org.apache.http.headers - << Content-Length: 12
+DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG main org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG main org.apache.http.wire - << "{"ok":true}[\n]"
+DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG main org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG main org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG main org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG main org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG main org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG main org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG main org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Sending request: HEAD /htwg_go/ HTTP/1.1
+DEBUG main org.apache.http.wire - >> "HEAD /htwg_go/ HTTP/1.1[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG main org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG main org.apache.http.wire - >> "[\r][\n]"
+DEBUG main org.apache.http.headers - >> HEAD /htwg_go/ HTTP/1.1
+DEBUG main org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG main org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG main org.apache.http.headers - >> Connection: Keep-Alive
 DEBUG main org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
 DEBUG main org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
-DEBUG main org.apache.http.wire - << "Date: Sat, 27 Jun 2015 17:45:39 GMT[\r][\n]"
+DEBUG main org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:04 GMT[\r][\n]"
 DEBUG main org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
-DEBUG main org.apache.http.wire - << "Content-Length: 234[\r][\n]"
+DEBUG main org.apache.http.wire - << "Content-Length: 226[\r][\n]"
 DEBUG main org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
 DEBUG main org.apache.http.wire - << "[\r][\n]"
 DEBUG main org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
 DEBUG main org.apache.http.headers - << HTTP/1.1 200 OK
 DEBUG main org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
-DEBUG main org.apache.http.headers - << Date: Sat, 27 Jun 2015 17:45:39 GMT
+DEBUG main org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:04 GMT
 DEBUG main org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
-DEBUG main org.apache.http.headers - << Content-Length: 234
+DEBUG main org.apache.http.headers - << Content-Length: 226
 DEBUG main org.apache.http.headers - << Cache-Control: must-revalidate
 DEBUG main org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
 DEBUG main org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
@@ -426,144 +408,505 @@ INFO main de.htwg.go -
 
 INFO main de.htwg.go - 
 Gamefield 9x9 successfully created, 
-white is next
-INFO main de.htwg.go - 
-white Player score: 0
-black Player score: 0
-INFO main de.htwg.go - 
-    0 1 2 3 4 5 6 7 8
-    _ _ _ _ _ _ _ _ _
-0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 0 0 0 0 0 0 0 
-2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 0 0 0 0 0 0 
-4  |0 0 0 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
-7  |0 0 0 0 0 0 0 0 0 
-8  |0 0 0 0 0 0 0 0 0 
-
-INFO main de.htwg.go - 
-Gamefield 9x9 successfully created, 
-white is next
-INFO main de.htwg.go - 
-white Player score: 0
-black Player score: 0
-INFO main de.htwg.go - 
-    0 1 2 3 4 5 6 7 8
-    _ _ _ _ _ _ _ _ _
-0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 0 0 0 0 0 0 0 
-2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 0 0 0 0 0 0 
-4  |0 0 0 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
-7  |0 0 0 0 0 0 0 0 0 
-8  |0 0 0 0 0 0 0 0 0 
-
-INFO main de.htwg.go - 
-Gamefield 9x9 successfully created, 
 black is next
 INFO main de.htwg.go - 
 white Player score: 0
 black Player score: 0
-INFO AWT-EventQueue-0 de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
 0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 0 2 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
 2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 0 2 0 0 0 0 
 4  |0 0 0 0 0 0 0 0 0 
 5  |0 0 0 0 0 0 0 0 0 
 6  |0 0 0 0 0 0 0 0 0 
 7  |0 0 0 0 0 0 0 0 0 
 8  |0 0 0 0 0 0 0 0 0 
 
-INFO AWT-EventQueue-0 de.htwg.go - 
-set BLACK at (3,1) 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (4,3) 
 white is next
-INFO AWT-EventQueue-0 de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
 white Player score: 0
 black Player score: 1
-INFO main de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
 0  |0 0 0 0 0 0 0 0 0 
 1  |0 0 0 0 0 0 0 0 0 
 2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 1 2 0 0 0 0 
 4  |0 0 0 0 0 0 0 0 0 
 5  |0 0 0 0 0 0 0 0 0 
 6  |0 0 0 0 0 0 0 0 0 
 7  |0 0 0 0 0 0 0 0 0 
 8  |0 0 0 0 0 0 0 0 0 
 
-INFO main de.htwg.go - 
-Gamefield 9x9 successfully created, 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (3,3) 
 black is next
-INFO main de.htwg.go - 
-white Player score: 0
-black Player score: 0
-INFO AWT-EventQueue-0 de.htwg.go - 
-    0 1 2 3 4 5 6 7 8
-    _ _ _ _ _ _ _ _ _
-0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 0 0 0 0 0 0 0 
-2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 2 0 0 0 0 0 
-4  |0 0 0 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
-7  |0 0 0 0 0 0 0 0 0 
-8  |0 0 0 0 0 0 0 0 0 
-
-INFO AWT-EventQueue-0 de.htwg.go - 
-set BLACK at (3,3) 
-white is next
-INFO AWT-EventQueue-0 de.htwg.go - 
-white Player score: 0
-black Player score: 1
-INFO AWT-EventQueue-0 de.htwg.go - 
-    0 1 2 3 4 5 6 7 8
-    _ _ _ _ _ _ _ _ _
-0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 0 0 0 0 0 0 0 
-2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 2 0 0 0 0 0 
-4  |0 0 1 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
-7  |0 0 0 0 0 0 0 0 0 
-8  |0 0 0 0 0 0 0 0 0 
-
-INFO AWT-EventQueue-0 de.htwg.go - 
-set WHITE at (2,4) 
-black is next
-INFO AWT-EventQueue-0 de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
 white Player score: 1
 black Player score: 1
-INFO AWT-EventQueue-0 de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
 0  |0 0 0 0 0 0 0 0 0 
 1  |0 0 0 0 0 0 0 0 0 
 2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 2 0 0 0 0 0 
-4  |0 0 1 0 0 0 0 0 0 
-5  |0 0 0 0 2 0 0 0 0 
+3  |0 0 0 1 2 0 0 0 0 
+4  |0 0 0 2 0 0 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
 6  |0 0 0 0 0 0 0 0 0 
 7  |0 0 0 0 0 0 0 0 0 
 8  |0 0 0 0 0 0 0 0 0 
 
-INFO AWT-EventQueue-0 de.htwg.go - 
-set BLACK at (4,5) 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (3,4) 
 white is next
-INFO AWT-EventQueue-0 de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
 white Player score: 1
 black Player score: 2
-INFO main de.htwg.go - 
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 1 2 0 0 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (5,4) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 2
+black Player score: 2
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 0 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (6,3) 
+white is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 2
+black Player score: 3
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 0 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (5,2) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 3
+black Player score: 3
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 2 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (3,6) 
+white is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 3
+black Player score: 4
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - Request should not be cached
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheInvalidator - parent entry: null
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was not serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: PUT /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "PUT /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Length: 4723[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Content-Type: application/json[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Expect: 100-continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> PUT /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Length: 4723
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Content-Type: application/json
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Expect: 100-continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 100 Continue[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 100 Continue
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "{"length":9,"_id":"ab7d7a24-d119-442e-9957-dabca4c15a13","gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":1,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":1,"checked":false,"coordX":3,"coordY":3},{"status":2,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":2,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":2,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":1,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":2,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":6,"coordY":3},{"status":2,"checked":false,"coordX":4,"coordY":3},{"status":2,"checked":false,"coordX":3,"coordY":4},{"status":2,"checked":false,"coordX":3,"coordY":6}],"whiteList":[{"status":1,"checked":false,"coordX":5,"coordY":2},{"status":1,"checked":false,"coordX":3,"coordY":3},{"status":1,"checked":false,"coordX":5,"coordY":4}],"whitePlayer":{"name":"unknown","score":3},"blackPlayer":{"name":"unknown","score":4},"pass":false}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 201 Created[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Location: http://lenny2.in.htwg-konstanz.de:5984/htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-01f736340f1914fd9ee0bbe805544d23"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:13 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 99[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 201 Created
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Location: http://lenny2.in.htwg-konstanz.de:5984/htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-01f736340f1914fd9ee0bbe805544d23"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:13 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 99
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was not cacheable.
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"ok":true,"id":"ab7d7a24-d119-442e-9957-dabca4c15a13","rev":"1-01f736340f1914fd9ee0bbe805544d23"}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/_all_docs?include_docs=true HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /htwg_go/_all_docs?include_docs=true HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /htwg_go/_all_docs?include_docs=true HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Transfer-Encoding: chunked[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "5U5C8YUQT0WFD98ZANWK0XBKZ"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:15 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Transfer-Encoding: chunked
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "5U5C8YUQT0WFD98ZANWK0XBKZ"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:15 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "25[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"total_rows":1,"offset":0,"rows":[[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "1335[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"id":"ab7d7a24-d119-442e-9957-dabca4c15a13","key":"ab7d7a24-d119-442e-9957-dabca4c15a13","value":{"rev":"1-01f736340f1914fd9ee0bbe805544d23"},"doc":{"_id":"ab7d7a24-d119-442e-9957-dabca4c15a13","_rev":"1-01f736340f1914fd9ee0bbe805544d23","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":1,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":1,"checked":false,"coordX":3,"coordY":3},{"status":2,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":2,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1,"coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":2,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":1,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checke"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "d":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":2,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5,"coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":6,"coordY":3},{"status":2,"checked":false,"coordX":4,"coordY":3},{"status":2,"checked":false,"coordX":3,"coordY":4},{"status":2,"checked":false,"coordX":3,"coordY":6}],"whiteList":[{"status":1,"checked":false,"coordX":5,"coordY":2},{"status":1,"checked":false,"coordX":3,"coordY":3},{"status":1,"checked":false,"coordX":5,"coordY":4}],"whitePlayer":{"name":"unknown","score":3},"blackPlayer":{"name":"unknown","score":4},"pass":false}}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "4[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "]}"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "0[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4
+    _ _ _ _ _
+0  |0 0 0 0 0 
+1  |0 0 0 0 0 
+2  |0 0 0 0 0 
+3  |0 0 0 0 0 
+4  |0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+Gamefield 5x5 successfully created, 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 0
+black Player score: 0
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CacheableRequestPolicy - Request was serveable from cache
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Cache miss [host: http://lenny2.in.htwg-konstanz.de:5984; uri: /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Calling the backend
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Get connection: HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984], timeout = 1000
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]] total kept alive: 1, total issued: 0, total allocated: 1 out of 20
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Getting free connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Stale connection check
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAddCookies - CookieSpec selected: best-match
+DEBUG AWT-EventQueue-0 org.apache.http.client.protocol.RequestAuthCache - Auth cache not set in the context
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Attempt 1 to execute request
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Sending request: GET /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "GET /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13 HTTP/1.1[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Host: lenny2.in.htwg-konstanz.de:5984[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "Connection: Keep-Alive[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - >> "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> GET /htwg_go/ab7d7a24-d119-442e-9957-dabca4c15a13 HTTP/1.1
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Via: 1.1 localhost (Apache-HttpClient/4.1.1 (cache))
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Host: lenny2.in.htwg-konstanz.de:5984
+DEBUG AWT-EventQueue-0 org.apache.http.headers - >> Connection: Keep-Alive
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "HTTP/1.1 200 OK[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Server: CouchDB/1.3.0 (Erlang OTP/R15B03)[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "ETag: "1-01f736340f1914fd9ee0bbe805544d23"[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Date: Tue, 30 Jun 2015 21:28:21 GMT[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Type: text/plain; charset=utf-8[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Content-Length: 4768[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "Cache-Control: must-revalidate[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "[\r][\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.DefaultClientConnection - Receiving response: HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << HTTP/1.1 200 OK
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Server: CouchDB/1.3.0 (Erlang OTP/R15B03)
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << ETag: "1-01f736340f1914fd9ee0bbe805544d23"
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Date: Tue, 30 Jun 2015 21:28:21 GMT
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Type: text/plain; charset=utf-8
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Content-Length: 4768
+DEBUG AWT-EventQueue-0 org.apache.http.headers - << Cache-Control: must-revalidate
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.DefaultHttpClient - Connection can be kept alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.CachingHttpClient - Handling Backend response
+DEBUG AWT-EventQueue-0 org.apache.http.impl.client.cache.ResponseCachingPolicy - Response was cacheable
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << "{"_id":"ab7d7a24-d119-442e-9957-dabca4c15a13","_rev":"1-01f736340f1914fd9ee0bbe805544d23","length":9,"gameField":[[{"status":0,"checked":false,"coordX":0,"coordY":0},{"status":0,"checked":false,"coordX":1,"coordY":0},{"status":0,"checked":false,"coordX":2,"coordY":0},{"status":0,"checked":false,"coordX":3,"coordY":0},{"status":0,"checked":false,"coordX":4,"coordY":0},{"status":0,"checked":false,"coordX":5,"coordY":0},{"status":0,"checked":false,"coordX":6,"coordY":0},{"status":0,"checked":false,"coordX":7,"coordY":0},{"status":0,"checked":false,"coordX":8,"coordY":0}],[{"status":0,"checked":false,"coordX":0,"coordY":1},{"status":0,"checked":false,"coordX":1,"coordY":1},{"status":0,"checked":false,"coordX":2,"coordY":1},{"status":0,"checked":false,"coordX":3,"coordY":1},{"status":0,"checked":false,"coordX":4,"coordY":1},{"status":0,"checked":false,"coordX":5,"coordY":1},{"status":0,"checked":false,"coordX":6,"coordY":1},{"status":0,"checked":false,"coordX":7,"coordY":1},{"status":0,"checked":false,"coordX":8,"coordY":1}],[{"status":0,"checked":false,"coordX":0,"coordY":2},{"status":0,"checked":false,"coordX":1,"coordY":2},{"status":0,"checked":false,"coordX":2,"coordY":2},{"status":0,"checked":false,"coordX":3,"coordY":2},{"status":0,"checked":false,"coordX":4,"coordY":2},{"status":1,"checked":false,"coordX":5,"coordY":2},{"status":0,"checked":false,"coordX":6,"coordY":2},{"status":0,"checked":false,"coordX":7,"coordY":2},{"status":0,"checked":false,"coordX":8,"coordY":2}],[{"status":0,"checked":false,"coordX":0,"coordY":3},{"status":0,"checked":false,"coordX":1,"coordY":3},{"status":0,"checked":false,"coordX":2,"coordY":3},{"status":1,"checked":false,"coordX":3,"coordY":3},{"status":2,"checked":false,"coordX":4,"coordY":3},{"status":0,"checked":false,"coordX":5,"coordY":3},{"status":2,"checked":false,"coordX":6,"coordY":3},{"status":0,"checked":false,"coordX":7,"coordY":3},{"status":0,"checked":false,"coordX":8,"coordY":3}],[{"status":0,"checked":false,"coordX":0,"coordY":4},{"status":0,"checked":false,"coordX":1"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ","coordY":4},{"status":0,"checked":false,"coordX":2,"coordY":4},{"status":2,"checked":false,"coordX":3,"coordY":4},{"status":0,"checked":false,"coordX":4,"coordY":4},{"status":1,"checked":false,"coordX":5,"coordY":4},{"status":0,"checked":false,"coordX":6,"coordY":4},{"status":0,"checked":false,"coordX":7,"coordY":4},{"status":0,"checked":false,"coordX":8,"coordY":4}],[{"status":0,"checked":false,"coordX":0,"coordY":5},{"status":0,"checked":false,"coordX":1,"coordY":5},{"status":0,"checked":false,"coordX":2,"coordY":5},{"status":0,"checked":false,"coordX":3,"coordY":5},{"status":0,"checked":false,"coordX":4,"coordY":5},{"status":0,"checked":false,"coordX":5,"coordY":5},{"status":0,"checked":false,"coordX":6,"coordY":5},{"status":0,"checked":false,"coordX":7,"coordY":5},{"status":0,"checked":false,"coordX":8,"coordY":5}],[{"status":0,"checked":false,"coordX":0,"coordY":6},{"status":0,"checked":false,"coordX":1,"coordY":6},{"status":0,"checked":false,"coordX":2,"coordY":6},{"status":2,"checked":false,"coordX":3,"coordY":6},{"status":0,"checked":false,"coordX":4,"coordY":6},{"status":0,"checked":false,"coordX":5,"coordY":6},{"status":0,"checked":false,"coordX":6,"coordY":6},{"status":0,"checked":false,"coordX":7,"coordY":6},{"status":0,"checked":false,"coordX":8,"coordY":6}],[{"status":0,"checked":false,"coordX":0,"coordY":7},{"status":0,"checked":false,"coordX":1,"coordY":7},{"status":0,"checked":false,"coordX":2,"coordY":7},{"status":0,"checked":false,"coordX":3,"coordY":7},{"status":0,"checked":false,"coordX":4,"coordY":7},{"status":0,"checked":false,"coordX":5,"coordY":7},{"status":0,"checked":false,"coordX":6,"coordY":7},{"status":0,"checked":false,"coordX":7,"coordY":7},{"status":0,"checked":false,"coordX":8,"coordY":7}],[{"status":0,"checked":false,"coordX":0,"coordY":8},{"status":0,"checked":false,"coordX":1,"coordY":8},{"status":0,"checked":false,"coordX":2,"coordY":8},{"status":0,"checked":false,"coordX":3,"coordY":8},{"status":0,"checked":false,"coordX":4,"coordY":8},{"status":0,"checked":false,"coordX":5"
+DEBUG AWT-EventQueue-0 org.apache.http.wire - << ","coordY":8},{"status":0,"checked":false,"coordX":6,"coordY":8},{"status":0,"checked":false,"coordX":7,"coordY":8},{"status":0,"checked":false,"coordX":8,"coordY":8}]],"whiteIsNext":true,"blackList":[{"status":2,"checked":false,"coordX":6,"coordY":3},{"status":2,"checked":false,"coordX":4,"coordY":3},{"status":2,"checked":false,"coordX":3,"coordY":4},{"status":2,"checked":false,"coordX":3,"coordY":6}],"whiteList":[{"status":1,"checked":false,"coordX":5,"coordY":2},{"status":1,"checked":false,"coordX":3,"coordY":3},{"status":1,"checked":false,"coordX":5,"coordY":4}],"whitePlayer":{"name":"unknown","score":3},"blackPlayer":{"name":"unknown","score":4},"pass":false}[\n]"
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ThreadSafeClientConnManager - Released connection is reusable.
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Releasing connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Pooling connection [HttpRoute[{}->http://lenny2.in.htwg-konstanz.de:5984]][null]; keep alive indefinitely
+DEBUG AWT-EventQueue-0 org.apache.http.impl.conn.tsccm.ConnPoolByRoute - Notifying no-one, there are no waiting threads
+INFO AWT-EventQueue-0 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 2 0 0 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO AWT-EventQueue-0 de.htwg.go - 
+Gamefield 5x5 successfully created, 
+black is next
+INFO AWT-EventQueue-0 de.htwg.go - 
+white Player score: 3
+black Player score: 4
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 0 0 0 
+6  |0 0 0 2 0 1 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (5,6) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 4
+black Player score: 4
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 0 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (6,5) 
+white is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 4
+black Player score: 5
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 0 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (6,6) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 5
+black Player score: 5
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 0 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 2 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (2,5) 
+white is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 5
+black Player score: 6
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 0 0 0 0 1 0 0 0 
+3  |0 0 1 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 2 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (2,3) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 6
+black Player score: 6
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 0 0 0 0 0 0 0 
+2  |0 2 0 0 0 1 0 0 0 
+3  |0 0 1 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 2 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (1,2) 
+white is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 6
+black Player score: 7
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 1 0 0 0 0 0 0 
+2  |0 2 0 0 0 1 0 0 0 
+3  |0 0 1 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 2 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (2,1) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 7
+black Player score: 7
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 1 0 0 2 0 0 0 
+2  |0 2 0 0 0 1 0 0 0 
+3  |0 0 1 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 2 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set BLACK at (5,1) 
+white is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 7
+black Player score: 8
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+    0 1 2 3 4 5 6 7 8
+    _ _ _ _ _ _ _ _ _
+0  |0 0 0 0 0 0 0 0 0 
+1  |0 0 1 0 0 2 1 0 0 
+2  |0 2 0 0 0 1 0 0 0 
+3  |0 0 1 1 2 0 2 0 0 
+4  |0 0 0 2 0 1 0 0 0 
+5  |0 0 2 0 0 0 2 0 0 
+6  |0 0 0 2 0 1 1 0 0 
+7  |0 0 0 0 0 0 0 0 0 
+8  |0 0 0 0 0 0 0 0 0 
+
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+set WHITE at (6,1) 
+black is next
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
+white Player score: 8
+black Player score: 8
+INFO actor-system-akka.actor.default-dispatcher-4 de.htwg.go - 
     0 1 2 3 4 5 6 7 8
     _ _ _ _ _ _ _ _ _
 0  |0 0 0 0 0 0 0 0 0 
@@ -576,28 +919,3 @@ INFO main de.htwg.go -
 7  |0 0 0 0 0 0 0 0 0 
 8  |0 0 0 0 0 0 0 0 0 
 
-INFO main de.htwg.go - 
-Gamefield 9x9 successfully created, 
-black is next
-INFO main de.htwg.go - 
-white Player score: 0
-black Player score: 0
-INFO AWT-EventQueue-0 de.htwg.go - 
-    0 1 2 3 4 5 6 7 8
-    _ _ _ _ _ _ _ _ _
-0  |0 0 0 0 0 0 0 0 0 
-1  |0 0 2 0 0 0 0 0 0 
-2  |0 0 0 0 0 0 0 0 0 
-3  |0 0 0 0 0 0 0 0 0 
-4  |0 0 0 0 0 0 0 0 0 
-5  |0 0 0 0 0 0 0 0 0 
-6  |0 0 0 0 0 0 0 0 0 
-7  |0 0 0 0 0 0 0 0 0 
-8  |0 0 0 0 0 0 0 0 0 
-
-INFO AWT-EventQueue-0 de.htwg.go - 
-set BLACK at (2,1) 
-white is next
-INFO AWT-EventQueue-0 de.htwg.go - 
-white Player score: 0
-black Player score: 1

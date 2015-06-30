@@ -1,11 +1,17 @@
 package de.htwg.go.plugins;
 
 import de.htwg.go.controller.IGoController;
+import de.htwg.go.model.IGameField;
 import de.htwg.go.util.observer.Event;
 
 import javax.swing.*;
 import java.awt.*;
-import java.util.Date;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import java.util.*;
+import java.util.List;
 
 /**
  * Created by michaelknoch on 24.06.15.
@@ -13,36 +19,63 @@ import java.util.Date;
 public class Plugin2 extends JFrame implements GoPlugins {
 
     IGoController controller;
-    private JLabel label;
     String pluginName = "plugin2";
 
     @Override
     public void update(Event e) {
-        label.setText(controller.getStatus());
+
     }
+
+
+    ArrayList<String> gameList;
+
 
     @Override
     public void enable(IGoController controller) {
         this.controller = controller;
-        setTitle(this.getName());
-        Dimension dimension = new Dimension(200, 200);
-        setMaximumSize(dimension);
-        setMinimumSize(dimension);
-        setPreferredSize(dimension);
 
-        setSize(700, 20);
+        java.util.List<IGameField> games = this.controller.getAllGames();
+        ArrayList<String> arrayList = new ArrayList<String>();
+
+        for (IGameField game : games) {
+            String id = game.getId();
+            if (id != null) {
+                arrayList.add(id);
+            }
+        }
+
+        final JList gList = new JList(arrayList.toArray());
+
+        gList.addKeyListener(new KeyAdapter() {
+            public void keyPressed(KeyEvent evt) {
+                if (evt.getKeyCode() == KeyEvent.VK_ENTER) {
+                    System.out.println("Load: " + gList.getSelectedValue());
+                    selectGame(gList.getSelectedValue().toString());
+                }
+            }
+        });
+
+
+        add(gList);
+
+
+        // Create a JList that displays strings from an array
+
+
+        setTitle(this.getName());
+
+        setSize(500, 800);
         setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         setLocationRelativeTo(null);
 
-
-        label = new JLabel();
-        label.setFont(new Font("Arial", Font.CENTER_BASELINE, 25));
-        add(label, BorderLayout.CENTER);
-
-
-        label.setText(controller.getStatus());
         setVisible(true);
     }
+
+    public void selectGame(String gameid) {
+        this.controller.loadGameById(gameid);
+        this.controller.notifyObservers();
+    }
+
 
     @Override
     public void deenable() {
