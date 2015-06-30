@@ -1,20 +1,11 @@
 package de.htwg.go.model.impl;
 
-import akka.actor.ActorRef;
-import akka.actor.ActorSystem;
-import akka.actor.Props;
-import akka.pattern.Patterns;
-import akka.util.Timeout;
 import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
 import de.htwg.go.util.observer.Observable;
-import scala.concurrent.Await;
-import scala.concurrent.Awaitable;
-import scala.concurrent.duration.Duration;
 
 import java.util.*;
-import java.util.concurrent.Future;
 
 /**
  * @author Timo Weiss, Michael Knoch

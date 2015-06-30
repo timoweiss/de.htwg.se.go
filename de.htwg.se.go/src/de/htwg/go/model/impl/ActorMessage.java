@@ -1,7 +1,6 @@
 package de.htwg.go.model.impl;
 
 import de.htwg.go.controller.IGoController;
-import de.htwg.go.model.IGameField;
 
 import java.io.Serializable;
 

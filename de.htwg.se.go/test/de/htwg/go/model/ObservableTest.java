@@ -1,13 +1,13 @@
 package de.htwg.go.model;
 
-import static org.junit.Assert.*;
-
-import org.junit.Before;
-import org.junit.Test;
-
 import de.htwg.go.util.observer.Event;
 import de.htwg.go.util.observer.IObserver;
 import de.htwg.go.util.observer.Observable;
+import org.junit.Before;
+import org.junit.Test;
+
+import static org.junit.Assert.assertFalse;
+import static org.junit.Assert.assertTrue;
 
 
 

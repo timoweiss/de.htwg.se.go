@@ -1,6 +1,6 @@
 package de.htwg.go.model;
 
-import java.awt.Point;
+import java.awt.*;
 
 /**	
  * Interface ICell represents the elementary item of the Game.

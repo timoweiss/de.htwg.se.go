@@ -1,16 +1,9 @@
 package de.htwg.go.persistence.hibernate;
 
 import com.google.gson.Gson;
-import de.htwg.go.model.ICell;
 import de.htwg.go.model.IGameField;
 import de.htwg.go.model.IPlayer;
-import de.htwg.go.model.impl.Cell;
 import de.htwg.go.model.impl.GameField;
-import de.htwg.go.model.impl.Player;
-
-import java.awt.*;
-import java.util.HashSet;
-import java.util.Set;
 
 /**
  * Created by michaelknoch on 25.06.15.

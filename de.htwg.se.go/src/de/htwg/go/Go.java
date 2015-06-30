@@ -7,8 +7,6 @@ import de.htwg.go.aview.TextUI;
 import de.htwg.go.controller.IGoController;
 import org.apache.log4j.PropertyConfigurator;
 
-
-
 import java.util.Scanner;
 
 public final class Go {

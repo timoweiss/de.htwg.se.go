@@ -1,13 +1,12 @@
 package de.htwg.go.model;
 
-import static org.junit.Assert.*;
-
-import java.awt.Point;
-
+import de.htwg.go.model.impl.Cell;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.go.model.impl.Cell;
+import java.awt.*;
+
+import static org.junit.Assert.assertEquals;
 
 public class CellTest {
 

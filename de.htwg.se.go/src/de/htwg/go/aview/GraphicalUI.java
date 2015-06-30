@@ -1,26 +1,21 @@
 package de.htwg.go.aview;
 
-import java.awt.BorderLayout;
-import java.awt.Color;
-import java.awt.Desktop;
-import java.awt.GridLayout;
+import com.google.inject.Inject;
+import de.htwg.go.controller.IGoController;
+import de.htwg.go.plugins.GoPlugins;
+import de.htwg.go.util.observer.Event;
+import de.htwg.go.util.observer.IObserver;
+import org.apache.log4j.Logger;
+
+import javax.imageio.ImageIO;
+import javax.swing.*;
+import java.awt.*;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.io.File;
 import java.io.IOException;
 import java.net.URL;
 import java.util.Set;
-
-import javax.imageio.ImageIO;
-import javax.swing.*;
-
-import com.google.inject.Inject;
-import de.htwg.go.plugins.GoPlugins;
-import org.apache.log4j.Logger;
-
-import de.htwg.go.controller.IGoController;
-import de.htwg.go.util.observer.Event;
-import de.htwg.go.util.observer.IObserver;
 
 public class GraphicalUI extends JFrame implements IObserver, ActionListener {
 

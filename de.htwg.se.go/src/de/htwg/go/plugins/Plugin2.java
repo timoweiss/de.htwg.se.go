@@ -5,13 +5,9 @@ import de.htwg.go.model.IGameField;
 import de.htwg.go.util.observer.Event;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
 import java.awt.event.KeyEvent;
-import java.util.*;
-import java.util.List;
+import java.util.ArrayList;
 
 /**
  * Created by michaelknoch on 24.06.15.

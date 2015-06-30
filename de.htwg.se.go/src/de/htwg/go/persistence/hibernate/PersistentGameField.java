@@ -1,11 +1,7 @@
 package de.htwg.go.persistence.hibernate;
 
-import de.htwg.go.persistence.couchdb.PersistenceCell;
-
 import javax.persistence.*;
 import java.io.Serializable;
-import java.util.Collection;
-import java.util.Set;
 
 /**
  * Created by michaelknoch on 24.06.15.

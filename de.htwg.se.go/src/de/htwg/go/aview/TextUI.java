@@ -1,11 +1,10 @@
 package de.htwg.go.aview;
 
-import de.htwg.go.model.IGameField;
-import org.apache.log4j.Logger;
-
 import de.htwg.go.controller.IGoController;
+import de.htwg.go.model.IGameField;
 import de.htwg.go.util.observer.Event;
 import de.htwg.go.util.observer.IObserver;
+import org.apache.log4j.Logger;
 
 import java.util.List;
 

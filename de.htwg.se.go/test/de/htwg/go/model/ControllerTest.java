@@ -1,11 +1,10 @@
 package de.htwg.go.model;
 
-import static org.junit.Assert.*;
-
+import de.htwg.go.controller.impl.GoController;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.go.controller.impl.GoController;
+import static org.junit.Assert.*;
 
 public class ControllerTest {
 	GoController controller;

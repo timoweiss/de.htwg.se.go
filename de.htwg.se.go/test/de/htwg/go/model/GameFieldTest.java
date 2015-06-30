@@ -1,12 +1,11 @@
 package de.htwg.go.model;
 
-import static org.junit.Assert.*;
-
+import de.htwg.go.model.impl.GameField;
+import de.htwg.go.model.impl.Player;
 import org.junit.Before;
 import org.junit.Test;
 
-import de.htwg.go.model.impl.GameField;
-import de.htwg.go.model.impl.Player;
+import static org.junit.Assert.*;
 
 public class GameFieldTest {
 

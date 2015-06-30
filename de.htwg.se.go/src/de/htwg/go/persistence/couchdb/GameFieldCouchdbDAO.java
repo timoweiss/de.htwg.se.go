@@ -5,15 +5,14 @@ import de.htwg.go.persistence.IGameFieldDAO;
 import org.ektorp.CouchDbConnector;
 import org.ektorp.CouchDbInstance;
 import org.ektorp.DocumentNotFoundException;
+import org.ektorp.ViewQuery;
 import org.ektorp.http.HttpClient;
 import org.ektorp.http.StdHttpClient;
 import org.ektorp.impl.StdCouchDbInstance;
-import org.ektorp.ViewQuery;
 
 import java.net.MalformedURLException;
-import java.util.List;
-
 import java.util.ArrayList;
+import java.util.List;
 
 public class GameFieldCouchdbDAO implements IGameFieldDAO {
 

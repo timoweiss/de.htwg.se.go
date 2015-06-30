@@ -1,7 +1,6 @@
 package de.htwg.go;
 
 import com.google.inject.AbstractModule;
-
 import com.google.inject.Singleton;
 import com.google.inject.multibindings.Multibinder;
 import de.htwg.go.controller.IGoController;

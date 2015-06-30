@@ -1,8 +1,8 @@
 package de.htwg.go.model.impl;
 
-import java.awt.Point;
-
 import de.htwg.go.model.ICell;
+
+import java.awt.*;
 
 public class Cell implements Comparable<Cell>, ICell {
 	private int status;
