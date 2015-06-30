@@ -13,7 +13,7 @@ import java.util.Set;
 
 @Entity
 @Table(name = "game")
-public class PersistentGame implements Serializable {
+public class PersistentGameField implements Serializable {
 
     private boolean pass = false;
 
@@ -47,7 +47,7 @@ public class PersistentGame implements Serializable {
     @Column(name = "id")
     private String id;
 
-    public PersistentGame() {
+    public PersistentGameField() {
 
     }
 

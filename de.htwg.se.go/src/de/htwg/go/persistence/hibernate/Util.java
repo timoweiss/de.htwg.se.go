@@ -6,7 +6,6 @@ import de.htwg.go.model.IPlayer;
 import de.htwg.go.model.impl.Cell;
 import de.htwg.go.model.impl.GameField;
 import de.htwg.go.model.impl.Player;
-import de.htwg.go.persistence.couchdb.PersistenceCell;
 
 import java.awt.*;
 import java.util.HashSet;
@@ -16,8 +15,8 @@ import java.util.Set;
  * Created by michaelknoch on 25.06.15.
  */
 public class Util {
-    public static PersistentGame getTransformedGameField(IGameField gameField) {
-        PersistentGame persistentGameField = new PersistentGame();
+    public static PersistentGameField getTransformedGameField(IGameField gameField) {
+        PersistentGameField persistentGameField = new PersistentGameField();
         persistentGameField.setId(gameField.getId());
         persistentGameField.setLength(gameField.getLength());
         persistentGameField.setPass(gameField.passed());
@@ -75,8 +74,7 @@ public class Util {
                 PersistentCell persistenceCell = new PersistentCell();
                 persistenceCell.setCoordX(gameField.getGameField()[i][j].getCoords().x);
                 persistenceCell.setCoordY(gameField.getGameField()[i][j].getCoords().y);
-                System.out.println(i);
-                System.out.println(j);
+                persistenceCell.setStatus(gameField.getGameField()[i][j].getStatus());
                 a[i][j] = persistenceCell;
 
             }
@@ -89,7 +87,7 @@ public class Util {
         return persistentGameField;
     }
 
-    public static IGameField getReTransformedGameField(PersistentGame gameField) {
+    public static IGameField getReTransformedGameField(PersistentGameField gameField) {
 
         IGameField nonPersistentGamefield = new GameField(gameField.getLength());
         nonPersistentGamefield.setId(gameField.getId());
@@ -142,7 +140,7 @@ public class Util {
         for(int i = 0; i < gameField.getGameField().length; i++) {
             for(int j = 0; j < gameField.getGameField()[i].length; j++) {
                 Cell npCell = new Cell(gameField.getGameField()[i][j].getCoordX(), gameField.getGameField()[i][j].getCoordY());
-
+                npCell.setStatus(gameField.getGameField()[i][j].getStatus());
                 b[i][j] = npCell;
 
             }

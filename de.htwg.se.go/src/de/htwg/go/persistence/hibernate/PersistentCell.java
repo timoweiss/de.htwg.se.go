@@ -22,7 +22,7 @@ public class PersistentCell implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "gameid")
-    private PersistentGame game;
+    private PersistentGameField game;
 
     private Integer value = 0;
 
@@ -66,11 +66,11 @@ public class PersistentCell implements Serializable {
         return status;
     }
 
-    public PersistentGame getGame() {
+    public PersistentGameField getGame() {
         return game;
     }
 
-    public void setGame(PersistentGame game) {
+    public void setGame(PersistentGameField game) {
         this.game = game;
     }
 }

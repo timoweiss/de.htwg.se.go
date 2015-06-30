@@ -1,6 +1,5 @@
 package de.htwg.go.persistence.hibernate;
 
-import javax.annotation.Generated;
 import javax.persistence.*;
 import java.io.Serializable;
 
@@ -23,16 +22,16 @@ public class PersistentPlayer implements Serializable {
 
     @OneToOne
     @JoinColumn(name = "gameid")
-    private PersistentGame game;
+    private PersistentGameField game;
 
     private Integer value = 0;
 
 
-    public PersistentGame getGame() {
+    public PersistentGameField getGame() {
         return game;
     }
 
-    public void setGame(PersistentGame game) {
+    public void setGame(PersistentGameField game) {
         this.game = game;
     }
 

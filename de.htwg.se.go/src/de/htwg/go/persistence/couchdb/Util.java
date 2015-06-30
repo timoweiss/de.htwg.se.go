@@ -146,7 +146,6 @@ public class Util {
             for(int j = 0; j < gameField.getGameField()[i].length; j++) {
                 Cell npCell = new Cell(gameField.getGameField()[i][j].getCoordX(), gameField.getGameField()[i][j].getCoordY());
                 npCell.setStatus(gameField.getGameField()[i][j].getStatus());
-                System.out.println(gameField.getGameField()[i][j].getStatus());
                 b[i][j] = npCell;
 
             }

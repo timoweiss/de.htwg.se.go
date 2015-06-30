@@ -1,9 +1,7 @@
 package de.htwg.go.persistence.hibernate;
 
 import de.htwg.go.model.IGameField;
-import de.htwg.go.model.impl.GameField;
 import de.htwg.go.persistence.IGameFieldDAO;
-import de.htwg.go.persistence.couchdb.PersistenceCell;
 import org.hibernate.Criteria;
 import org.hibernate.HibernateException;
 import org.hibernate.Session;
@@ -11,7 +9,6 @@ import org.hibernate.Transaction;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Set;
 
 /**
  * Created by michaelknoch on 24.06.15.
@@ -32,7 +29,7 @@ public class GoHibernateDAO implements IGameFieldDAO {
         try {
             tx = this.session.beginTransaction();
 
-            PersistentGame pGame = Util.getTransformedGameField(gameField);
+            PersistentGameField pGame = Util.getTransformedGameField(gameField);
 
             this.session.saveOrUpdate(pGame);
             for (PersistentCell current:pGame.getBlackList()) {
@@ -62,8 +59,8 @@ public class GoHibernateDAO implements IGameFieldDAO {
     @Override
     public IGameField getGameById(String id) {
         this.session.beginTransaction();
-        return Util.getReTransformedGameField((PersistentGame) this.session.get(
-                PersistentGame.class, id));
+        return Util.getReTransformedGameField((PersistentGameField) this.session.get(
+                PersistentGameField.class, id));
     }
 
     @Override
@@ -74,8 +71,8 @@ public class GoHibernateDAO implements IGameFieldDAO {
         try {
             tx = this.session.beginTransaction();
 
-            PersistentGame pGame = (PersistentGame) this.session.get(
-                    PersistentGame.class, id);
+            PersistentGameField pGame = (PersistentGameField) this.session.get(
+                    PersistentGameField.class, id);
 
 
             for (PersistentCell current:pGame.getBlackList()) {
@@ -110,13 +107,13 @@ public class GoHibernateDAO implements IGameFieldDAO {
 
         this.session.beginTransaction();
 
-        Criteria criteria = this.session.createCriteria(PersistentGame.class);
+        Criteria criteria = this.session.createCriteria(PersistentGameField.class);
 
         @SuppressWarnings("unchecked")
-        List<PersistentGame> results = criteria.list();
+        List<PersistentGameField> results = criteria.list();
 
         List<IGameField> games = new ArrayList<IGameField>();
-        for (PersistentGame current : results) {
+        for (PersistentGameField current : results) {
             IGameField game = Util.getReTransformedGameField(current);
             games.add(game);
         }
