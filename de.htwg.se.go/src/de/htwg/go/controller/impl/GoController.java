@@ -73,7 +73,6 @@ public class GoController extends Observable implements IGoController {
             statusLine = "Game already closed, not allowed to set a stone";
             //update
             actorRef.tell(new ActorMessage("update", this), null);
-
             return false;
         }
 
